@@ -47,3 +47,7 @@ repos["response"]["venues"].each do |venue|
       address: venue["formattedAddress"][0],
     )
 end
+
+
+
+
