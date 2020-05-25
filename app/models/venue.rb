@@ -1,4 +1,4 @@
 class Venue < ApplicationRecord
   # Attractions
-  belongs_to :trip_venue
+  has_many :trip_venue
 end
