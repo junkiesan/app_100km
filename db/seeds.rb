@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'open-uri'
+require "json"
+require "rest-client"
 
 puts "Destroy Users"
 User.destroy_all
@@ -22,7 +24,7 @@ puts 'Creating user...'
   users = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password: "mdpmdp",
     )
   users.save!
   puts 'New user!'
@@ -32,3 +34,12 @@ test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld'
 
 trip = Trip.new(name: 'Hermit in the mountains 🏔', date: Date.now, user: nemo)
 truck_1.save!
+
+response = RestClient.get "https://api.foursquare.com/v2/venues/search?ll=48.8566969,2.3514616&client_id=PKECGHIH201FYP4DKCUB4IC2RG0AEPAFICVKMBLFO1XXLNMN
+
+&client_secret=EP215GIGFV11TDBDZDZLFI1V3ZDQ2RDZWOGV5UCTGKKXIZDW
+
+&v=20202005&categoryId=4bf58dd8d48988d181941735"
+repos = JSON.parse(response)
+
+puts repos
