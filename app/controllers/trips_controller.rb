@@ -13,7 +13,8 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = Trip.find(params[:id])
+    @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
     if @trip.save
       redirect_to trip_path(@trip)
     else
