@@ -13,13 +13,9 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.find(params[:id])
-    @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :new
-    end
+    @trip = Trip.new(trip_params)
+    @trip.save
+    redirect_to trip_path(@trip)
   end
 
   def edit
@@ -41,7 +37,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :start_date, :end_date, :user_id)
+    params.require(:trip).permit(:name, :start_date, :end_date, :radius, :address, :user_id)
   end
 end
 

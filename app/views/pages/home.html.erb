@@ -1,3 +1,14 @@
 <h1>Pages#home</h1>
 
+<div class= "container">
+  <div class="row">
+    <div class="col-6 offset-3">
+        <%= simple_form_for @trip do |f| %>
+          <%= f.input :address %>
+          <%= f.input :radius %>
+          <%= f.submit "Create Trip", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
