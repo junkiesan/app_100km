@@ -1,4 +1,16 @@
 <h1>All Trips</h1>
 
-<p><%= link_to "Create new trip", new_trip_path(@trip) %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div id="trips">
+        <% @trips.each do |trip| %>
+          <h4><%= trip.name %></h4>
+          <h4><%= trip.user.name %></h4>
+        <% end %>
+      </div>
+      <p><%= link_to "Create new trip", new_trip_path(@trip) %></p>
+    </div>
+  </div>
+</div>
 

@@ -1,10 +1,13 @@
 class Trip < ApplicationRecord
 
-  # Attractions
+# Attractions
   belongs_to :user
   has_many :trip_venues
+  has_many :venues, through: :trip_venues
 
 
-# Validations
+# Geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
 end
