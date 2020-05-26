@@ -1,0 +1,26 @@
+  <div class="container">
+
+    <div>
+      <h1>My Profile</h1>
+      <img src="profilepicture">
+      <h2>
+        <%= @user.name %>
+        <%= @user.interests %>
+        <%= @user.bio %>
+      </h2>
+    </div>
+
+    <div>
+      <h2>My trips</h2>
+      <% @trips.each do |trip| %>
+          <p>Name: <%= trip.name %>
+          Start: <%= trip.start_date %>
+          End: <%= trip.end_date %></p>
+      <% end %>
+    </div>
+
+    <div>
+      <h2>Social medias</h2>
+    </div>
+  </div>
+
