@@ -13,9 +13,14 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = Trip.new(trip_params.merge(user: current_user))
     @trip.save
-    redirect_to trip_path(@trip)
+    redirect_to custom_trip_path(@trip)
+  end
+
+  def custom
+    @trip = Trip.find(params[:id])
+    @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
   end
 
   def edit

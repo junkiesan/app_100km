@@ -55,7 +55,7 @@ test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld'
 # end
 
 puts 'Creating venues...'
-venue_1 = Venue.new(name: 'Tour Eiffel', latitude: '2.294481', longitude: '48.858370', zip: '75007', category: 'Monuments historiques', address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris')
+venue_1 = Venue.new(name: 'Tour Eiffel', latitude: '48.858370 ', longitude: '2.294481', zip: '75007', category: 'Monuments historiques', address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris')
 file = URI.open('https://img-4.linternaute.com/cv2k3btDzZhtnviFc3M3asFIr2Y=/1240x/smart/7244e5210e52400fa046c092d12d307f/ccmcms-linternaute/11468236.jpg')
 venue_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!

@@ -3,10 +3,17 @@
 <div class= "container">
   <div class="row">
     <div class="col-6 offset-3">
-        <%= simple_form_for @trip do |f| %>
-          <%= f.input :address %>
-          <%= f.input :radius %>
-          <%= f.submit "Create Trip", class: "btn btn-primary" %>
+      <%= simple_form_for @trip do |f| %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :address %>
+          </div>
+          <div class="col">
+            <%= f.input :radius %>
+          </div>
+          <div class="col">
+          <%= f.submit "Create Trip" %>
+        </div>
       <% end %>
     </div>
   </div>
