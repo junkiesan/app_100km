@@ -55,6 +55,7 @@ CITIES.each do |city|
 end
 
 puts 'Creating venues...'
+
 venue_1 = Venue.new(name: 'Fondation Claude Monet', latitude: '48.8656', longitude: '2.3789894', zip: '27620', category: 'Monument', address: '84 Rue Claude Monet, 27620 Giverny')
 file = URI.open('https://lh3.googleusercontent.com/proxy/k81Cnh17dA3yW1a4Gx0pHIkOguBRvjhkkyf3MRS4aoJ5b6HFQi-EyQSzfnC6OczFQpQdQmKVNQfmoNVo4q7vu7uVXtOGchJ0ckT_HS9R3IiweiO5Y3sxXbnwSrbjy7rKLp90knocHJXZWGSQkADwndAP6vWYo-J7Xz95kpU')
 venue_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')

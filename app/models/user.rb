@@ -6,7 +6,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   # Attractions
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   # Devise
   devise :database_authenticatable, :registerable,
