@@ -1,9 +1,5 @@
 class TripVenuesController < ApplicationController
 
-  def show
-    @trip_venue = TripVenue.find(params[:id])
-  end
-
   def create
     @trip_venue = TripVenue.find(params[:id])
     if @trip_venue.save
