@@ -2,7 +2,7 @@ class Trip < ApplicationRecord
 
 # Attractions
   belongs_to :user
-  has_many :trip_venues
+  has_many :trip_venues, dependent: :destroy
   has_many :venues, through: :trip_venues
 
 
