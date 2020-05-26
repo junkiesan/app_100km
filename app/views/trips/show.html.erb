@@ -1,0 +1,20 @@
+<h1>Trip Show</h1>
+
+<%# @trips.each do |trip| %>
+  <ul>
+    <li>Name: <%= @trip.name %></li>
+    <li>Start Date: <%= @trip.start_date %></li>
+    <li>End Date: <%= @trip.end_date %></li>
+    <li>User: <%= @trip.user.name %></li>
+  </ul>
+
+  <p><%= link_to "Delete #{@trip.name}",
+            trip_path(@trip),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+      <i class="fa fa-trash destroy_dose"></i></p>
+
+
+<p><%= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
+
+<p><%= link_to "Back to all", trips_path(@trips) %></p>
