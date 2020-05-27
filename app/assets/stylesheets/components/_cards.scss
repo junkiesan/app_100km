@@ -1,0 +1,16 @@
+.venue-card {
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, .2);
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .venue-details {
+    padding: 15px;
+  }
+}
