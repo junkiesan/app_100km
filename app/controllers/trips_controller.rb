@@ -13,6 +13,7 @@ class TripsController < ApplicationController
         lat: trip.latitude,
         lng: trip.longitude
       }
+    end
   end
 
   def new
