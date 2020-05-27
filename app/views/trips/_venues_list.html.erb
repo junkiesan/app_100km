@@ -1,14 +1,20 @@
 <h1>Venues List</h1>
 
 <% venues.each do |venue| %>
-  <%= venue.name  %>
-  <% if @trip.venues.include?(venue) %>
-    <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true %>
-  <% else %>
-    <%= simple_form_for TripVenue.new, remote: true do |f| %>
-      <%= f.input :trip_id, as: :hidden, input_html: {value: @trip.id} %>
-      <%= f.input :venue_id, as: :hidden, input_html: {value: venue.id} %>
-      <%= f.submit "Add" %>
+<div class="venue-card">
+  <div class="venue-details">
+    <%= venue.name  %>
+    <% if @trip.venues.include?(venue) %>
+      <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true %>
+    <% else %>
+      <%= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true %>
     <% end %>
+  </div>
+  <% if venue.photo.attached? %>
+  <%= cl_image_tag venue.photo.key %>
+    <% else %>
+    <%= image_tag('venue-img.jpeg') %>
   <% end %>
+</div>
 <% end %>
+
