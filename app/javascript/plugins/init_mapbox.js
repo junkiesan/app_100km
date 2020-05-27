@@ -6,15 +6,24 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/light-v10'
   });
 };
 
-const addMarkersToMap = (map, markers) => {
+const addMarkersToMap = (map, markers, trip) => {
   markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    if (trip) {
+    new mapboxgl.Marker({color: "red"})
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map)
+    } else {
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
+      .setPopup(popup)
+      .addTo(map)
+    }
   });
 };
 
@@ -28,10 +37,10 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.tripMarker);
-    addMarkersToMap(map, markers);
+    addMarkersToMap(map, markers, true);
     fitMapToMarkers(map, markers);
     const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
-    addMarkersToMap(map, venue_markers);
+    addMarkersToMap(map, venue_markers, false);
     fitMapToMarkers(map, venue_markers);
   }
 };
