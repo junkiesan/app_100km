@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @trip = Trip.new
   end
+
+  def profile
+    @user = current_user
+    @trips = @user.trips
+  end
 end
