@@ -14,9 +14,11 @@
       <% end %>
     </div>
   </div>
-  <% if venue.photo.attached? %>
-  <%= cl_image_tag venue.photo.key %>
-    <% else %>
+  <% if venue.photos.attached? %>
+    <% venue.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
+  <% else %>
     <%= image_tag('venue-img.jpeg') %>
   <% end %>
 </div>
