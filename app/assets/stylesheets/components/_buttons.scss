@@ -18,5 +18,10 @@
 
 .save-trip-btn {
   z-index: 2;
-  color: white;
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  a {
+    color: $white;
+  }
 }
