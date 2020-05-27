@@ -8,6 +8,9 @@ class User < ApplicationRecord
   # Attractions
   has_many :trips, dependent: :destroy
 
+  # ActiveStorage
+  has_one_attached :photo
+
   # Devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
