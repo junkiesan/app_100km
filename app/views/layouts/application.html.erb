@@ -16,7 +16,9 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
 <!-- CONDITION FOOTER -->
-    <%= render 'shared/footer' unless @skip_footer %>
+    <% unless  %>
+    <%= render 'shared/footer' %>
+    <% end %>
     <%= javascript_pack_tag 'application' %>
 
   </body>
