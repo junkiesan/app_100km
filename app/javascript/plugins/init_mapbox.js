@@ -30,8 +30,10 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.tripMarker);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
+    addMarkersToMap(map, venue_markers);
+    fitMapToMarkers(map, venue_markers);
   }
-  console.log("lili")
 };
 
 export { initMapbox };
