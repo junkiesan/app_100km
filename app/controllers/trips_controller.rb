@@ -6,6 +6,13 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @trips = Trip.geocoded # returns trips with coordinates
+
+    @markers = @trips.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude
+      }
   end
 
   def new
