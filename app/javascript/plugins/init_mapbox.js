@@ -16,7 +16,7 @@ const addMarkersToMap = (map, markers, trip) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     if (trip) {
-    new mapboxgl.Marker({color: "red"})
+    new mapboxgl.Marker({color: "#FE7763"})
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map)
