@@ -1,0 +1,39 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: bold;
+  display: block;
+  margin-top: 200px;
+  letter-spacing: 5px;
+  padding-top: 5px;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.nav_button {
+  color: $white;
+  background-color: $white;
+  border: $red;
+  border-radius: 10px;
+  height: 50px;
+  width :110px;
+  margin-top: 15px;
+  margin-right: 40px;
+  transition: background-image 5s;
+  // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+}
