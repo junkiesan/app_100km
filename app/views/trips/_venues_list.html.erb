@@ -1,18 +1,24 @@
-<h1>Venues List</h1>
-
+<!-- <h1>Venues List</h1>
+ -->
 <% venues.each do |venue| %>
 <div class="venue-card">
   <div class="venue-details">
-    <%= venue.name  %>
-    <% if @trip.venues.include?(venue) %>
-      <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true %>
-    <% else %>
-      <%= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true %>
-    <% end %>
+    <h2><%= venue.name  %></h2>
+    <p><%= venue.address %></p>
+    <h6><%= venue.category %></h6>
+    <div class="venue-action">
+      <% if @trip.venues.include?(venue) %>
+        <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true %>
+      <% else %>
+        <%= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true %>
+      <% end %>
+    </div>
   </div>
-  <% if venue.photo.attached? %>
-  <%= cl_image_tag venue.photo.key %>
-    <% else %>
+  <% if venue.photos.attached? %>
+    <% venue.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
+  <% else %>
     <%= image_tag('venue-img.jpeg') %>
   <% end %>
 </div>

@@ -15,7 +15,10 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/footer'  %>
+<!-- CONDITION FOOTER -->
+    <% unless action_name == 'custom' && controller_name == 'trips' %>
+    <%= render 'shared/footer' %>
+    <% end %>
     <%= javascript_pack_tag 'application' %>
 
   </body>
