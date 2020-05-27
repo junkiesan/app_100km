@@ -7,6 +7,6 @@ class Venue < ApplicationRecord
   has_many :trip_venues, dependent: :destroy
 
   #ActiveStorage
-  has_one_attached :photo
+  has_many_attached :photos
 
 end

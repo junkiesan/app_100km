@@ -6,6 +6,23 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @trips = Trip.geocoded # returns trips with coordinates
+
+    @trip_marker = [
+      {
+        lat: @trip.latitude,
+        lng: @trip.longitude,
+        trip: true
+      }
+    ]
+
+    @venue_markers = @trip.venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude,
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
+      }
+    end
   end
 
   def new
@@ -21,6 +38,13 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
+    @trips = Trip.geocoded
+    @venue_markers = @trip.venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude
+      }
+    end
   end
 
   def edit
