@@ -1,22 +1,23 @@
-<h1>Pages#home</h1>
-
-<div class= "container">
-  <div class="row">
-    <div class="col-6 offset-3">
-      <%= simple_form_for @trip do |f| %>
-        <div class="row">
-          <div class="col">
-            <%= f.input :address %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1252500/pexels-photo-1252500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+  <div class="container">
+    <h1>Évadez-vous à moins de 100km !</h1>
+    <p>Cet été, revalorisez les régions Françaises 🇫🇷</p>
+    <div class="row">
+      <div class="col-8">
+        <%= simple_form_for @trip do |f| %>
+          <div class="row">
+            <div class="col-6">
+              <%= f.input :address, placeholder: "Entrez votre adresse", label: false %>
+            </div>
+            <div class="col-2">
+              <%= f.input :radius, placeholder: "Radius", label: false %>
+            </div>
+            <div class="col-4">
+              <%= f.submit "Create Trip", class: "btn nav_button" %>
+            </div>
           </div>
-          <div class="col">
-            <%= f.input :radius %>
-          </div>
-          <div class="col">
-          <%= f.submit "Create Trip" %>
-        </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
