@@ -5,10 +5,23 @@
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
+  height: 170px;
+  position: relative;
+  .venue-action {
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+  }
   img {
-    width: 100px;
-    height: 100px;
+    width: 45%;
+    height: 100%;
     object-fit: cover;
+  }
+  p {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 18px;
   }
   .venue-details {
     padding: 15px;
