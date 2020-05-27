@@ -8,10 +8,17 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trips = Trip.geocoded # returns trips with coordinates
 
-    @markers = @trips.map do |trip|
+    @trip_marker = [
       {
-        lat: trip.latitude,
-        lng: trip.longitude
+        lat: @trip.latitude,
+        lng: @trip.longitude
+      }
+    ]
+
+    @venue_markers = @trip.venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude
       }
     end
   end
