@@ -9,8 +9,4 @@ class PagesController < ApplicationController
     @user = current_user
     @trips = @user.trips
   end
-
-  def non_footer_action
-    @skip_footer = true
-  end
 end

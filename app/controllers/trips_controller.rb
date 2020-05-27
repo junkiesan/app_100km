@@ -36,6 +36,13 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
+    @trips = Trip.geocoded
+    @venue_markers = @trip.venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude
+      }
+    end
   end
 
   def edit
