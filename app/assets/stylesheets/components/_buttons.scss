@@ -1,0 +1,17 @@
+.nav_button {
+  background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
+  color: $white;
+  border: $red;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
+  width :110px;
+  margin-top: 15px;
+  margin-right: 40px;
+  transition: background-image 5s;
+  // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+  &:hover {
+    background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
+
+  }
+}
