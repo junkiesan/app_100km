@@ -1,15 +1,31 @@
 
-<%#= @trip.address %>
 <div class="map-container">
+  <!-- ICONS -->
+  <div class="icon-sidebar">
+    <a href="#"><i class="fa fa-home"></i></a>
+    <a href="#"><i class="fas fa-hiking"></i></a>
+    <a href="#"><i class="fas fa-binoculars"></i></a>
+    <a href="#"><i class="fas fa-umbrella-beach"></i></a>
+    <a href="#"><i class="fas fa-bicycle"></i></a>
+    <a href="#"><i class="fas fa-archway"></i></a>
+    <a href="#"><i class="fas fa-tree"></i></a>
+    <a href="#"><i class="  fas fa-ellipsis-h"></i></a>
+  </div>
+  <!-- MAP -->
+  <div id="map"
+       style="width: 100%; height: 100vh;"
+       data-venue-markers="<%= @venue_markers.to_json %>"
+       data-trip-marker="<%= @trip_marker.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+  <!-- VENUES -->
   <div class="venues-list">
     <%= render 'venues_list', venues: @venues %>
   </div>
 
-<!-- MAP -->
+<!-- BLUR -->
+<!--   <div class="blur"></div>
+</div> -->
 
-  <div id="map"
-       style="width: 100%; height: 88vh;"
-       data-trip-markers="<%= @venue_markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>

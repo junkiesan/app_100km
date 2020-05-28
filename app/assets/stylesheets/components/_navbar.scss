@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  height: 12vh;
+  // height: 12vh;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,7 +12,13 @@
   width: 40px;
 }
 
-
 .nav-link {
   color: $white;
+}
+
+#trips-custom .navbar-lewagon {
+  background: transparent;
+  width: 100%;
+  z-index: 3;
+  position: absolute;
 }
