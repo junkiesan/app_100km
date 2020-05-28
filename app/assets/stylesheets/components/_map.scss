@@ -11,3 +11,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.trip-container {
+  // height: 100%;
+  // width: 50%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+}

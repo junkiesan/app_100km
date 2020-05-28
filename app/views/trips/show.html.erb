@@ -1,4 +1,10 @@
-<div class="container">
+<!-- SIDE IMAGE -->
+<div class="side-image">
+  <img src="https://images.unsplash.com/photo-1513124146973-b7538cd925bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Cliff photo" width="500" height="600">
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="trip-container">
   <div>
   <h1>Trip Show</h1>
   </div>
@@ -28,13 +34,18 @@
     <p><%= venue.category %></p>
     <% end %>
   </div>
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-venue-markers="<%= @venue_markers.to_json %>"
-     data-trip-marker="<%= @trip_marker.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
   <button class="nav_button">
     <%= link_to "Save Trip", trip_path(@trip), class: 'save-trip-btn' %>
   </button>
 </div>
+
+<div class="trip-map">
+  <div id="map"
+     style="width: 50%; height: 100vh;"
+     data-venue-markers="<%= @venue_markers.to_json %>"
+     data-trip-marker="<%= @trip_marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+
+
