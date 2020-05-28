@@ -2,7 +2,7 @@
   background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
   color: $white;
   border: $red;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   height: 50px;
   width :110px;
@@ -18,10 +18,8 @@
 
 .save-trip-btn {
   z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 10px;
-  a {
+  color: $white;
+  &:hover {
     color: $white;
   }
 }
