@@ -28,13 +28,18 @@
     <p><%= venue.category %></p>
     <% end %>
   </div>
+
+  <!-- MAP -->
   <div id="map"
      style="width: 100%; height: 600px;"
      data-venue-markers="<%= @venue_markers.to_json %>"
      data-trip-marker="<%= @trip_marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="btn btn-primary">
-    <p><%= link_to "SAVE", profile_path %></p>
-  </div>
+  <button class="nav_button">
+    <%= link_to "Save Trip", profile_path, class: 'save-trip-btn' %>
+  </button>
 </div>
+
+
+
