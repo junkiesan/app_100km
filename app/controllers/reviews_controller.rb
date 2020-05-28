@@ -1,4 +1,13 @@
 class ReviewsController < ApplicationController
+
+  def index
+    @review = Review.all
+  end
+
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @venue = Venue.find(params[:venue_id])
     @review = Review.new
