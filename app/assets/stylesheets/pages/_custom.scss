@@ -18,3 +18,35 @@
   width: 100vw;
   box-shadow: inset -200px 30px 300px 50px #d4d4d4ab;
 }
+
+.icon-sidebar {
+  height: 100%;
+  width: 70px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  // left: 20px;
+  background-color: #111;
+  overflow-x: hidden;
+  background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
+  color: $white;
+  border: $red;
+  border: none;
+  // border-radius: 6px;
+}
+
+.icon-sidebar a {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  padding-left: 12px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-sidebar a:hover {
+  background-color: $white; /* Add a hover color */
+  color: $coral-CTA;
+}
+
