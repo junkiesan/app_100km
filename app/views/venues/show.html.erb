@@ -1,6 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1><%= @venues.name %></h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Address</th>
+            <td><%= @venues.address %></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td><%= @venues.category %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="list-group">
+        <% @venues.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
+
 <%= simple_form_for [@venue, @review] do |f| %>
         <%= f.input :rating, collection: 0..5 %>
         <%= f.input :comment%>
-        <%#R= f.input :photo as: :file%>
+        <%#= f.input :photo as: :file%>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
+      <%= link_to "See all Venues", venues_path %>
+    </div>
+  </div>
+</div>
