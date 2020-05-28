@@ -13,7 +13,7 @@
     <div>
       <h2>My trips</h2>
       <% @trips.each do |trip| %>
-          <p>Name: <%= trip.name %>
+          <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
           Start: <%= trip.start_date %>
           End: <%= trip.end_date %></p>
       <% end %>

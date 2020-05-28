@@ -39,10 +39,19 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
     @trips = Trip.geocoded
-    @venue_markers = @trip.venues.map do |venue|
+    @trip_marker = [
+      {
+        lat: @trip.latitude,
+        lng: @trip.longitude,
+        trip: true
+      }
+    ]
+
+    @venue_markers = @venues.map do |venue|
       {
         lat: venue.latitude,
-        lng: venue.longitude
+        lng: venue.longitude,
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
       }
     end
   end
