@@ -9,8 +9,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <% if action_name == 'custom' && controller_name == 'trips' %>
+        <li class="nav-item">
+          <!-- <div class="save-trip-btn"> -->
+            <button class="nav_button">
+              <%= link_to "Save Trip", trip_path(@trip), class: 'save-trip-btn' %>
+            </button>
+          <!-- </div> -->
+        </li>
+      <% else %>
         <li class="nav-item">
           <button class="nav_button">Buddies</button>
+        </li>
+      <% end %>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

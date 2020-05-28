@@ -1,22 +1,21 @@
-
-<%#= @trip.address %>
 <div class="map-container">
-  <div class="venues-list">
-    <%= render 'venues_list', venues: @venues %>
+  <div class="sidebar">
+  <!-- ICONS -->
   </div>
-
-<!-- MAP -->
-
+  <!-- MAP -->
   <div id="map"
        style="width: 100%; height: 100vh;"
        data-venue-markers="<%= @venue_markers.to_json %>"
        data-trip-marker="<%= @trip_marker.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div class="save-trip-btn">
-      <button class="nav_button">
-        <%= link_to "Save Trip", profile_path %>
-      </button>
-    </div>
   </div>
+
+  <!-- VENUES -->
+  <div class="venues-list">
+    <%= render 'venues_list', venues: @venues %>
+  </div>
+
+<!-- BLUR -->
+  <div class="blur"></div>
 </div>
 
