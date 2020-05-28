@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     @review.venue = @venue
     if @review.save
-      redirect_to venue_path(@venue)
+      redirect_to venue_path(@venue), notice: 'Review was successfully shared !'
     else
       render :new
     end

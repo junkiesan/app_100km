@@ -1,6 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h2>Venues list</h2>
-      <% @venues.each do |venue| %>
-          <p>Name: <%= link_to venue.name, venue_path(venue.id) %>
-          Start: <%= venue.address %>
+      <ul class="list-group">
+        <% @venues.each do |venue| %>
+          <li class="list-group-item">
+          <p> <%= venue.photos %>
+          Name: <%= link_to venue.name, venue_path(venue.id) %>
+          Address: <%= venue.address %>
           Description: <%=  %></p>
-      <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
