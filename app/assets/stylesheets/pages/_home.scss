@@ -1,1 +1,75 @@
 // Specific CSS for your home-page
+
+.bloc1 {
+  height: 500px;
+  background: #f8edeb;
+  background-position: center;
+  vertical-align: middle;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+  }
+  div {
+    background: $coral-CTA;
+    padding: 15px;
+    width: 400px;
+    margin-left: -60px;
+    h2 {
+      margin: 0;
+      color: $white;
+      display: block;
+      justify-content: center;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 60px;
+        background: black;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.bloc2 {
+  height: 500px;
+  background: #f8edeb;
+  background-position: center;
+  vertical-align: middle;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+  }
+  div {
+    background: $coral-CTA;
+    padding: 15px;
+    margin-left: -60px;
+    h2 {
+      margin: 0;
+      color: $black;
+      display: block;
+      justify-content: center;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 60px;
+        background: black;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
