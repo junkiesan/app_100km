@@ -10,7 +10,8 @@
               <%= f.input :address, placeholder: "Entrez votre adresse", label: false %>
             </div>
             <div class="col-2">
-              <%= f.input :radius, placeholder: "Radius", label: false %>
+              <%= f.input :radius, placeholder: "Radius", label: false, input_html: { value: 100 } %>
+              <%#= f.input :radius, placeholder: "Radius", label: false, input_html: { value: 100 } %>
             </div>
             <div class="col-4">
               <%= f.submit "Create Trip", class: "nav_button" %>
