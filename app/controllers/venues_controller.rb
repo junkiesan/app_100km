@@ -1,11 +1,12 @@
 class VenuesController < ApplicationController
 
   def index
-    @venue = Venue.all
+    @venues = Venue.all
   end
 
   def show
-    @venue = Venue.find(params[:id])
+    @venues = Venue.find(params[:id])
+    @review = Review.new
   end
 
 private

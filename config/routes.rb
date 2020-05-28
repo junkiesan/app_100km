@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
   end
   resources :venues do
-    resources :reviews, only: [:new, :create]
+    resources :reviews
   end
   resources :trip_venues, only: [:create, :destroy]
   get "/profile", to: 'pages#profile'
+  resources :reviews
 end

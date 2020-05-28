@@ -5,6 +5,7 @@ class Venue < ApplicationRecord
 
   # Attractions
   has_many :trip_venues, dependent: :destroy
+  has_many :reviews
 
   #ActiveStorage
   has_many_attached :photos
