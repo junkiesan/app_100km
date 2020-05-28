@@ -11,14 +11,8 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.trip-container {
-  // height: 100%;
-  // width: 50%;
-  z-index: 3;
-  top: 0;
-}
-
-.side-image {
+.trip-map {
   height: 100vh;
   width: 50vw;
+  position: relative;
 }
