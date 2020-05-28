@@ -1,5 +1,13 @@
 // Specific CSS for your home-page
 
+#pages-home {
+  background: #f8edeb;
+}
+
+p {
+  color: $white;
+}
+
 .bloc1 {
   height: 500px;
   background: #f8edeb;
@@ -8,6 +16,7 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  margin: 50px 0;
   img {
     width: 500px;
     height: 400px;
@@ -16,7 +25,8 @@
   div {
     background: $coral-CTA;
     padding: 15px;
-    width: 400px;
+    width: 500px;
+    height: 300px;
     margin-left: -60px;
     h2 {
       margin: 0;
@@ -24,12 +34,13 @@
       display: block;
       justify-content: center;
       position: relative;
+      margin-bottom: 15px;
       &:after {
         content: "";
         position: absolute;
         height: 2px;
         width: 60px;
-        background: black;
+        background: $white;
         left: 0;
         bottom: 0;
       }
@@ -45,31 +56,42 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  margin: 70px 0 150px;
   img {
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     object-fit: cover;
+  }
+  img:last-child {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 200px;
+  margin-left: -40px;
   }
   div {
     background: $coral-CTA;
     padding: 15px;
-    margin-left: -60px;
+    width: 400px;
+//    height: 200px;
+    margin-right: -60px;
+    z-index: 1;
     h2 {
       margin: 0;
-      color: $black;
+      color: $white;
       display: block;
       justify-content: center;
       position: relative;
+      margin-bottom: 15px;
       &:after {
         content: "";
         position: absolute;
         height: 2px;
-        width: 60px;
-        background: black;
+        width: 80px;
+        background: $white;
         left: 0;
         bottom: 0;
       }
     }
   }
 }
-

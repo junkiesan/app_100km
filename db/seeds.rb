@@ -30,8 +30,6 @@ puts 'Creating user...'
 # end
 test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld')
 
-
-<<<<<<< HEAD
 CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
 CITIES = ['Paris'] # => Add Cities
