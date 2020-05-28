@@ -17,38 +17,38 @@
       </div>
     </div>
 
-    <div class="trip-info">
-      <ul>
-        <li>Name: <%= @trip.name %></li>
-        <li>Start Date: <%= @trip.start_date %></li>
-        <li>End Date: <%= @trip.end_date %></li>
-        <li>User: <%= @trip.user.name %></li>
-      </ul>
+      <div class="trip-info">
+        <ul>
+          <li>Name: <%= @trip.name %></li>
+          <li>Start Date: <%= @trip.start_date %></li>
+          <li>End Date: <%= @trip.end_date %></li>
+          <li>User: <%= @trip.user.name %></li>
+        </ul>
 
-      <div class="trip-action">
-      <p><%= link_to "Delete #{@trip.name}",
-              trip_path(@trip),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-      <i class="fa fa-trash destroy_venue"></i></p>
-      <p><%= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
-      <p><%= link_to "Back to all", trips_path(@trips) %></p>
-      </div>
-    </div>
+        <div class="trip-action">
+        <p><%= link_to "Delete #{@trip.name}",
+                trip_path(@trip),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        <i class="fa fa-trash destroy_venue"></i></p>
+        <p><%= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
+        <p><%= link_to "Back to all", trips_path(@trips) %></p>
+        </div>
 
-    <div class="trip-card">
-      <% @trip.venues.each do |venue| %>
       <div class="trip-card">
-        <p><%= venue.name %></p>
-        <p><%= venue.category %></p>
-        <% end %>
+        <% @trip.venues.each do |venue| %>
+        <div class="trip-card">
+          <p><%= venue.name %></p>
+          <p><%= venue.category %></p>
+          <% end %>
+        </div>
+        <button class="nav_button">
+          <%= link_to "Save Trip", trip_path(@trip), class: 'save-trip-btn' %>
+        </button>
       </div>
-      <button class="nav_button">
-        <%= link_to "Save Trip", trip_path(@trip), class: 'save-trip-btn' %>
-      </button>
     </div>
   </div>
 
-  </div>
+</div>
 
 
