@@ -41,15 +41,17 @@
 }
 
 .trip-venues-list {
-  // width: 53%;
+  width: 53vw;
   position: absolute;
   bottom: 20px;
-  left: 680px;
+  right: 0;
   // overflow-y: scroll;
   padding: 10px;
-  display: flex;
   overflow-x: scroll;
   z-index: 3;
+  .trip-cards-scroll {
+    display: inline-flex;
+  }
 }
 
 .trip-info {
