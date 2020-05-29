@@ -7,6 +7,7 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import '../plugins/flatpickr';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 

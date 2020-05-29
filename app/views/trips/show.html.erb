@@ -11,8 +11,8 @@
     <div class="trip-info">
       <%= simple_form_for @trip do |f| %>
         <%= f.input :name, placeholder: 'ex. Roadtrip', label: 'Donnez un nom à votre trip' %>
-        <%= f.input :start_date, label: 'Date de départ' %>
-        <%= f.input :end_date, label: 'Date de retour' %>
+        <%= f.input :start_date, label: 'Date de départ', input_html: { class: 'datepicker' } %>
+        <%= f.input :end_date, label: 'Date de retour', input_html: { class: 'datepicker' } %>
         <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
         <!-- <button class="nav_button"> -->
           <%= link_to profile_path do %>
