@@ -68,7 +68,7 @@ test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld'
 
 puts 'Creating venues...'
 
-# MARSEILLE
+# AIX EN PROVENCE
 
 venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Canyon', address: 'Provence Alpes Côte d’Azur')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
