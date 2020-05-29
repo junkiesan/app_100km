@@ -14,5 +14,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
   if (document.querySelector('#map')) initMapbox();
   if (document.querySelector('#trip_address')) initAutocomplete();
 
+// Star Rating for reviews
+import { initStarRating } from '../plugins/init_star_rating';
 
+initStarRating();
 // });

@@ -1,54 +1,51 @@
 <!-- SIDE IMAGE -->
-  <!-- <div class="side-trip-image">
+<!--   <div class="side-trip-image">
     <img src="https://images.unsplash.com/photo-1513124146973-b7538cd925bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Cliff photo">
   </div> -->
 
   <!-- PAGE CONTENT -->
-  <div class="trip-content">
+  <div class="trip">
 
   <!-- TRIP MAP -->
-  <div class="trip">
-    <div class="trip-map">
-      <div id="map"
-         style="width: 50vw; height: 100vh;"
-         data-venue-markers="<%= @venue_markers.to_json %>"
-         data-trip-marker="<%= @trip_marker.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="trip-content">
+    <div class="trip-info">
+      <%= simple_form_for @trip do |f| %>
+        <%= f.input :name, placeholder: 'ex. Roadtrip', label: 'Donnez un nom à votre trip' %>
+        <%= f.input :start_date, label: 'Date de départ' %>
+        <%= f.input :end_date, label: 'Date de retour' %>
+        <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
+        <!-- <button class="nav_button"> -->
+          <%= link_to profile_path, class: 'save-trip-btn' do %>
+          <%= f.submit "Sauvegarder" %>
+          <% end %>
+        <!-- </button> -->
+        <% end %>
       </div>
-    </div>
-
-      <div class="trip-info">
-        <ul>
-          <li>Name: <%= @trip.name %></li>
-          <li>Start Date: <%= @trip.start_date %></li>
-          <li>End Date: <%= @trip.end_date %></li>
-          <li>User: <%= @trip.user.name %></li>
-        </ul>
-
-        <div class="trip-action">
-        <p><%= link_to "Delete #{@trip.name}",
+      <div class="trip-action">
+        <p><%= link_to "Abandonner",
                 trip_path(@trip),
                 method: :delete,
-                data: { confirm: "Are you sure?" } %>
-        <i class="fa fa-trash destroy_venue"></i></p>
-        <p><%= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
-        <p><%= link_to "Back to all", trips_path(@trips) %></p>
-        </div>
-
-      <div class="trip-card">
-        <% @trip.venues.each do |venue| %>
-        <div class="trip-card">
-          <p><%= venue.name %></p>
-          <p><%= venue.category %></p>
-          <% end %>
-        </div>
-        <button class="nav_button">
-          <%= link_to "Save Trip", trip_path(@trip), class: 'save-trip-btn' %>
-        </button>
+                data: { confirm: "Are you sure?" } %></p>
+<!--           <p><%#= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
+-->     <p><%= link_to "Retour", trips_path(@trips) %></p>
       </div>
     </div>
-  </div>
 
+    <div class="trip-summary">
+
+      <div class="trip-map">
+        <div id="map"
+           style="width: 50vw; height: 100vh;"
+           data-venue-markers="<%= @venue_markers.to_json %>"
+           data-trip-marker="<%= @trip_marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="trip-venues-list">
+  <%= render 'trip_venues_list', trip: @trip %>
 </div>
 
 

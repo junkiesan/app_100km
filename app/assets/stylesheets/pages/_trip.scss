@@ -1,0 +1,90 @@
+.trip-container {
+  // height: 100%;
+  // width: 50%;
+  z-index: 3;
+  top: 0;
+}
+
+// .side-trip-image {
+//   height: 100vh;
+//   width: 50vw;
+// }
+
+#trips-show {
+  position: absolute;
+}
+
+.trip {
+  display: flex;
+  height: 100vh;
+  z-index: 0;
+}
+
+.trip-content {
+  width: 50vw;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1513124146973-b7538cd925bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.trip-summary {
+  width: 50vw;
+}
+
+.trip-action {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+  p {
+    padding: 0 10px;
+  }
+}
+
+.trip-venues-list {
+  // width: 53%;
+  position: absolute;
+  bottom: 20px;
+  left: 680px;
+  // overflow-y: scroll;
+  padding: 10px;
+  display: flex;
+  overflow-x: scroll;
+  z-index: 3;
+}
+
+.trip-info {
+  background-color: $white;
+  border-radius: 6px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+  margin: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.trip-venue-card {
+  background-color: white;
+  // border: 1px solid grey;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 170px;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 250px;
+  img {
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+  }
+  p {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  .venue-details {
+    padding: 15px;
+  }
+}
