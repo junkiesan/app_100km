@@ -15,8 +15,8 @@
         <%= f.input :end_date, label: 'Date de retour' %>
         <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
         <!-- <button class="nav_button"> -->
-          <%= link_to profile_path, class: 'save-trip-btn' do %>
-          <%= f.submit "Sauvegarder" %>
+          <%= link_to profile_path do %>
+          <%= f.submit "Sauvegarder", class: 'nav_button' %>
           <% end %>
         <!-- </button> -->
         <% end %>
@@ -27,7 +27,7 @@
                 method: :delete,
                 data: { confirm: "Are you sure?" } %></p>
 <!--           <p><%#= link_to "Edit #{@trip.name}", edit_trip_path(@trip) %></p>
--->     <p><%= link_to "Retour", trips_path(@trips) %></p>
+-->     <p><%= link_to "Retour", custom_trip_path(@trip) %></p>
       </div>
     </div>
 
@@ -45,7 +45,9 @@
 </div>
 
 <div class="trip-venues-list">
-  <%= render 'trip_venues_list', trip: @trip %>
+  <div class="trip-cards-scroll">
+    <%= render 'trip_venues_list', trip: @trip %>
+  </div>
 </div>
 
 
