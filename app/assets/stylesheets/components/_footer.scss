@@ -1,12 +1,9 @@
   .footer {
-    // background: $dark-green;
-    background-image: linear-gradient(to right, $yellow 10%, $coral-CTA 51%, $coral-CTA 100%);
-    // background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
-
+    background: #00a295 ;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 250px;
+    height: 150px;
     width: 100%;
     padding: 0px 50px;
     color: rgba(0,0,0,0.3);
@@ -21,6 +18,7 @@
     opacity: 1;
     text-decoration: none;
     font-size: 24px;
+    font-weight: bold;
     padding: 0px 10px;
   }
   .footer-links a:hover {
@@ -44,6 +42,7 @@
     list-style-type: none;
     a {
       color: $yellow;
+      font-size: 16px;
       transition: all 0.1s linear;
       &:hover {
         color: $coral-CTA;
@@ -54,4 +53,5 @@
 
 .footer-description {
   color: $yellow;
+  font-size: 25px;
 }
