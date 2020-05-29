@@ -48,24 +48,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="New trips">
     <h1>Roadtrips</h1>
-    <h2>Mes futures</h2>
+    <h3>Mes futures trips</h3>
     <% @trips.each do |trip| %>
-    <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
+    <p>Name: <%= link_to trip.name, trip_path(trip) %>
       Start: <%= trip.start_date %>
       End: <%= trip.end_date %></p>
       <% end %>
@@ -75,11 +62,9 @@
     <div>
 
 
-
-
-      <h2>Mes ex</h2>
+      <h3>Mes anciens trips</h3>
       <% @trips.each do |trip| %>
-      <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
+      <p>Name: <%= link_to trip.name, trip_path(trip) %>
         Start: <%= trip.start_date %>
         End: <%= trip.end_date %></p>
         <% end %>

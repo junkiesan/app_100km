@@ -11,7 +11,7 @@ require 'rest-client'
 require 'open-uri'
 
 puts "Destroy Users"
-# User.destroy_all
+User.destroy_all
 # puts "Destroy Trips"
 # Trip.destroy_all
 # puts "Destroy Reviews"
@@ -112,10 +112,10 @@ file = URI.open("https://www.francetvinfo.fr/image/75nfocijh-36d4/578/325/194402
 venue_8.photos.attach(io: file, filename: 'vexin.png', content_type: 'image/png')
 venue_8.save!
 
-venue_9 = Venue.new(name: 'Parc Naturel Régional de Camargue', latitude: '43.5939', longitude: '4.4690', zip: '77300', category: 'Parc', address: "Mas du pont de Rousty, Arles")
-file = URI.open('https://lh3.googleusercontent.com/proxy/nWk30gHX5olK7Lpf0TlXDNSn9_gvtHcwgsc2Ddgjn9V5dT-c4_FjJsHhtIoUo1ag0VRILzpJK4zGP1HJ7WxnUzsJoSeZ17Mkj_xa1PPgxQF7UVBpPTg66gtGz3ZuO39Nj3c')
-venue_9.photos.attach(io: file, filename: 'fontainebleau.png', content_type: 'image/png')
-venue_9.save!
+# venue_9 = Venue.new(name: 'Parc Naturel Régional de Camargue', latitude: '43.5939', longitude: '4.4690', zip: '77300', category: 'Parc', address: "Mas du pont de Rousty, Arles")
+# file = URI.open('https://lh3.googleusercontent.com/proxy/nWk30gHX5olK7Lpf0TlXDNSn9_gvtHcwgsc2Ddgjn9V5dT-c4_FjJsHhtIoUo1ag0VRILzpJK4zGP1HJ7WxnUzsJoSeZ17Mkj_xa1PPgxQF7UVBpPTg66gtGz3ZuO39Nj3c')
+# venue_9.photos.attach(io: file, filename: 'fontainebleau.png', content_type: 'image/png')
+# venue_9.save!
 
 venue_10 = Venue.new(name: 'Basilique Notre-Dame de la Garde', latitude: '43.2840', longitude: '5.3712', zip: '91310', category: 'Monuments historiques', address: "Longpont-sur-Orge")
 file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
