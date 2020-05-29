@@ -2,27 +2,19 @@
   <div class="container">
     <h1>Évadez-vous à moins de 100km !</h1>
     <p>Cet été, revalorisez les régions Françaises 🇫🇷</p>
-    <div class="row">
+    <!-- <div class="row"> -->
       <div class="col-8">
         <%= simple_form_for @trip do |f| %>
-          <div class="row">
-            <div class="col-6">
-              <%= f.input :address, placeholder: "Entrez votre adresse", label: false %>
-            </div>
-            <div class="col-2">
-              <%= f.input :radius, placeholder: "Radius", label: false, input_html: { value: 100 } %>
-              <%#= f.input :radius, placeholder: "Radius", label: false, input_html: { value: 100 } %>
-            </div>
-            <div class="col-4">
-              <%= f.submit "Create Trip", class: "nav_button" %>
-            </div>
-          </div>
-        <% end %>
+        <div class="home-searchbar">
+          <%= f.input :address, placeholder: "Entrez votre adresse", label: false, class: "barsearch" %>
+          <%= f.input :radius, placeholder: "Radius", label: false, input_html: { value: 100 } %>
+          <%= f.submit "Create Trip", class: "nav_button" %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </div>
-
 
 <div class="bloc1">
   <%= image_tag("image2.jpg") %>
