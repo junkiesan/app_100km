@@ -1,30 +1,30 @@
 <!-- Venues List -->
 <% venues.each do |venue| %>
-<div class="venue-card" data-id="<%= venue.id %>" 
-                        data-lng="<%= venue.longitude %>" 
+<div class="venue-card" data-id="<%= venue.id %>"
+                        data-lng="<%= venue.longitude %>"
                         data-lat="<%= venue.latitude %>">
-                        
+
   <div class="venue-details">
     <h2><%= venue.name  %></h2>
     <p><%= venue.address %></p>
     <h6><%= venue.category %></h6>
     <div class="venue-action">
       <% if @trip.venues.include?(venue) %>
-        <%= simple_form_for @trip.trip_venue(venue), 
-            url: trip_venue_path(@trip.trip_venue(venue)), 
+        <%= simple_form_for @trip.trip_venue(venue),
+            url: trip_venue_path(@trip.trip_venue(venue)),
             method: :delete, remote: true do |f| %>
 
-          <%= f.input :query, input_html: { class: 'card-query' } %>
+          <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
           <%= f.submit 'Remove', class: 'remove-venue', id: "venue-#{venue.id}" %>
         <% end %>
 
         <%#= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true, class: 'remove-venue', id: "venue-#{venue.id}" %>
       <% else %>
-        <%= simple_form_for TripVenue.new, 
-            url: trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), 
+        <%= simple_form_for TripVenue.new,
+            url: trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}),
             method: :post, remote: true do |f| %>
 
-          <%= f.input :query, input_html: { class: 'card-query' } %>
+          <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
           <%= f.submit 'Add', class: 'add-venue', id: "venue-#{venue.id}" %>
         <% end %>
 

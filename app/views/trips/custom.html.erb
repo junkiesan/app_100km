@@ -7,8 +7,9 @@
     <a class="filter-btn" href="#" data-value="parc"><i class="fas fa-hiking"></i></a>
     <a class="filter-btn" href="#" data-value="monument"><i class="fas fa-archway"></i></a>
     <a class="filter-btn" href="#" data-value="plage"><i class="fas fa-umbrella-beach"></i></a>
+
   </div>
-  <div class="container">
+  <div class="container d-none">
     <%= simple_form_for :filter, url: custom_trip_path, method: :get, remote: true do |f|%>
       <%= f.input :query %>
       <%= f.submit 'submit', id: 'submit-filter' %>
