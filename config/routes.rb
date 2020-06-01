@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :trip_venues, only: [:create, :destroy]
   get "/profile", to: 'pages#profile'
   #resources :reviews
+  resources :chatrooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end
