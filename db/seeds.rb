@@ -10,8 +10,8 @@ require "json"
 require 'rest-client'
 require 'open-uri'
 
-# puts "Destroy Users"
-# User.destroy_all
+puts "Destroy Users"
+User.destroy_all
 # puts "Destroy Trips"
 # Trip.destroy_all
 # puts "Destroy Reviews"
@@ -29,6 +29,9 @@ puts 'Creating user...'
 #   puts 'New user!'
 # end
 test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld')
+kenza = User.create(name: 'Kenza', email: 'k.mahresi@gmail.com', password: 'kenza1')
+seb = User.create(name: 'Seb', email: 'seb@lewagon.org', password: '123456')
+
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"

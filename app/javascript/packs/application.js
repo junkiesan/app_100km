@@ -8,7 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/flatpickr';
-
+import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
@@ -20,4 +20,5 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+initChatroomCable();
 // });
