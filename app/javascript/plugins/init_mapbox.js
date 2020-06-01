@@ -8,31 +8,30 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     zoom: 7
-
   });
 };
 
 const addMarkersToMap = (map, markers, trip) => {
-  markers.forEach((marker) => {
+  markers.forEach(marker => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     if (trip) {
-    new mapboxgl.Marker({color: "#FE7763"})
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map)
+      new mapboxgl.Marker({ color: '#FE7763' })
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(map);
     } else {
       let element = new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map)
-      element._element.id = `marker-${marker.marker_id}`
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(map);
+      element._element.id = `marker-${marker.marker_id}`;
     }
   });
 };
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
@@ -47,7 +46,7 @@ const initMapbox = () => {
     fitMapToMarkers(map, venue_markers);
     return map;
   }
-  return null
+  return null;
 };
 
 export { initMapbox };

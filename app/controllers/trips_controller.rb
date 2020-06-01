@@ -52,8 +52,9 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
+        id: venue.id,
+        active: @trip.venues.include?(venue) ? true : false,
         infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
-        marker_id: venue.id
       }
     end
   end
