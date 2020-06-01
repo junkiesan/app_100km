@@ -20,7 +20,7 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
       }
     end
   end
@@ -43,7 +43,8 @@ class TripsController < ApplicationController
       {
         lat: @trip.latitude,
         lng: @trip.longitude,
-        trip: true
+        trip: true,
+        marker_id: @trip.id
       }
     ]
 
@@ -51,7 +52,8 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
+        marker_id: venue.id
       }
     end
   end
