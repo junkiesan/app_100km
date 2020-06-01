@@ -82,9 +82,9 @@ function displayTripReshaped(map, coords) {
                     }
                 },
                 paint: {
-                    'line-color': "#3399ff", //couleur de la ligne
-                    'line-width': 4, //epaisseur de la ligne
-                    'line-opacity': 0.7 //opacité de la ligne
+                    'line-color': "#FE7763", //couleur de la ligne
+                    'line-width': 7, //epaisseur de la ligne
+                    'line-opacity': 0.5 //opacité de la ligne
                 }
             });
         } else {
@@ -111,7 +111,9 @@ const initMapbox = () => {
         steps.push([marker.lng, marker.lat])
       });
       // displayTrip(map, steps);
-      displayTripReshaped(map, steps);
+      if (mapElement.dataset.itinerary) {
+        displayTripReshaped(map, steps);
+      }
     });
   }
 };
