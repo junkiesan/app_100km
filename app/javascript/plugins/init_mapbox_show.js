@@ -1,13 +1,11 @@
 import mapboxgl from 'mapbox-gl';
 
-import { initAddMarker, initRemoveMarker } from './init_toggle_markers';
-
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById('map-show');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
-    container: 'map',
+    container: 'map-show',
     style: 'mapbox://styles/mapbox/light-v10',
     zoom: 7
   });
