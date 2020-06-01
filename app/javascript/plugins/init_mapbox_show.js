@@ -1,5 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
+import { initAddMarker, initRemoveMarker } from './init_toggle_markers';
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -95,7 +97,7 @@ function displayTripReshaped(map, coords) {
     xhr.send();
 }
 
-const initMapbox = () => {
+const initMapboxShow = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.tripMarker);
@@ -118,4 +120,4 @@ const initMapbox = () => {
   }
 };
 
-export { initMapbox };
+export { initMapboxShow };

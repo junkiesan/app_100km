@@ -1,6 +1,21 @@
 import mapboxgl from 'mapbox-gl';
 
+import { initAddMarker, initRemoveMarker } from './init_toggle_markers';
+
 const mapElement = document.getElementById('map');
+
+const initFlyTo = map => {
+  document.querySelectorAll('.venue-card').forEach(card => {
+    card.addEventListener('click', event => {
+      map.flyTo({
+        center: [
+          event.currentTarget.dataset.lng,
+          event.currentTarget.dataset.lat
+        ]
+      });
+    });
+  });
+};
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -12,26 +27,27 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers, trip) => {
-  markers.forEach((marker) => {
+  markers.forEach(marker => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     if (trip) {
-    new mapboxgl.Marker({color: "#FE7763"})
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map)
+      new mapboxgl.Marker({ color: '#FE7763' })
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(map);
     } else {
       let element = new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map)
-      element._element.id = `marker-${marker.marker_id}`
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(map);
+      element._element.id = `marker-${marker.id}`;
+      if (marker.active) element._element.classList.add('marker-active');
     }
   });
 };
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
@@ -44,9 +60,14 @@ const initMapbox = () => {
     const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
     addMarkersToMap(map, venue_markers, false);
     fitMapToMarkers(map, venue_markers);
-    return map;
+
+    map.on('load', () => {
+      initAddMarker();
+      initRemoveMarker();
+      initFlyTo(map);
+      window.map = map;
+    });
   }
-  return null
 };
 
 export { initMapbox };

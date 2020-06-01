@@ -38,13 +38,13 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
-    @trips = Trip.geocoded
+
     @trip_marker = [
       {
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
-        marker_id: @trip.id
+        # marker_id: @trip.id
       }
     ]
 
@@ -52,8 +52,9 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
+        id: venue.id,
+        active: @trip.venues.include?(venue) ? true : false,
         infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
-        marker_id: venue.id
       }
     end
   end
