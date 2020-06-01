@@ -17,12 +17,15 @@ import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import { initFilter } from '../plugins/init_filter';
+
 // document.addEventListener('turbolinks:load', () => {
 const map = initMapbox();
 if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
 initChatroomCable();
+initFilter();
 
 // initMarkerHightlight(map);
 

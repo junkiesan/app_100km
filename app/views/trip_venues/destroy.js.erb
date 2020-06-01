@@ -43,6 +43,25 @@ var initFlyTo = map => {
   });
 };
 
+var query = event => {
+	document.querySelector('#filter_query').value =
+		event.currentTarget.dataset.value;
+	document.querySelector('#submit-filter').click();
+};
+
+var initFilter = () => {
+	document.querySelectorAll('.filter-btn').forEach(btn => {
+		btn.addEventListener('click', query);
+	});
+};
+
+<% if @query %>
+	document.querySelectorAll('.card-query').forEach(input => {
+		input.value = "<%= @query %>";
+	});
+<% end %>
+
 initAddMarker();
 initRemoveMarker();
 initFlyTo();
+initFilter();

@@ -10,4 +10,7 @@ class Trip < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def trip_venue(venue)
+  	self.trip_venues.find_by(venue: venue)
+  end
 end
