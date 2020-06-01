@@ -11,7 +11,7 @@
     <a href="#" data-value=""><i class="fas fa-tree"></i></a>
     <a href="#" data-value=""><i class="fas fa-ellipsis-h"></i></a> -->
   </div>
-  <div class="container d-none">
+  <div class="container">
     <%= simple_form_for :filter, url: custom_trip_path, method: :get, remote: true do |f|%>
       <%= f.input :query %>
       <%= f.submit 'submit', id: 'submit-filter' %>

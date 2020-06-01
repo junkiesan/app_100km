@@ -7,8 +7,9 @@ class TripVenuesController < ApplicationController
   end
 
   def destroy
-    @trip = Trip.find(params[:trip_id])
-    @trip.trip_venues.find_by(venue: Venue.find(params[:id])).destroy
+    @trip_venue = TripVenue.find(params[:id])
+    @trip = @trip_venue.trip
+    @trip_venue.destroy
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
   end
 

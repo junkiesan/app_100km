@@ -1,6 +1,11 @@
 const query = event => {
 	document.querySelector('#filter_query').value =
 		event.currentTarget.dataset.value;
+
+	document.querySelectorAll('.card-query').forEach(input => {
+		input.value = event.currentTarget.dataset.value;
+	});
+
 	document.querySelector('#submit-filter').click();
 };
 
