@@ -75,20 +75,28 @@ file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-v
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 
+puts 'Creating venues...'
+
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_2.save!
+
+puts 'Creating venues...'
 
 venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-calanques-cassis.jpg')
 venue_3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_3.save!
 
+puts 'Creating venues...'
+
 venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'City', address: 'Avignon')
 file = URI.open('https://cdn.generationvoyage.fr/2019/10/vue-sur-le-pont-d-avignon-vue-depuis-le-rhone.jpg')
 venue_4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_4.save!
+
+puts 'Creating venues...'
 
 venue_5 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères")
 file = URI.open('https://cdn.generationvoyage.fr/2020/05/ile-porquerolles.jpg')
@@ -102,20 +110,34 @@ file = URI.open('https://www.actualitix.com/wp-content/uploads/2017/09/plateau-d
 venue_6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_6.save!
 
+puts 'Creating venues...'
+
 venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Monuments historiques', address: "Rond-Point des Arènes, Arles")
 file = URI.open('https://cdn.thecrazytourist.com/wp-content/uploads/2016/11/Les-Ar%C3%A8nes-1024x705.jpg')
 venue_7.photos.attach(io: file, filename: 'chateaustger.png', content_type: 'image/png')
 venue_7.save!
+
+puts 'Creating venues...'
 
 venue_8 = Venue.new(name: 'Musée Picasso', latitude: '43.5808', longitude: '7.1283', zip: '06600', category: 'Musée', address: "Antibes, Juan-Les-Pins")
 file = URI.open("https://www.francetvinfo.fr/image/75nfocijh-36d4/578/325/19440255.jpg")
 venue_8.photos.attach(io: file, filename: 'vexin.png', content_type: 'image/png')
 venue_8.save!
 
+<<<<<<< HEAD
+=======
+# puts 'Creating venues...'
+
+>>>>>>> master
 # venue_9 = Venue.new(name: 'Parc Naturel Régional de Camargue', latitude: '43.5939', longitude: '4.4690', zip: '77300', category: 'Parc', address: "Mas du pont de Rousty, Arles")
 # file = URI.open('https://lh3.googleusercontent.com/proxy/nWk30gHX5olK7Lpf0TlXDNSn9_gvtHcwgsc2Ddgjn9V5dT-c4_FjJsHhtIoUo1ag0VRILzpJK4zGP1HJ7WxnUzsJoSeZ17Mkj_xa1PPgxQF7UVBpPTg66gtGz3ZuO39Nj3c')
 # venue_9.photos.attach(io: file, filename: 'fontainebleau.png', content_type: 'image/png')
 # venue_9.save!
+<<<<<<< HEAD
+=======
+
+puts 'Creating venues...'
+>>>>>>> master
 
 venue_10 = Venue.new(name: 'Basilique Notre-Dame de la Garde', latitude: '43.2840', longitude: '5.3712', zip: '91310', category: 'Monuments historiques', address: "Longpont-sur-Orge")
 file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')

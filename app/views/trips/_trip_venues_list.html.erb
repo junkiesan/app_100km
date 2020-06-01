@@ -1,0 +1,15 @@
+  <% trip.venues.each do |venue| %>
+    <div class="trip-venue-card">
+      <div class="venue-details">
+        <h2><%= venue.name %></h2>
+        <h6><%= venue.category %></h6>
+      </div>
+      <% if venue.photos.attached? %>
+        <% venue.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+      <% end %>
+      <% else %>
+        <%= image_tag('venue-img.jpg') %>
+      <% end %>
+    </div>
+  <% end %>
