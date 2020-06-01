@@ -1,14 +1,8 @@
 <div class="container">
-  <h1>#<%= @chatroom.name %></h1>
+  <h1>Chatroom #<%= @chatroom.name %></h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.name %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
+      <%= render 'messages/message', message: message %>
     <% end %>
   </div>
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>

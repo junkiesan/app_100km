@@ -29,6 +29,9 @@ puts 'Creating user...'
 #   puts 'New user!'
 # end
 test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld')
+kenza = User.create(name: 'Kenza', email: 'k.mahresi@gmail.com', password: 'kenza1')
+seb = User.create(name: 'Seb', email: 'seb@lewagon.org', password: '123456')
+
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
@@ -124,20 +127,14 @@ file = URI.open("https://www.francetvinfo.fr/image/75nfocijh-36d4/578/325/194402
 venue_8.photos.attach(io: file, filename: 'vexin.png', content_type: 'image/png')
 venue_8.save!
 
-<<<<<<< HEAD
-=======
 # puts 'Creating venues...'
 
->>>>>>> master
 # venue_9 = Venue.new(name: 'Parc Naturel Régional de Camargue', latitude: '43.5939', longitude: '4.4690', zip: '77300', category: 'Parc', address: "Mas du pont de Rousty, Arles")
 # file = URI.open('https://lh3.googleusercontent.com/proxy/nWk30gHX5olK7Lpf0TlXDNSn9_gvtHcwgsc2Ddgjn9V5dT-c4_FjJsHhtIoUo1ag0VRILzpJK4zGP1HJ7WxnUzsJoSeZ17Mkj_xa1PPgxQF7UVBpPTg66gtGz3ZuO39Nj3c')
 # venue_9.photos.attach(io: file, filename: 'fontainebleau.png', content_type: 'image/png')
 # venue_9.save!
-<<<<<<< HEAD
-=======
 
 puts 'Creating venues...'
->>>>>>> master
 
 venue_10 = Venue.new(name: 'Basilique Notre-Dame de la Garde', latitude: '43.2840', longitude: '5.3712', zip: '91310', category: 'Monuments historiques', address: "Longpont-sur-Orge")
 file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
