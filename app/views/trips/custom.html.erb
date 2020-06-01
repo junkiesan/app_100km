@@ -2,14 +2,18 @@
 <div class="map-container" id="custom-view">
   <!-- ICONS -->
   <div class="icon-sidebar">
-    <a href="#"><i class="fa fa-home"></i></a>
-    <a href="#"><i class="fas fa-hiking"></i></a>
-    <a href="#"><i class="fas fa-binoculars"></i></a>
-    <a href="#"><i class="fas fa-umbrella-beach"></i></a>
-    <a href="#"><i class="fas fa-bicycle"></i></a>
-    <a href="#"><i class="fas fa-archway"></i></a>
-    <a href="#"><i class="fas fa-tree"></i></a>
-    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+    <a class="" href="/" data-value=""><i class="fa fa-home"></i></a>
+    <a class="filter-btn" href="#" data-value=""><i class="fa fa-facebook"></i></a>
+    <a class="filter-btn" href="#" data-value="parc"><i class="fas fa-hiking"></i></a>
+    <a class="filter-btn" href="#" data-value="monument"><i class="fas fa-archway"></i></a>
+    <a class="filter-btn" href="#" data-value="plage"><i class="fas fa-umbrella-beach"></i></a>
+
+  </div>
+  <div class="container d-none">
+    <%= simple_form_for :filter, url: custom_trip_path, method: :get, remote: true do |f|%>
+      <%= f.input :query %>
+      <%= f.submit 'submit', id: 'submit-filter' %>
+    <% end %>
   </div>
   <!-- MAP -->
   <div id="map"

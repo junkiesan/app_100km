@@ -18,6 +18,8 @@ import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import { initFilter } from '../plugins/init_filter';
+
 // document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('#map')) initMapbox();
   if (document.querySelector('#map-show')) initMapboxShow();
@@ -27,6 +29,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initStarRating();
 initChatroomCable();
+initFilter();
 
 // initMarkerHightlight(map);
 

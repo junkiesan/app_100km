@@ -39,12 +39,16 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
 
+    if params[:filter] && params[:filter][:query].present?
+      @query = params[:filter][:query]
+      @venues = @venues.search_by_category(params[:filter][:query]) if params[:filter][:query] != 'home'
+    end
+
     @trip_marker = [
       {
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
-        # marker_id: @trip.id
       }
     ]
 
@@ -64,8 +68,12 @@ class TripsController < ApplicationController
   end
 
   def update
+    params[:trip][:user_ids] = params[:trip][:user_ids].reject(&:empty?)
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
+    params[:trip][:user_ids].each do |id|
+      Invitation.create(trip: @trip, user: User.find(id))
+    end
     redirect_to profile_path
   end
 
