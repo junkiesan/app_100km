@@ -44,7 +44,6 @@ class TripsController < ApplicationController
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
-        # marker_id: @trip.id
       }
     ]
 
