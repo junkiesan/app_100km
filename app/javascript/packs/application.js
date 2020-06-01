@@ -8,17 +8,22 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/flatpickr';
+
+import { initMarkerHightlight } from '../plugins/marker_highlight';
+// Star Rating for reviews
+import { initStarRating } from '../plugins/init_star_rating';
+
 import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // document.addEventListener('turbolinks:load', () => {
-  if (document.querySelector('#map')) initMapbox();
+  const map = initMapbox();
   if (document.querySelector('#trip_address')) initAutocomplete();
 
-// Star Rating for reviews
-import { initStarRating } from '../plugins/init_star_rating';
-
 initStarRating();
+
+initMarkerHightlight(map);
+
 initChatroomCable();
 // });

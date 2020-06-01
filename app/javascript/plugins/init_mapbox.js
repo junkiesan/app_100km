@@ -21,10 +21,11 @@ const addMarkersToMap = (map, markers, trip) => {
       .setPopup(popup)
       .addTo(map)
     } else {
-    new mapboxgl.Marker()
+      let element = new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map)
+      element._element.id = `marker-${marker.marker_id}`
     }
   });
 };
@@ -44,7 +45,9 @@ const initMapbox = () => {
     const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
     addMarkersToMap(map, venue_markers, false);
     fitMapToMarkers(map, venue_markers);
+    return map;
   }
+  return null
 };
 
 export { initMapbox };
