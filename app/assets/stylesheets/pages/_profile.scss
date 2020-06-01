@@ -33,6 +33,22 @@ body {
   }
 }
 
+.profile-action {
+  position: absolute;
+  bottom: 0px;
+}
+
+.interests {
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+  display: inline;
+  a {
+  padding: 10px;
+  }
+}
+
 .socials-card {
   height: 83%;
   width: 70px;

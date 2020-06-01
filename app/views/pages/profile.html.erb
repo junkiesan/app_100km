@@ -11,22 +11,21 @@
 
         <div class="profile-name">
           <h1><%= @user.name %></h1>
-          <p><%= @user.bio %></p>
+          <h6><%= @user.bio %></h6>
         </div>
 
         <div class="interests">
-          <p><%= @user.interests %></p>
+        <!-- <h6><%#= @user.interests %></h6> -->
           <a href="#"><i class="fas fa-hiking"></i></a>
-          <a href="#"><i class="fas fa-binoculars"></i></a>
           <a href="#"><i class="fas fa-umbrella-beach"></i></a>
           <a href="#"><i class="fas fa-bicycle"></i></a>
           <a href="#"><i class="fas fa-archway"></i></a>
           <a href="#"><i class="fas fa-tree"></i></a>
-          <a href="#"><i class="  fas fa-ellipsis-h"></i></a>
         </div>
 
-        <%= link_to "Modifier mon profil", edit_user_registration_path, class: "nav_bttn" %>
-        <%#= link_to chatroom_path(@chatroom), class: "fas fa-enveloppe" %>
+        <div class="profile-action">
+          <%= link_to "Modifier mon profil", edit_user_registration_path %>
+        </div>
       </div>
     </div>
   </div>
@@ -45,14 +44,6 @@
       <ul class="list-inline">
         <li>
           <div class="col-md-6">
-            <div class="past-trips-card">
-            <h4>Mes anciens trips</h4>
-              <% @trips.each do |trip| %>
-                <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
-                Start: <%= trip.start_date %>
-                End: <%= trip.end_date %></p>
-              <% end %>
-            </div>
           </div>
         </li>
         <li>
