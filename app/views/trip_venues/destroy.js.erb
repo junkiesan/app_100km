@@ -30,5 +30,19 @@ var initRemoveMarker = () => {
 	document.querySelectorAll('.remove-venue').forEach(bindRemoveVenue);
 };
 
+var initFlyTo = map => {
+  document.querySelectorAll('.venue-card').forEach(card => {
+    card.addEventListener('click', event => {
+      window.map.flyTo({
+        center: [
+          event.currentTarget.dataset.lng,
+          event.currentTarget.dataset.lat
+        ]
+      });
+    });
+  });
+};
+
 initAddMarker();
 initRemoveMarker();
+initFlyTo();

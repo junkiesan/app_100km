@@ -1,6 +1,9 @@
 <!-- Venues List -->
 <% venues.each do |venue| %>
-<div class="venue-card" data-id="<%= venue.id %>">
+<div class="venue-card" data-id="<%= venue.id %>" 
+                        data-lng="<%= venue.longitude %>" 
+                        data-lat="<%= venue.latitude %>">
+                        
   <div class="venue-details">
     <h2><%= venue.name  %></h2>
     <p><%= venue.address %></p>

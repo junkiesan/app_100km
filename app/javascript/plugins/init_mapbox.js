@@ -4,6 +4,19 @@ import { initAddMarker, initRemoveMarker } from './init_toggle_markers';
 
 const mapElement = document.getElementById('map');
 
+const initFlyTo = map => {
+  document.querySelectorAll('.venue-card').forEach(card => {
+    card.addEventListener('click', event => {
+      map.flyTo({
+        center: [
+          event.currentTarget.dataset.lng,
+          event.currentTarget.dataset.lat
+        ]
+      });
+    });
+  });
+};
+
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
@@ -51,6 +64,8 @@ const initMapbox = () => {
     map.on('load', () => {
       initAddMarker();
       initRemoveMarker();
+      initFlyTo(map);
+      window.map = map;
     });
   }
 };
