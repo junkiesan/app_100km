@@ -26,5 +26,3 @@ const bindRemoveVenue = btn => {
 const initRemoveMarker = () => {
 	document.querySelectorAll('.remove-venue').forEach(bindRemoveVenue);
 };
-
-export { initAddMarker, initRemoveMarker };

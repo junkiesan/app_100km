@@ -28,6 +28,7 @@ if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
 initChatroomCable();
+
 initAddMarker();
 initRemoveMarker();
 
