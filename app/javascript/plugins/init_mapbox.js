@@ -1,5 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
+import { initAddMarker, initRemoveMarker } from './init_toggle_markers';
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -24,8 +26,8 @@ const addMarkersToMap = (map, markers, trip) => {
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
-      element._element.id = `marker-${marker.marker_id}`;
-      // if (marker.active) element._element.classList.add('marker-active');
+      element._element.id = `marker-${marker.id}`;
+      if (marker.active) element._element.classList.add('marker-active');
     }
   });
 };
@@ -45,9 +47,12 @@ const initMapbox = () => {
     const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
     addMarkersToMap(map, venue_markers, false);
     fitMapToMarkers(map, venue_markers);
-    return map;
+
+    map.on('load', () => {
+      initAddMarker();
+      initRemoveMarker();
+    });
   }
-  return null;
 };
 
 export { initMapbox };

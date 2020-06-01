@@ -27,3 +27,5 @@ const initRemoveMarker = () => {
 	console.log('init remove');
 	document.querySelectorAll('.remove-venue').forEach(bindRemoveVenue);
 };
+
+export { initAddMarker, initRemoveMarker };
