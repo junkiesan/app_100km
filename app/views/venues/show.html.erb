@@ -35,9 +35,8 @@
       </div>
 
 <%= simple_form_for [@venue, @review] do |f| %>
-        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :rating, collection: 0..6 %>
         <%= f.input :comment%>
-        <%#= f.input :photo as: :file%>
         <%= f.submit class: 'nav_button' %>
       <% end %>
       <%= link_to "See all Venues", venues_path %>

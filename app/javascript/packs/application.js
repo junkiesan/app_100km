@@ -7,6 +7,7 @@ import 'bootstrap';
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxShow } from '../plugins/init_mapbox_show';
 import '../plugins/flatpickr';
 
 import { initMarkerHightlight } from '../plugins/marker_highlight';
@@ -20,8 +21,11 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initFilter } from '../plugins/init_filter';
 
 // document.addEventListener('turbolinks:load', () => {
-const map = initMapbox();
-if (document.querySelector('#trip_address')) initAutocomplete();
+  if (document.querySelector('#map')) initMapbox();
+  if (document.querySelector('#map-show')) initMapboxShow();
+  const map = initMapbox();
+
+  if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
 initChatroomCable();
