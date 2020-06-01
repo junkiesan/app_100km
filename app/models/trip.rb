@@ -18,4 +18,7 @@ class Trip < ApplicationRecord
     self.chatroom = Chatroom.new
   end
 
+  def trip_venue(venue)
+  	self.trip_venues.find_by(venue: venue)
+  end
 end

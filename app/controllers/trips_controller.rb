@@ -20,7 +20,7 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
       }
     end
   end
@@ -38,12 +38,17 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
-    @trips = Trip.geocoded
+
+    if params[:filter] && params[:filter][:query].present?
+      @query = params[:filter][:query]
+      @venues = @venues.search_by_category(params[:filter][:query]) if params[:filter][:query] != 'home'
+    end
+
     @trip_marker = [
       {
         lat: @trip.latitude,
         lng: @trip.longitude,
-        trip: true
+        trip: true,
       }
     ]
 
@@ -51,7 +56,9 @@ class TripsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue })
+        id: venue.id,
+        active: @trip.venues.include?(venue) ? true : false,
+        infoWindow: render_to_string(partial: "/trips/info_window", locals: { venue: venue }),
       }
     end
   end
