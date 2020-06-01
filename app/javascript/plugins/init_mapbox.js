@@ -69,9 +69,7 @@ function displayTripReshaped(map, coords) {
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             //on récupère la données calculé qui nous permettra d'afficher l'itinéraire
-            var route = response.waypoints;
-            console.log(route);
-            console.log(response);
+            var route = response["routes"][0]["geometry"];
             //add layer
             map.addLayer({
                 id: 'journeyReshaped', //identifiant unique de l'objet
