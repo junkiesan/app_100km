@@ -1,8 +1,8 @@
-require("@rails/ujs").start()
-require("@rails/activestorage").start()
-require("channels")
+require('@rails/ujs').start();
+require('@rails/activestorage').start();
+require('channels');
 
-import "bootstrap";
+import 'bootstrap';
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -17,13 +17,20 @@ import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import {
+	initAddMarker,
+	initRemoveMarker
+} from '../plugins/init_toggle_markers';
+
 // document.addEventListener('turbolinks:load', () => {
-  const map = initMapbox();
-  if (document.querySelector('#trip_address')) initAutocomplete();
+const map = initMapbox();
+if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
-
-initMarkerHightlight(map);
-
 initChatroomCable();
+initAddMarker();
+initRemoveMarker();
+
+// initMarkerHightlight(map);
+
 // });

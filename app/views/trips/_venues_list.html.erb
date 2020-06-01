@@ -7,9 +7,9 @@
     <h6><%= venue.category %></h6>
     <div class="venue-action">
       <% if @trip.venues.include?(venue) %>
-        <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true %>
+        <%= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true, class: 'remove-venue' %>
       <% else %>
-        <%= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true %>
+        <%= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true, class: 'add-venue' %>
       <% end %>
     </div>
   </div>
