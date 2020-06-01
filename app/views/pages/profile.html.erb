@@ -1,10 +1,10 @@
 <!-- My profile general container -->
 
-<div class="container">
+<div class="container-profile">
 
   <div class="profile-card row">
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
     </div>
 
@@ -41,80 +41,37 @@
     </div>
 
   </div>
-  <div class="roadtrips-card row">
 
-    <div class="col-md-6">
-      <h1>Roadtrips</h1>
-      <div class="new-trips-card">
-
-        <h2>Mes futures</h2>
-        <% @trips.each do |trip| %>
-        <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
-          Start: <%= trip.start_date %>
-          End: <%= trip.end_date %></p>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-       <div class="past-trips-card">
-        <h2>Mes ex</h2>
-        <% @trips.each do |trip| %>
-        <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
-          Start: <%= trip.start_date %>
-          End: <%= trip.end_date %></p>
-          <% end %>
-        </div>
-      </div>
+<div class="roadtrips-card">
+      <h3>Mes voyages</h3>
+      <ul class="list-inline">
+        <li>
+          <div class="col-md-6">
+            <div class="past-trips-card">
+            <h4>Mes anciens trips</h4>
+              <% @trips.each do |trip| %>
+                <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
+                Start: <%= trip.start_date %>
+                End: <%= trip.end_date %></p>
+              <% end %>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="new-trips-card">
+          <h4>Mes futures trips</h4>
+            <% @trips.each do |trip| %>
+              <p>Name: <%= link_to trip.name, trip_path(trip) %>
+              Start: <%= trip.start_date %>
+              End: <%= trip.end_date %></p>
+            <% end %>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 
 
 
-<<<<<<< HEAD
-  <div class="New trips">
-    <h1>Roadtrips</h1>
-    <h3>Mes futures trips</h3>
-    <% @trips.each do |trip| %>
-    <p>Name: <%= link_to trip.name, trip_path(trip) %>
-      Start: <%= trip.start_date %>
-      End: <%= trip.end_date %></p>
-      <% end %>
-    </div>
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> master
-
-
-
-
-<<<<<<< HEAD
-      <h3>Mes anciens trips</h3>
-      <% @trips.each do |trip| %>
-      <p>Name: <%= link_to trip.name, trip_path(trip) %>
-        Start: <%= trip.start_date %>
-        End: <%= trip.end_date %></p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-=======
-
-
-
-</div>
-</div>
->>>>>>> master
-</div>
+<%= link_to "My Trucks", my_trucks_path, class: "btn btn-trucks-index mr-4" %>
+<%= link_to "My Bookings", bookings_path, class: "btn btn-trucks-profile mr-4" %>
