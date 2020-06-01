@@ -13,6 +13,7 @@ import '../plugins/flatpickr';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // document.addEventListener('turbolinks:load', () => {
+
   if (document.querySelector('#map')) initMapbox();
   if (document.querySelector('#trip_address')) initAutocomplete();
 
