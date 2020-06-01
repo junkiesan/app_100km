@@ -25,6 +25,7 @@ const addMarkersToMap = (map, markers, trip) => {
         .setPopup(popup)
         .addTo(map);
       element._element.id = `marker-${marker.marker_id}`;
+      // if (marker.active) element._element.classList.add('marker-active');
     }
   });
 };

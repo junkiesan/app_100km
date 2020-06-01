@@ -1,6 +1,5 @@
 const addActive = event => {
 	const id = event.target.id.split('-')[1];
-	console.log(id);
 	const marker = document.querySelector(`#marker-${id}`);
 	marker.classList.add('marker-active');
 };
@@ -10,6 +9,7 @@ const bindAddVenue = btn => {
 };
 
 const initAddMarker = () => {
+	console.log('init add');
 	document.querySelectorAll('.add-venue').forEach(bindAddVenue);
 };
 
@@ -24,5 +24,6 @@ const bindRemoveVenue = btn => {
 };
 
 const initRemoveMarker = () => {
+	console.log('init remove');
 	document.querySelectorAll('.remove-venue').forEach(bindRemoveVenue);
 };
