@@ -13,13 +13,13 @@
         <%= f.input :name, placeholder: 'ex. Roadtrip', label: 'Donnez un nom à votre trip' %>
         <%= f.input :start_date, label: 'Date de départ', as: :string, input_html: { class: 'datepicker' } %>
         <%= f.input :end_date, label: 'Date de retour', as: :string, input_html: { class: 'datepicker' } %>
+        <%#= f.input :users, label: 'Inviter vos buddies', collection: User.all.pluck(:name), as: :check_boxes, input_html: { multiple: true } %>
+        <%= f.collection_check_boxes :user_ids, User.all, :id, :name, {}, { multiple: true } %>
         <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
         <!-- <button class="nav_button"> -->
-          <%= link_to profile_path do %>
-          <%= f.submit "Sauvegarder", class: 'nav_button' %>
-          <% end %>
+        <%= f.submit "Sauvegarder", class: 'nav_button' %>
         <!-- </button> -->
-        <% end %>
+      <% end %>
       </div>
       <div class="trip-action">
         <p><%= link_to "Abandonner",

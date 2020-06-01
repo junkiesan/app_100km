@@ -1,10 +1,8 @@
 <!-- My profile general container -->
-
 <div class="container-profile">
 
   <div class="profile-card row">
-
-    <div class="col-md-4">
+    <div class="profile-avatar col-md-6">
       <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
     </div>
 
@@ -13,15 +11,11 @@
 
         <div class="profile-name">
           <h1><%= @user.name %></h1>
-          <%= @user.bio %>
+          <p><%= @user.bio %></p>
         </div>
 
         <div class="interests">
-          <h2>Centres d'intérêt</h2>
-          <%= @user.interests %>
-        </div>
-
-        <div class="icon-profile">
+          <p><%= @user.interests %></p>
           <a href="#"><i class="fas fa-hiking"></i></a>
           <a href="#"><i class="fas fa-binoculars"></i></a>
           <a href="#"><i class="fas fa-umbrella-beach"></i></a>
@@ -31,15 +25,19 @@
           <a href="#"><i class="  fas fa-ellipsis-h"></i></a>
         </div>
 
-        <div class="socials">
-          <h2>Social medias</h2>
-        </div>
-
-        <p><%= link_to "Edite ton profile", edit_user_registration_path %></p>
-
+        <%= link_to "Modifier mon profil", edit_user_registration_path, class: "nav_bttn" %>
+        <%#= link_to chatroom_path(@chatroom), class: "fas fa-enveloppe" %>
       </div>
     </div>
+  </div>
 
+
+  <div class="socials-card">
+      <a href="#"><i class="fab fa-github-square"></i></a>
+      <a href="#"><i class="fab fa-twitter-square"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
   </div>
 
 <div class="roadtrips-card">
@@ -64,14 +62,10 @@
               <p>Name: <%= link_to trip.name, trip_path(trip) %>
               Start: <%= trip.start_date %>
               End: <%= trip.end_date %></p>
+              <%= link_to "Ouvrir chatroom", chatroom_path(trip.chatroom), class: "nav_button" %>
             <% end %>
           </div>
         </li>
       </ul>
     </div>
   </div>
-
-
-
-<%= link_to "My Trucks", my_trucks_path, class: "btn btn-trucks-index mr-4" %>
-<%= link_to "My Bookings", bookings_path, class: "btn btn-trucks-profile mr-4" %>
