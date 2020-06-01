@@ -55,9 +55,11 @@ var initFilter = () => {
 	});
 };
 
-<%# if @query.present? %>
-
-<%# end %>
+<% if @query %>
+	document.querySelectorAll('.card-query').forEach(input => {
+		input.value = "<%= @query %>";
+	});
+<% end %>
 
 initAddMarker();
 initRemoveMarker();
