@@ -18,12 +18,9 @@ import { initChatroomCable } from '../channels/chatroom_channel.js';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // document.addEventListener('turbolinks:load', () => {
-<<<<<<< HEAD
-
   if (document.querySelector('#map')) initMapbox();
-=======
   const map = initMapbox();
->>>>>>> master
+
   if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
