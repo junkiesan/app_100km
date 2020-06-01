@@ -8,9 +8,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/flatpickr';
+
 import { initMarkerHightlight } from '../plugins/marker_highlight';
 // Star Rating for reviews
 import { initStarRating } from '../plugins/init_star_rating';
+
+import { initChatroomCable } from '../channels/chatroom_channel.js';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
@@ -19,5 +22,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
   if (document.querySelector('#trip_address')) initAutocomplete();
 
 initStarRating();
+
 initMarkerHightlight(map);
+
+initChatroomCable();
 // });
