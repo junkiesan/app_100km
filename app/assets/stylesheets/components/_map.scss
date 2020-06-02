@@ -19,13 +19,13 @@
 }
 
 .marker-highlight {
-	background-color: blue;
+	background-color: $yellow;
 }
 
 .marker-active {
 	svg {
 		g {
-			fill: black;
+			fill: $greenish;
 		}
 	}
 }
