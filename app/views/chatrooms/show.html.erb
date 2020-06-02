@@ -1,12 +1,21 @@
-<div class="container">
-  <h1>Chatroom #<%= @chatroom.name %></h1>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
+<div class="chat-wrapper">
+
+  <div class="chat-participants">
+  </div>
+
+  <div class="chatroom-container" style="background-color: red;">
+    <h1>Chatroom #<%= @chatroom.name %></h1>
+
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+      <%= f.submit 'Envoyer', class: 'nav_button' %>
     <% end %>
   </div>
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-    <%= f.submit 'Envoyer', class: 'nav_button' %>
-  <% end %>
+
 </div>

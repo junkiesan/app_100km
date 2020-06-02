@@ -1,1 +1,22 @@
+.chat-wrapper {
+  background-color: $coral-CTA;
+  min-height: 100vh;
+}
 
+.chat-participants {
+  height: 100%;
+  width: 70px;
+  position: fixed;
+  top: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  background-image: linear-gradient(to right, #fe8564 0%, #FE7763 51%, #FE7763 100%);
+  color: #FFFFFF;
+  border: #FF0000;
+  border: none;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

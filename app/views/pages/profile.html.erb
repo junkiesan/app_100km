@@ -44,43 +44,36 @@
 
   <div class="col-md-8 p-4">
     <h5>Mes Voyages</h5>
-      <div class="roadtrips-card p-5">
+      <% @trips.each do |trip| %>
+        <div class="roadtrips-card p-4">
 
-      <div class="bubble-chatroom">
-        <% @trips.each do |trip| %>
-          <%= link_to chatroom_path(trip.chatroom) do %>
-            <i class="far fa-comments"></i>
-          <% end %>
-        <% end %>
-      </div>
-
-
-      <div class="my-trips-card">
-          <% @trips.each do |trip| %>
-            <div class="my-trip-details"></div>
-            Name: <%= link_to trip.name, trip_path(trip) %>
-            Start: <%= trip.start_date %>
-            End: <%= trip.end_date %>
-              <div class="bubble-chatroom">
-                <% @trips.each do |trip| %>
-                <%= link_to chatroom_path(trip.chatroom) do %>
-                <i class="far fa-comments"></i>
-                <% end %>
-              <% end %>
-              </div>
-                <div class="buddies">
-              <% trip.users.each do |user| %>
-            Buddies: <%= user.email %>
-            <% if user.photo.attached? %>
-            <%= cl_image_tag user.photo.key %>
-            <% end %>
-            <% end %>
+          <div class="my-trip-card">
+            <h2><%= trip.name %></h2>
+            <div class="trip-date">
+              <h6>Début du voyage <%= trip.start_date.strftime('%m/%d/%Y') %></h6>
+              <h6>Fin du voyage <%= trip.end_date.strftime('%m/%d/%Y') %></h6>
             </div>
+            <%= link_to 'Voir ma roadmap', trip_path(trip), class: 'nav_button' %>
+            <div class="bubble-chatroom">
+              <%= link_to chatroom_path(trip.chatroom) do %>
+                <i class="far fa-comments"></i>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="buddies">
+            <% trip.users.each do |user| %>
+              <h6>Buddies: <%= user.name %></h6>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key %>
+              <% end %>
+            <% end %>
+          </div>
+
         </div>
       <% end %>
     </div>
   </div>
-</div>
 
 
 
