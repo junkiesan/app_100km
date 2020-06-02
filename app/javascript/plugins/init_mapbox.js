@@ -35,7 +35,7 @@ const addMarkersToMap = (map, markers, trip) => {
         .setPopup(popup)
         .addTo(map);
     } else {
-      let element = new mapboxgl.Marker()
+      let element = new mapboxgl.Marker({ color: '#FFCC6D' })
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
