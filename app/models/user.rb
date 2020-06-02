@@ -12,7 +12,14 @@ class User < ApplicationRecord
   # ActiveStorage
   has_one_attached :photo
 
+  # Validates
+  validates :interests, inclusion: { in: ['Sportif', 'Farniente', 'Vélo', 'Culture', 'Nature'] }
+
+
   # Devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # Variable interests
+  INTERESTS = ['Sportif', 'Farniente', 'Vélo', 'Culture', 'Nature']
 end
