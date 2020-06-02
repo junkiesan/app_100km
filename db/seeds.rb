@@ -28,10 +28,22 @@ puts 'Creating user...'
 #   users.save!
 #   puts 'New user!'
 # end
-test = User.create(name: 'Nemo', email: 'nemo@100km.com', password: 'helloworld')
-kenza = User.create(name: 'Kenza', email: 'k.mahresi@gmail.com', password: 'kenza1')
-seb = User.create(name: 'Seb', email: 'seb@lewagon.org', password: '123456')
-
+aurian = User.create(name: 'Aurian GL', email: 'user@100km.com', password: '123456')
+basile = User.create(name: 'Basile Marquefave', email: 'user@100km.com', password: '123456')
+cecile = User.create(name: 'Cécile Dezy', email: 'user@100km.com', password: '123456')
+dimitri = User.create(name: 'Dimitri Bosch', email: 'user@100km.com', password: '123456')
+diane = User.create(name: 'Diane Johnston-Roussillon', email: 'user@100km.com', password: '123456')
+edouard = User.create(name: 'Edouard Foussier', email: 'user@100km.com', password: '123456')
+fred = User.create(name: 'Frédéric Laffont', email: 'user@100km.com', password: '123456')
+hadrien = User.create(name: 'Hadrien Matringe', email: 'user@100km.com', password: '123456')
+julien = User.create(name: 'Julien Da Silva', email: 'user@100km.com', password: '123456')
+lomig = User.create(name: 'Guillaume Lomig Enfroy', email: 'user@100km.com', password: '123456')
+louis = User.create(name: 'Louis Sommer', email: 'user@100km.com', password: '123456')
+philippine = User.create(name: 'Philippine Berton', email: 'user@100km.com', password: '123456')
+paul = User.create(name: 'Paul Lahana', email: 'user@100km.com', password: '123456')
+romain = User.create(name: 'Romain Sanson', email: 'user@100km.com', password: '123456')
+thomas = User.create(name: 'Thomas Desmoulins', email: 'user@100km.com', password: '123456')
+paul = User.create(name: 'Paul Lahana', email: 'user@100km.com', password: '123456')
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
