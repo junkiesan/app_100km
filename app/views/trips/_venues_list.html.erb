@@ -15,7 +15,7 @@
             method: :delete, remote: true do |f| %>
 
           <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
-          <%= f.submit 'Remove', class: 'remove-venue', id: "venue-#{venue.id}" %>
+          <%= f.submit 'Retirer', class: 'remove-venue', id: "venue-#{venue.id}" %>
         <% end %>
 
         <%#= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true, class: 'remove-venue', id: "venue-#{venue.id}" %>
@@ -25,7 +25,7 @@
             method: :post, remote: true do |f| %>
 
           <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
-          <%= f.submit 'Add', class: 'add-venue', id: "venue-#{venue.id}" %>
+          <%= f.submit 'Ajouter', class: 'add-venue', id: "venue-#{venue.id}" %>
         <% end %>
 
         <%#= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true, class: 'add-venue', id: "venue-#{venue.id}" %>
