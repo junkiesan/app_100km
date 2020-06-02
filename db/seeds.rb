@@ -73,7 +73,7 @@ puts 'Creating venues...'
 
 # AIX EN PROVENCE
 
-venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Canyon', address: 'Provence Alpes Côte d’Azur')
+venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!

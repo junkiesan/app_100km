@@ -3,17 +3,25 @@
   <!-- ICONS -->
   <div class="icon-sidebar">
     <a class="" href="/" data-value=""><i class="fa fa-home"></i></a>
-    <a class="filter-btn" href="#" data-value=""><i class="fa fa-facebook"></i></a>
-    <a class="filter-btn" href="#" data-value="parc"><i class="fas fa-hiking"></i></a>
-    <a class="filter-btn" href="#" data-value="monument"><i class="fas fa-archway"></i></a>
-    <a class="filter-btn" href="#" data-value="plage"><i class="fas fa-umbrella-beach"></i></a>
+    <a class="filter-btn" href="#" data-value=""><i class="fas fa-map"></i></a>
+    <a class="filter-btn" href="#" data-value="Plage"><i class="fas fa-umbrella-beach"></i></a>
+    <a class="filter-btn" href="#" data-value="Monument"><i class="fas fa-archway"></i></a>
+    <a class="filter-btn" href="#" data-value="Parc"><i class="fas fa-hiking"></i></a>
+    <a class="filter-btn" href="#" data-value="Foret" ><i class="fas fa-tree"></i></a>
+    <a class="filter-btn" href="#" data-value="vélo"><i class="fas fa-bicycle"></i></a>
+
+
+    <a class="filter-btn" href="#" data-value="vues"><i class="fas fa-binoculars"></i></a>
+    <a class="filter-btn" href="#" data-value="autre"><i class="fas fa-ellipsis-h"></i></a>
   </div>
-  <div class="container">
+
+  <div class="container d-none">
     <%= simple_form_for :filter, url: custom_trip_path, method: :get, remote: true do |f|%>
       <%= f.input :query %>
       <%= f.submit 'submit', id: 'submit-filter' %>
     <% end %>
   </div>
+
   <!-- MAP -->
   <div id="map"
        style="width: 100%; height: 100vh;"

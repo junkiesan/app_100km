@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   # Attractions
   has_many :trips, dependent: :destroy
+  has_many :invitations
 
   # ActiveStorage
   has_one_attached :photo
