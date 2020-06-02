@@ -23,7 +23,7 @@ import { initFilter } from '../plugins/init_filter';
 // document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('#map')) initMapbox();
   if (document.querySelector('#map-show')) initMapboxShow();
-  const map = initMapbox();
+  // const map = initMapbox();
 
   if (document.querySelector('#trip_address')) initAutocomplete();
 
