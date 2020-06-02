@@ -2,14 +2,6 @@ body {
   background-color: white;
 }
 
-h5 {
-  color: black;
-}
-
-p {
-  color: black;
-}
-
 .p-4 {
   padding: 1.5rem !important;
   margin-top: 80px;
@@ -19,6 +11,12 @@ p {
   margin-top: 12vh;
   padding-left: 70px;
   min-height: 88vh;
+  p {
+    color: black;
+  }
+  h5 {
+    color: black;
+  }
 }
 
 .profile-avatar {
@@ -26,7 +24,7 @@ p {
 }
 
 .profile-card {
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
   border-radius: 6px;
   .profile-card-img {
     width: 200px;
@@ -120,15 +118,27 @@ p {
 
 .roadtrips-card {
   border-radius: 6px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
   position: relative;
   margin-top: 25px;
+  margin-bottom: 50px;
+  display: flex;
+  h2 {
+    color: $coral-CTA;
+  }
 }
 
-.my-trips-card {
-
+.trip-date {
+  padding-bottom: 15px;
 }
 
+.my-trip-card {
+  flex-grow: 1;
+}
+
+.buddies {
+  align-self: flex-end;
+}
 
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */

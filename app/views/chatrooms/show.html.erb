@@ -1,12 +1,34 @@
-<div class="container">
-  <h1>Chatroom #<%= @chatroom.name %></h1>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
-    <% end %>
+<div class="chat-wrapper">
+
+  <div class="chatroom-container">
+
+    <h1>Chatroom #<%= @chatroom.trip.name %></h1>
+
+    <div class="chat-participants">
+      <% @chatroom.trip.users.each do |user| %>
+        <h6><%= user.name %></h6>
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key %>
+        <% end %>
+      <% end %>
+    </div>
+
+
+    <div class="message-card">
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="message-action">
+      <%= simple_form_for [ @chatroom, @message ], class: "form-inline", remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+        <%= f.submit 'Envoyer', class: 'nav_button' %>
+      <% end %>
+    </div>
+
   </div>
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-    <%= f.submit 'Envoyer', class: 'nav_button' %>
-  <% end %>
 </div>
