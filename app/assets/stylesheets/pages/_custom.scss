@@ -20,11 +20,16 @@
 // }
 
 .icon-sidebar {
-  height: 100%;
-  width: 70px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90px;
   position: fixed;
   z-index: 3;
   top: 0;
+  padding-bottom: 10px;
   // left: 20px;
   background-color: #111;
   overflow-x: hidden;
@@ -32,14 +37,20 @@
   color: $white;
   border: $red;
   border: none;
+  overflow: hidden;
   // border-radius: 6px;
+
 }
 
 .icon-sidebar a {
-  display: block;
-  text-align: center;
-  padding: 20px;
-  padding-left: 12px;
+  // display: flex;
+  // align-items: align-items;
+  // justify-content: center;
+  // display: block;
+  // text-align: center;
+  // padding: 0 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   transition: all 0.3s ease;
   color: white;
   font-size: 36px;
@@ -48,6 +59,10 @@
 .icon-sidebar a:hover {
   background-color: $white; /* Add a hover color */
   color: $coral-CTA;
+  p {
+    color: $coral-CTA;
+    font: Open Sans;
+  }
   // border-radius: 30px;
 }
 

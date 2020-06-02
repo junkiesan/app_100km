@@ -94,7 +94,7 @@ venue_3.save!
 
 puts 'Creating venues...'
 
-venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'City', address: 'Avignon')
+venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'Culture', address: 'Avignon')
 file = URI.open('https://cdn.generationvoyage.fr/2019/10/vue-sur-le-pont-d-avignon-vue-depuis-le-rhone.jpg')
 venue_4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_4.save!
@@ -115,14 +115,14 @@ venue_6.save!
 
 puts 'Creating venues...'
 
-venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Monuments historiques', address: "Rond-Point des Arènes, Arles")
+venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Culture', address: "Rond-Point des Arènes, Arles")
 file = URI.open('https://cdn.thecrazytourist.com/wp-content/uploads/2016/11/Les-Ar%C3%A8nes-1024x705.jpg')
 venue_7.photos.attach(io: file, filename: 'chateaustger.png', content_type: 'image/png')
 venue_7.save!
 
 puts 'Creating venues...'
 
-venue_8 = Venue.new(name: 'Musée Picasso', latitude: '43.5808', longitude: '7.1283', zip: '06600', category: 'Musée', address: "Antibes, Juan-Les-Pins")
+venue_8 = Venue.new(name: 'Musée Picasso', latitude: '43.5808', longitude: '7.1283', zip: '06600', category: 'Culture', address: "Antibes, Juan-Les-Pins")
 file = URI.open("https://www.francetvinfo.fr/image/75nfocijh-36d4/578/325/19440255.jpg")
 venue_8.photos.attach(io: file, filename: 'vexin.png', content_type: 'image/png')
 venue_8.save!
@@ -192,3 +192,4 @@ venue_10.save!
 # file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
 # venue_10.photos.attach(io: file, filename: 'chevreuse.png', content_type: 'image/png')
 # venue_10.save!
+

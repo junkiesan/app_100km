@@ -8,6 +8,7 @@
     <%= f.input :name, required: true, autofocus: true, hint: "Don't be shy", input_html: { autocomplete: "name" }%>
     <%= f.input :age, autofocus: true, input_html: { autocomplete: "age" }%>
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :interests, label: false, prompt: 'Interests', collection: User::INTERESTS %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
