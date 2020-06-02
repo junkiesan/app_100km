@@ -2,12 +2,23 @@ body {
   background-color: white;
 }
 
-.container-profile {
-  width: 700px;
-  margin: 0 auto;
-  margin-top: 150px;
-  margin-bottom: 100px;
-  // background-color: white;
+h5 {
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+  margin-top: 80px;
+}
+
+.profile-wrapper {
+  margin-top: 12vh;
+  padding-left: 70px;
+  min-height: 88vh;
 }
 
 .profile-avatar {
@@ -15,9 +26,7 @@ body {
 }
 
 .profile-card {
-  margin-top: 200px;
-  padding: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
   border-radius: 6px;
   .profile-card-img {
     width: 200px;
@@ -26,18 +35,44 @@ body {
     object-fit: cover;
     display: block;
     margin: auto;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+    position: absolute;
+    top: -70px;
+    right: 130px;
   }
-  p {
-    color: black;
+  .profile-details {
+    padding-top: 80px;
+    padding-left: 20px;
+  }
+  .profile-action {
+    bottom: 0px;
+  }
+  .profile-name div h6 :after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: black;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.interests {
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+  display: inline;
+  a {
+  padding: 10px;
   }
 }
 
 .socials-card {
-  height: 83%;
+  height: 100%;
   width: 70px;
   position: fixed;
-  top: 60px;
+  top: 0;
   background-color: #111;
   overflow-x: hidden;
   background-image: linear-gradient(to right, #fe8564 0%, #FE7763 51%, #FE7763 100%);
@@ -45,7 +80,10 @@ body {
   border: #FF0000;
   border: none;
   left: 0;
-  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .socials-card a {
@@ -61,52 +99,33 @@ body {
 .socials-card a:hover {
   background-color: $white; /* Add a hover color */
   color: $coral-CTA;
-  // border-radius: 30px;
 }
 
-// .socials-card {
-//   margin-top: 200px;
-//   padding: 20px;
-//   box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
-//   border-radius: 6px;
-//   position: fixed;
-//   width: 100%;
-//   height: 80px;
-//   bottom: 10px;
-//   background-color: #111;
-//   background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
-//   color: $white;
-//   border: $red;
-// }
-// .socials-icon {
-//   display: block;
-//   text-align: center;
-//   padding: 20px;
-//   padding-left: 12px;
-//   transition: all 0.3s ease;
-//   color: white;
-//   font-size: 36px;
-// }
-
-// .socials-icon a:hover {
-//   background-color: $white; /* Add a hover color */
-//   color: $coral-CTA;
-//   // border-radius: 30px;
-// }
-
+.bubble-chatroom {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  right: 20px;
+  top: -30px;
+  border-radius: 50%;
+  background-color: #FE7763;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 32px;
+    color: white;
+  }
+}
 
 .roadtrips-card {
-  margin-top: 70px;
   border-radius: 6px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
-
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+  position: relative;
+  margin-top: 25px;
 }
 
-.new-trips-card{
-
-}
-
-.old-trips-card {
+.my-trips-card {
 
 }
 

@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
+  attr_accessor :inviter
   after_create :create_chatroom
 
 # Attractions

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div>
-  <%= link_to root_path, class: "#{"d-none" if params[:action] == "custom"} navbar-brand" do %>
+  <%= link_to root_path, class: "#{"d-none" if params[:action] == "custom" || params[:action] == 'profile'} navbar-brand" do %>
     <%= image_tag('logo_v1.png') %>
   <% end %>
   </div>
