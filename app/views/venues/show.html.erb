@@ -72,7 +72,6 @@
         <%= simple_form_for [@venue, @review] do |f| %>
           <%= f.input :rating, collection: 0..5 %>
           <%= f.input :comment%>
-          <%#= f.input :photo as: :file%>
           <%= f.submit class: 'nav_button' %>
         <% end %>
         <%= link_to "See all Venues", venues_path %>
@@ -89,15 +88,6 @@
       </div>
       <!-- insert booking console on the left -->
 
-<<<<<<< HEAD
-=======
-<%= simple_form_for [@venue, @review] do |f| %>
-        <%= f.input :rating, collection: 0..6 %>
-        <%= f.input :comment%>
-        <%= f.submit class: 'nav_button' %>
-      <% end %>
-      <%= link_to "See all Venues", venues_path %>
->>>>>>> master
     </div>
   </div>
   <div id="map" class="mb-5"
