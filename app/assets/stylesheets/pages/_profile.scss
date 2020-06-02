@@ -6,6 +6,15 @@ h5 {
   color: black;
 }
 
+p {
+  color: black;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+  margin-top: 80px;
+}
+
 .profile-wrapper {
   margin-top: 12vh;
   padding-left: 70px;
@@ -26,14 +35,26 @@ h5 {
     object-fit: cover;
     display: block;
     margin: auto;
+    position: absolute;
+    top: -70px;
+    right: 130px;
   }
-  p {
-    color: black;
+  .profile-details {
+    padding-top: 80px;
+    padding-left: 20px;
   }
-}
-
-.profile-action {
-  bottom: 0px;
+  .profile-action {
+    bottom: 0px;
+  }
+  .profile-name div h6 :after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: black;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .interests {
@@ -101,6 +122,7 @@ h5 {
   border-radius: 6px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
   position: relative;
+  margin-top: 25px;
 }
 
 .my-trips-card {

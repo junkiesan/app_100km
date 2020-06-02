@@ -10,7 +10,7 @@
   </div>
 
   <div class="col-md-4 p-4">
-    <h5>Mon Profil</h5>
+    <!-- <h5>Mon Profil</h5> -->
 
       <div class="profile-card p-5">
         <div class="profile-avatar">
@@ -40,32 +40,32 @@
           </div>
         </div>
       </div>
-
-
   </div>
-    <div class="col-md-8 p-4">
-      <h5>Mes Voyages</h5>
-        <div class="roadtrips-card p-5">
 
-        <div class="bubble-chatroom">
-            <%# @trips.each do |trip| %>
-            <i class="far fa-comments">
-              <%#= link_to chatroom_path(trip.chatroom) %>
-            </i>
-            <%# end %>
-        </div>
+  <div class="col-md-8 p-4">
+    <h5>Mes Voyages</h5>
+      <div class="roadtrips-card p-5">
 
-        <div class="my-trips-card">
+      <div class="bubble-chatroom">
+        <% @trips.each do |trip| %>
+          <%= link_to chatroom_path(trip.chatroom) do %>
+            <i class="far fa-comments"></i>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="my-trips-card">
+        <ul>
           <% @trips.each do |trip| %>
-            <p>Name: <%= link_to trip.name, trip_path(trip) %>
+            Name: <%= link_to trip.name, trip_path(trip) %>
             Start: <%= trip.start_date %>
             End: <%= trip.end_date %></p>
-            <%= link_to "Ouvrir chatroom", chatroom_path(trip.chatroom), class: "nav_button" %>
           <% end %>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
+</div>
 
 
 
