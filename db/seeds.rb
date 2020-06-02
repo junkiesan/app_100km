@@ -45,6 +45,8 @@ romain = User.create(name: 'Romain Sanson', email: 'user@100km.com', password: '
 thomas = User.create(name: 'Thomas Desmoulins', email: 'user@100km.com', password: '123456')
 paul = User.create(name: 'Paul Lahana', email: 'user@100km.com', password: '123456')
 
+kenza = User.create(name: 'Kenza Mahresi', email: 'k.mahresi@gmail.com', password: 'kenza1')
+
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
 # CITIES = ['Paris'] # => Add Cities
