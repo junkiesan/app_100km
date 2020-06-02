@@ -28,24 +28,24 @@ puts 'Creating user...'
 #   users.save!
 #   puts 'New user!'
 # end
-aurian = User.create(name: 'Aurian GL', email: 'user@100km.com', password: '123456')
-basile = User.create(name: 'Basile Marquefave', email: 'user@100km.com', password: '123456')
-cecile = User.create(name: 'Cécile Dezy', email: 'user@100km.com', password: '123456')
-dimitri = User.create(name: 'Dimitri Bosch', email: 'user@100km.com', password: '123456')
-diane = User.create(name: 'Diane Johnston-Roussillon', email: 'user@100km.com', password: '123456')
-edouard = User.create(name: 'Edouard Foussier', email: 'user@100km.com', password: '123456')
-fred = User.create(name: 'Frédéric Laffont', email: 'user@100km.com', password: '123456')
-hadrien = User.create(name: 'Hadrien Matringe', email: 'user@100km.com', password: '123456')
-julien = User.create(name: 'Julien Da Silva', email: 'user@100km.com', password: '123456')
-lomig = User.create(name: 'Guillaume Lomig Enfroy', email: 'user@100km.com', password: '123456')
-louis = User.create(name: 'Louis Sommer', email: 'user@100km.com', password: '123456')
-philippine = User.create(name: 'Philippine Berton', email: 'user@100km.com', password: '123456')
-paul = User.create(name: 'Paul Lahana', email: 'user@100km.com', password: '123456')
-romain = User.create(name: 'Romain Sanson', email: 'user@100km.com', password: '123456')
-thomas = User.create(name: 'Thomas Desmoulins', email: 'user@100km.com', password: '123456')
-paul = User.create(name: 'Paul Lahana', email: 'user@100km.com', password: '123456')
+aurian = User.create!(name: 'Aurian GL', email: 'user1@100km.com', password: '123456')
+basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', password: '123456')
+cecile = User.create!(name: 'Cécile Dezy', email: 'user3@100km.com', password: '123456')
+dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
+diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
+edouard = User.create!(name: 'Edouard Foussier', email: 'user6@100km.com', password: '123456')
+fred = User.create!(name: 'Frédéric Laffont', email: 'user7@100km.com', password: '123456')
+hadrien = User.create!(name: 'Hadrien Matringe', email: 'user8@100km.com', password: '123456')
+julien = User.create!(name: 'Julien Da Silva', email: 'user9@100km.com', password: '123456')
+lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', password: '123456')
+louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
+philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
+paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
+romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
+thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
+paul = User.create!(name: 'Paul Lahana', email: 'user16@100km.com', password: '123456')
 
-kenza = User.create(name: 'Kenza Mahresi', email: 'k.mahresi@gmail.com', password: 'kenza1')
+# kenza = User.create(name: 'Kenza Mahresi', email: 'k.mahresi@gmail.com', password: 'kenza1')
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
@@ -206,4 +206,3 @@ venue_10.save!
 # file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
 # venue_10.photos.attach(io: file, filename: 'chevreuse.png', content_type: 'image/png')
 # venue_10.save!
-

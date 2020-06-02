@@ -15,7 +15,9 @@
 
       <div class="profile-card p-5">
         <div class="profile-avatar">
+          <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
+          <% end %>
         </div>
 
         <div class="">
@@ -27,12 +29,11 @@
             </div>
 
             <div class="interests">
-            <p><%= @user.interests %></p>
-              <!-- <a href="#"><i class="fas fa-hiking"></i></a>
+              <a href="#"><i class="fas fa-hiking"></i></a>
               <a href="#"><i class="fas fa-umbrella-beach"></i></a>
               <a href="#"><i class="fas fa-bicycle"></i></a>
               <a href="#"><i class="fas fa-archway"></i></a>
-              <a href="#"><i class="fas fa-tree"></i></a> -->
+              <a href="#"><i class="fas fa-tree"></i></a>
             </div>
 
             <div class="profile-action">
