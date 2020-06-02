@@ -73,56 +73,56 @@ puts 'Creating venues...'
 
 # AIX EN PROVENCE
 
-venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur')
+venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Les gorges du Verdon sont un canyon creusé par la rivière Verdon séparant les Préalpes de Castellane et les Préalpes de Digne, en France.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 
 puts 'Creating venues...'
 
-venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur')
+venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_2.save!
 
 puts 'Creating venues...'
 
-venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille')
+venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille', description: 'À l ouest de Cassis, le Massif des Calanques est constitué de calcaire blanc de plus de 400 m d’épaisseur. Des vallées marines se sont creusées, créant de véritables fjords miniatures, abritant parfois de magnifiques anses naturelles.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-calanques-cassis.jpg')
 venue_3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_3.save!
 
 puts 'Creating venues...'
 
-venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'City', address: 'Avignon')
+venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'Culture', address: 'Avignon', description: 'Avignon, ville de Provence dans le sud-est de la France, est traversée par le Rhône. De 1309 à 1377, les papes catholiques élisent résidence dans la ville. Celle-ci reste sous le règne pontifical jusqu’en 1791, date à laquelle elle est rattachée à la France. Le Palais des Papes, qui se trouve dans le centre-ville, est entouré de remparts médiévaux en pierre et témoigne de cette histoire.')
 file = URI.open('https://cdn.generationvoyage.fr/2019/10/vue-sur-le-pont-d-avignon-vue-depuis-le-rhone.jpg')
 venue_4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_4.save!
 
 puts 'Creating venues...'
 
-venue_5 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères")
+venue_5 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères", description: 'L’île de Porquerolles est la plus grande et la plus occidentale des trois îles d Hyères avec ses 12,54 km² de superficie. Elle se situe à 2,6 km au sud-est de la Tour Fondue, l extrémité sud de la presqu île de Giens, et à 9,6 km à l ouest de l île de Port-Cros.')
 file = URI.open('https://cdn.generationvoyage.fr/2020/05/ile-porquerolles.jpg')
 venue_5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_5.save!
 
 puts 'Creating venues...'
 
-venue_6 = Venue.new(name: 'Le Plateau de Valensole', latitude: '43.8333', longitude: '5.9833', zip: '04210', category: 'Parc', address: "Digne-les-Bains")
+venue_6 = Venue.new(name: 'Le Plateau de Valensole', latitude: '43.8333', longitude: '5.9833', zip: '04210', category: 'Parc', address: "Digne-les-Bains", description: 'Le Plateau de Valensole est une région naturelle de France située dans les Alpes-de-Haute-Provence, au sud-ouest de Digne-les-Bains, entre les vallées de la Durance à l ouest, de l Asse au nord, des Gorges du Verdon et du lac de Sainte-Croix au sud.')
 file = URI.open('https://www.actualitix.com/wp-content/uploads/2017/09/plateau-de-valensole.jpg')
 venue_6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_6.save!
 
 puts 'Creating venues...'
 
-venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Monuments historiques', address: "Rond-Point des Arènes, Arles")
+venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Culture', address: "Rond-Point des Arènes, Arles", description: 'Les Arènes d Arles sont un amphithéâtre romain construit vers 80 apr. J.-C. / 90 apr. J.-C. par les ordres de Tibère César Auguste, dans le cadre des extensions flaviennes de la ville.')
 file = URI.open('https://cdn.thecrazytourist.com/wp-content/uploads/2016/11/Les-Ar%C3%A8nes-1024x705.jpg')
 venue_7.photos.attach(io: file, filename: 'chateaustger.png', content_type: 'image/png')
 venue_7.save!
 
 puts 'Creating venues...'
 
-venue_8 = Venue.new(name: 'Musée Picasso', latitude: '43.5808', longitude: '7.1283', zip: '06600', category: 'Musée', address: "Antibes, Juan-Les-Pins")
+venue_8 = Venue.new(name: 'Musée Picasso', latitude: '43.5808', longitude: '7.1283', zip: '06600', category: 'Culture', address: "Antibes, Juan-Les-Pins", description: 'Le musée Picasso est le musée national français consacré à la vie et à l œuvre de Pablo Picasso ainsi qu aux artistes qui lui furent liés.')
 file = URI.open("https://www.francetvinfo.fr/image/75nfocijh-36d4/578/325/19440255.jpg")
 venue_8.photos.attach(io: file, filename: 'vexin.png', content_type: 'image/png')
 venue_8.save!
@@ -136,7 +136,7 @@ venue_8.save!
 
 puts 'Creating venues...'
 
-venue_10 = Venue.new(name: 'Basilique Notre-Dame de la Garde', latitude: '43.2840', longitude: '5.3712', zip: '91310', category: 'Monuments historiques', address: "Longpont-sur-Orge")
+venue_10 = Venue.new(name: 'Basilique Notre-Dame de la Garde', latitude: '43.2840', longitude: '5.3712', zip: '91310', category: 'Monuments historiques', address: "Longpont-sur-Orge", description: 'La basilique Notre-Dame-de-Bonne-Garde est une basilique de culte catholique, dédiée à Notre-Dame, située dans la commune française de Longpont-sur-Orge et le département de l Essonne.')
 file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
 venue_10.photos.attach(io: file, filename: 'chevreuse.png', content_type: 'image/png')
 venue_10.save!
@@ -192,3 +192,4 @@ venue_10.save!
 # file = URI.open('https://rando.pnr-idf.fr/media/paperclip/trekking_trek/29802/chateau-madeleinepetit_1.jpg.800x800_q85_watermark-d41d8cd98f00b204e9800998ecf8427e.jpg')
 # venue_10.photos.attach(io: file, filename: 'chevreuse.png', content_type: 'image/png')
 # venue_10.save!
+

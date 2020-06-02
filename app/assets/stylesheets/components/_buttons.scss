@@ -4,8 +4,7 @@
   border: $red;
   border-radius: 6px;
   border: none;
-  height: 50px;
-  width :110px;
+  padding: 10px;
   margin-top: 15px;
   margin-right: 40px;
   transition: background-image 5s;
@@ -26,23 +25,29 @@
 
 
 .add-venue{
-  background-image: linear-gradient(to right, $light-green 0%, $greenish 51%, $greenish 100%);
-
-  color: $white;
-  border: $dark-green;
+  background: $white;
+  color: $coral-CTA;
   border-radius: 6px;
-  border: none;
+  border: 0.5px;
+  border-style: solid;
+  border-color: $coral-CTA;
   height: 35px;
-  width :90px;
+  width : 90px;
   margin-top: 15px;
   margin-right: 40px;
-  transition: background-image 5s;
+  transition: background-image 6s;
   // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
   &:hover {
-    background-image: linear-gradient(to right, $greenish 0%, $greenish 51%, $light-green 100%);
+    background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
     color: $white;
+
   }
 }
+
+
+
+
+
 
 
 .remove-venue {
@@ -52,37 +57,35 @@
   border-radius: 6px;
   border: none;
   height: 35px;
-  width : 90px;
+  width: 90px;
   margin-top: 15px;
   margin-right: 40px;
   transition: background-image 5s;
   // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
   &:hover {
     background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
+    // background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
     color: $white;
   }
 }
 
+.filter-btn {
+  display: block;
+  text-align: center;
+  height: 70px;
+  padding: 0;
+  width: 100%;
+  p {
+    font-size: 12px;
+    padding: 0;
+    z-index: 10;
+    &:hover {
+      color: $coral-CTA;
 
+    }
+  }
+}
 
-
-
-//   background-image: linear-gradient(to right, $light-green 0%, $greenish 51%, $greenish 100%);
-//   color: $white;
-//   border: $dark-green;
-//   border-radius: 6px;
-//   border: none;
-//   height: 35px;
-//   width :90px;
-//   margin-top: 15px;
-//   margin-right: 40px;
-//   transition: background-image 5s;
-//   // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
-//   &:hover {
-//     background-image: linear-gradient(to right, $greenish 0%, $greenish 51%, $light-green 100%);
-//     color: $white;
-//   }
-// }
 
 
 

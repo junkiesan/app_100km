@@ -1,36 +1,5 @@
 <!-- My profile general container -->
-<div class="container-profile">
-
-  <div class="profile-card row">
-    <div class="profile-avatar col-md-6">
-      <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
-    </div>
-
-    <div class="col-md-6">
-      <div class="profile-details">
-
-        <div class="profile-name">
-          <h1><%= @user.name %></h1>
-          <p><%= @user.bio %></p>
-        </div>
-
-        <div class="interests">
-          <p><%= @user.interests %></p>
-          <a href="#"><i class="fas fa-hiking"></i></a>
-          <a href="#"><i class="fas fa-binoculars"></i></a>
-          <a href="#"><i class="fas fa-umbrella-beach"></i></a>
-          <a href="#"><i class="fas fa-bicycle"></i></a>
-          <a href="#"><i class="fas fa-archway"></i></a>
-          <a href="#"><i class="fas fa-tree"></i></a>
-          <a href="#"><i class="  fas fa-ellipsis-h"></i></a>
-        </div>
-
-        <%= link_to "Modifier mon profil", edit_user_registration_path, class: "nav_bttn" %>
-        <%#= link_to chatroom_path(@chatroom), class: "fas fa-enveloppe" %>
-      </div>
-    </div>
-  </div>
-
+<div class="profile-wrapper row mr-0 mb-0 ml-0 w-100">
 
   <div class="socials-card">
       <a href="#"><i class="fab fa-github-square"></i></a>
@@ -40,32 +9,73 @@
       <a href="#"><i class="fab fa-facebook"></i></a>
   </div>
 
-<div class="roadtrips-card">
-      <h3>Mes voyages</h3>
-      <ul class="list-inline">
-        <li>
-          <div class="col-md-6">
-            <div class="past-trips-card">
-            <h4>Mes anciens trips</h4>
-              <% @trips.each do |trip| %>
-                <p>Name: <%= link_to trip.name, trip_path(trip.id) %>
-                Start: <%= trip.start_date %>
-                End: <%= trip.end_date %></p>
+  <div class="col-md-4 p-4">
+    <!-- <h5>Mon Profil</h5> -->
+
+      <div class="profile-card p-5">
+        <div class="profile-avatar">
+          <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
+        </div>
+
+        <div class="">
+          <div class="profile-details">
+
+            <div class="profile-name">
+              <h1><%= @user.name %></h1>
+              <h6><%= @user.bio %></h6>
+            </div>
+
+            <div class="interests">
+            <p><%= @user.interests %></p>
+              <!-- <a href="#"><i class="fas fa-hiking"></i></a>
+              <a href="#"><i class="fas fa-umbrella-beach"></i></a>
+              <a href="#"><i class="fas fa-bicycle"></i></a>
+              <a href="#"><i class="fas fa-archway"></i></a>
+              <a href="#"><i class="fas fa-tree"></i></a> -->
+            </div>
+
+            <div class="profile-action">
+              <%= link_to "Modifier mon profil", edit_user_registration_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-md-8 p-4">
+    <h5>Mes Voyages</h5>
+      <% @trips.each do |trip| %>
+        <div class="roadtrips-card p-4">
+
+          <div class="my-trip-card">
+            <h2><%= trip.name %></h2>
+            <div class="trip-date">
+              <h6>Début du voyage <%= trip.start_date.strftime('%m/%d/%Y') %></h6>
+              <h6>Fin du voyage <%= trip.end_date.strftime('%m/%d/%Y') %></h6>
+            </div>
+            <%= link_to 'Voir ma roadmap', trip_path(trip), class: 'nav_button' %>
+            <div class="bubble-chatroom">
+              <%= link_to chatroom_path(trip.chatroom) do %>
+                <i class="far fa-comments"></i>
               <% end %>
             </div>
           </div>
-        </li>
-        <li>
-          <div class="new-trips-card">
-          <h4>Mes futures trips</h4>
-            <% @trips.each do |trip| %>
-              <p>Name: <%= link_to trip.name, trip_path(trip) %>
-              Start: <%= trip.start_date %>
-              End: <%= trip.end_date %></p>
-              <%= link_to "Ouvrir chatroom", chatroom_path(trip.chatroom), class: "nav_button" %>
+
+          <div class="buddies">
+            <% trip.users.each do |user| %>
+              <h6>Buddies: <%= user.name %></h6>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key %>
+              <% end %>
             <% end %>
           </div>
-        </li>
-      </ul>
+
+        </div>
+      <% end %>
     </div>
   </div>
+
+
+
+
+

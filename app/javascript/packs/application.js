@@ -20,16 +20,22 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { initFilter } from '../plugins/init_filter';
 
+import { initSelect2 } from '../plugins/init_select2';
+import { initSliders } from '../plugins/init_sliders';
+
 // document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('#map')) initMapbox();
   if (document.querySelector('#map-show')) initMapboxShow();
   // const map = initMapbox();
 
   if (document.querySelector('#trip_address')) initAutocomplete();
+  if (document.querySelector('#trip_radius')) initSliders();
+  if (document.querySelector('.js-example-basic-multiple')) initSelect2();
 
 initStarRating();
 initChatroomCable();
 initFilter();
+initSliders();
 
 // initMarkerHightlight(map);
 

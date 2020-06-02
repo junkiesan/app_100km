@@ -9,8 +9,8 @@ const initFlyTo = map => {
     card.addEventListener('click', event => {
       map.flyTo({
         center: [
-          event.currentTarget.dataset.lng,
-          event.currentTarget.dataset.lat
+        event.currentTarget.dataset.lng,
+        event.currentTarget.dataset.lat
         ]
       });
     });
@@ -30,15 +30,23 @@ const addMarkersToMap = (map, markers, trip) => {
   markers.forEach(marker => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     if (trip) {
-      new mapboxgl.Marker({ color: '#FE7763' })
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(map);
+      const el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url('${marker.image_url}')`;
+      el.style.backgroundSize = 'contain';
+      el.style.width = '105px';
+      el.style.height = '105px';
+      let element = new mapboxgl.Marker(el)
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
+      element._element.id = `marker-home`;
+
     } else {
-      let element = new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(map);
+      let element = new mapboxgl.Marker({ color: '#FFCC6D' })
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
       element._element.id = `marker-${marker.id}`;
       if (marker.active) element._element.classList.add('marker-active');
     }
