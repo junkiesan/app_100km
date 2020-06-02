@@ -68,10 +68,10 @@ class TripsController < ApplicationController
   end
 
   def update
-    params[:trip][:user_ids] = params[:trip][:user_ids].reject(&:empty?)
+    params[:users] = params[:users].reject(&:empty?)
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    params[:trip][:user_ids].each do |id|
+    params[:users].each do |id|
       Invitation.create(trip: @trip, user: User.find(id))
     end
     redirect_to profile_path

@@ -14,7 +14,7 @@
         <%= f.input :start_date, label: 'Date de départ', as: :string, input_html: { class: 'datepicker' } %>
         <%= f.input :end_date, label: 'Date de retour', as: :string, input_html: { class: 'datepicker' } %>
         <%#= f.input :users, label: 'Inviter vos buddies', collection: User.all.pluck(:name), as: :check_boxes, input_html: { multiple: true } %>
-        <%= f.collection_check_boxes :user_ids, User.all, :id, :name, {}, { multiple: true } %>
+        <%= f.input :inviter, collection: User.all.reject { |u| u == current_user }, input_html: { class: 'js-example-basic-multiple', name: 'users[]', multiple: 'multiple' } %>
         <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
         <!-- <button class="nav_button"> -->
         <%= f.submit "Sauvegarder", class: 'nav_button' %>

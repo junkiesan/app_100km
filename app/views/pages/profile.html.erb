@@ -48,7 +48,11 @@
         <div class="roadtrips-card p-5">
 
         <div class="bubble-chatroom">
-          <i class="far fa-comments"></i>
+            <%# @trips.each do |trip| %>
+            <i class="far fa-comments">
+              <%#= link_to chatroom_path(trip.chatroom) %>
+            </i>
+            <%# end %>
         </div>
 
         <div class="my-trips-card">
