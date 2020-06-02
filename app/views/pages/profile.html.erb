@@ -54,15 +54,30 @@
         <% end %>
       </div>
 
+
       <div class="my-trips-card">
-        <ul>
           <% @trips.each do |trip| %>
+            <div class="my-trip-details"></div>
             Name: <%= link_to trip.name, trip_path(trip) %>
             Start: <%= trip.start_date %>
-            End: <%= trip.end_date %></p>
-          <% end %>
-        </ul>
-      </div>
+            End: <%= trip.end_date %>
+              <div class="bubble-chatroom">
+                <% @trips.each do |trip| %>
+                <%= link_to chatroom_path(trip.chatroom) do %>
+                <i class="far fa-comments"></i>
+                <% end %>
+              <% end %>
+              </div>
+                <div class="buddies">
+              <% trip.users.each do |user| %>
+            Buddies: <%= user.email %>
+            <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key %>
+            <% end %>
+            <% end %>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

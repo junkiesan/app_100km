@@ -2,14 +2,6 @@ body {
   background-color: white;
 }
 
-h5 {
-  color: black;
-}
-
-p {
-  color: black;
-}
-
 .p-4 {
   padding: 1.5rem !important;
   margin-top: 80px;
@@ -19,6 +11,12 @@ p {
   margin-top: 12vh;
   padding-left: 70px;
   min-height: 88vh;
+    p {
+    color: black;
+    h5 {
+    color: black;
+  }
+  }
 }
 
 .profile-avatar {
