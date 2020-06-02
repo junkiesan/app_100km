@@ -12,7 +12,8 @@ class TripsController < ApplicationController
       {
         lat: @trip.latitude,
         lng: @trip.longitude,
-        trip: true
+        trip: true,
+        image_url: helpers.asset_url('logo_v1')
       }
     ]
 
@@ -38,7 +39,6 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
-
     if params[:filter] && params[:filter][:query].present?
       @query = params[:filter][:query]
       @venues = @venues.search_by_category(params[:filter][:query]) if params[:filter][:query] != 'home'
@@ -49,6 +49,7 @@ class TripsController < ApplicationController
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
+        image_url: helpers.asset_url('logo_v1')
       }
     ]
 
