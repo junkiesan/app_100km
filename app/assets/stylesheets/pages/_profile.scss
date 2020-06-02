@@ -11,11 +11,11 @@ body {
   margin-top: 12vh;
   padding-left: 70px;
   min-height: 88vh;
-    p {
-    color: black;
-    h5 {
+  p {
     color: black;
   }
+  h5 {
+    color: black;
   }
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .profile-card {
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
   border-radius: 6px;
   .profile-card-img {
     width: 200px;
@@ -118,7 +118,7 @@ body {
 
 .roadtrips-card {
   border-radius: 6px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
   position: relative;
   margin-top: 25px;
 }
