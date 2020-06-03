@@ -39,6 +39,7 @@ class TripsController < ApplicationController
   def custom
     @trip = Trip.find(params[:id])
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
+    @delay = 200
     if params[:filter] && params[:filter][:query].present?
       @query = params[:filter][:query]
       @venues = @venues.search_by_category(params[:filter][:query]) if params[:filter][:query] != 'home'
