@@ -12,11 +12,14 @@ require 'open-uri'
 
 puts "Destroy Users"
 User.destroy_all
-# puts "Destroy Trips"
-# Trip.destroy_all
-# puts "Destroy Reviews"
-# Review.destroy_all
-# puts "Destroy Venues"
+puts "Destroy Messages"
+Message.destroy_all
+puts "Destroy Chatrooms"
+Chatroom.destroy_all
+puts "Destroy Invitation"
+Invitation.destroy_all
+puts "Destroy Trips"
+Trip.destroy_all
 Venue.destroy_all
 puts 'Creating user...'
 # 10.times do
