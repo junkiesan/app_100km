@@ -1,44 +1,48 @@
 <!-- Venues List -->
-<% venues.each do |venue| %>
-<div class="venue-card" data-id="<%= venue.id %>"
+<% venues.sort.each do |venue| %>
+<% @delay += 200 %>
+<div class="venue-card" data-aos="fade-up-left"
+                        data-aos-delay="<%=@delay %>"
+                        data-aos-duration="800"
+                        data-id="<%= venue.id %>"
                         data-lng="<%= venue.longitude %>"
                         data-lat="<%= venue.latitude %>">
 
-  <div class="venue-details">
-    <h2><%= venue.name  %></h2>
-    <p><%= venue.address %></p>
-    <h6><%= venue.category %></h6>
-    <div class="venue-action">
-      <% if @trip.venues.include?(venue) %>
-        <%= simple_form_for @trip.trip_venue(venue),
-            url: trip_venue_path(@trip.trip_venue(venue)),
-            method: :delete, remote: true do |f| %>
+<div class="venue-details">
+  <h2><%= venue.name  %></h2>
+  <p><%= venue.address %></p>
+  <h6><%= venue.category %></h6>
+  <div class="venue-action">
+    <% if @trip.venues.include?(venue) %>
+    <%= simple_form_for @trip.trip_venue(venue),
+    url: trip_venue_path(@trip.trip_venue(venue)),
+    method: :delete, remote: true do |f| %>
 
-          <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
-          <%= f.submit 'Retirer', class: 'remove-venue', id: "venue-#{venue.id}" %>
-        <% end %>
-
-        <%#= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true, class: 'remove-venue', id: "venue-#{venue.id}" %>
-      <% else %>
-        <%= simple_form_for TripVenue.new,
-            url: trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}),
-            method: :post, remote: true do |f| %>
-
-          <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
-          <%= f.submit 'Ajouter', class: 'add-venue', id: "venue-#{venue.id}" %>
-        <% end %>
-
-        <%#= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true, class: 'add-venue', id: "venue-#{venue.id}" %>
-      <% end %>
-    </div>
-  </div>
-  <% if venue.photos.attached? %>
-    <% venue.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
+    <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
+    <%= f.submit 'Retirer', class: 'remove-venue', id: "venue-#{venue.id}" %>
     <% end %>
-  <% else %>
-    <%= image_tag('venue-img.jpg') %>
-  <% end %>
+
+    <%#= link_to "Remove", trip_venue_path(venue, params: {trip_id: @trip.id}), method: :delete, remote: true, class: 'remove-venue', id: "venue-#{venue.id}" %>
+    <% else %>
+    <%= simple_form_for TripVenue.new,
+    url: trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}),
+    method: :post, remote: true do |f| %>
+
+    <%= f.input :query, as: :hidden, input_html: { class: 'card-query' } %>
+    <%= f.submit 'Ajouter', class: 'add-venue', id: "venue-#{venue.id}" %>
+    <% end %>
+
+    <%#= link_to "+", trip_venues_path(params: {trip_id: @trip.id, venue_id: venue.id}), method: :post, remote: true, class: 'add-venue', id: "venue-#{venue.id}" %>
+    <% end %>
+  </div>
+</div>
+<% if venue.photos.attached? %>
+<% venue.photos.each do |photo| %>
+<%= cl_image_tag photo.key %>
+<% end %>
+<% else %>
+<%= image_tag('venue-img.jpg') %>
+<% end %>
 </div>
 <% end %>
 

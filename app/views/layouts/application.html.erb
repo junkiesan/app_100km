@@ -13,6 +13,7 @@
   <!-- Load an icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body id='<%= controller.controller_name %>-<%= controller.action_name %>'>
   <!-- CONDITION NAVBAR -->
@@ -34,6 +35,10 @@
   <% end %>
   <% end %>
   <%= javascript_pack_tag 'application' %>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>
