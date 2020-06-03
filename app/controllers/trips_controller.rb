@@ -13,7 +13,7 @@ class TripsController < ApplicationController
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
-        image_url: helpers.asset_url('logo_v1.png')
+        image_url: helpers.asset_url('home.png')
       }
     ]
 
@@ -49,7 +49,7 @@ class TripsController < ApplicationController
         lat: @trip.latitude,
         lng: @trip.longitude,
         trip: true,
-        image_url: helpers.asset_url('logo_v1.png')
+        image_url: helpers.asset_url('home.png')
       }
     ]
 
