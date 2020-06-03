@@ -4,10 +4,22 @@
   position: absolute;
   top: 90px;
   right: 10px;
-  height: 88vh;
+  height: calc(100vh - 90px);
   overflow-y: scroll;
   padding: 10px;
 }
+
+
+// .venues-list {
+//     width: 30%;
+//     z-index: 1;
+//     position: absolute;
+//     top: 0px;
+//     right: 10px;
+//     height: 100vh;
+//     overflow-y: scroll;
+//     padding: 10px;
+// }
 
 // .blur {
 //   position: fixed;

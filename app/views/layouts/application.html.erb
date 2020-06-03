@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-     <title>100km</title>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>100km</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
-<!-- Load an icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+      <title>100km</title>
+
+      <%= csrf_meta_tags %>
+      <%= action_cable_meta_tag %>
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+      <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+
+      <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+      <!-- Load an icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+
   <body id='<%= controller.controller_name %>-<%= controller.action_name %>'>
-    <!-- CONDITION NAVBAR -->
+  <!-- CONDITION NAVBAR -->
     <% unless action_name == 'show' && controller_name == 'trips' %>
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
     <% end %>
-    <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' %>
     <%= yield %>
-<!-- CONDITION FOOTER -->
+  <!-- CONDITION FOOTER -->
     <% unless action_name == 'custom' && controller_name == 'trips' %>
     <% unless action_name == 'show' && controller_name == 'application' %>
     <% unless action_name == 'show' && controller_name == 'trips' %>
     <% unless action_name == 'show' && controller_name == 'chatrooms' %>
     <% unless action_name == 'profile' && controller_name == 'pages' %>
-    <%= render 'shared/footer' %>
+      <%= render 'shared/footer' %>
     <% end %>
     <% end %>
     <% end %>
     <% end %>
     <% end %>
-    <%= javascript_pack_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  </body>
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
 
 
