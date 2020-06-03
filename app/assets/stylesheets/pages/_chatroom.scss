@@ -35,6 +35,9 @@
   h2 {
     color: white;
   }
+   p {
+    color: black;
+  }
 }
 
 .message-card {
@@ -44,9 +47,6 @@
   padding: 35px;
   height: 57vh;
   overflow-y: scroll;
-  p {
-    color: black;
-  }
 }
 
 .message-action {
