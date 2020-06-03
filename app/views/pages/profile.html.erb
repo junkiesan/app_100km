@@ -52,8 +52,8 @@
           <div class="my-trip-card">
             <h2><%= trip.name %></h2>
             <div class="trip-date">
-              <h6>Début du voyage <%= trip.start_date.strftime('%m/%d/%Y') %></h6>
-              <h6>Fin du voyage <%= trip.end_date.strftime('%m/%d/%Y') %></h6>
+              <h6>Début du voyage <%= trip.start_date&.strftime('%m/%d/%Y') %></h6>
+              <h6>Fin du voyage <%= trip.end_date&.strftime('%m/%d/%Y') %></h6>
             </div>
             <%= link_to 'Voir ma roadmap', trip_path(trip), class: 'nav_button' %>
             <div class="bubble-chatroom">

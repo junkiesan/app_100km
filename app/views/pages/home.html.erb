@@ -53,31 +53,19 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active showcase" style="position: relative;">
-            <%= cl_image_tag @venues[0].photos.first.key, class: "showcase-image d-block" %>
+        <% @venues.each do |venue|%>
+         <div class="carousel-item active showcase" style="position: relative;">
+            <%= cl_image_tag venue.photos.first.key, class: "showcase-image d-block" %>
             <div class="d-flex align-items-center justify-content-between flex-wrap py-4 px-4" style="position: absolute; top: 30px; right: 30px; background-color: rgba(250, 250, 250, 0.8);">
-             <p class="mb-5"><%= @venues[0].name %></p>
-             <span><%= @venues[0].reviews.first.rating %></span>
-             <p><%= @venues[0].reviews.first.comment %></p>
+             <p class="mb-5"><%= venue.name %></p>
+              <% if venue.reviews.first.user.photo.attached? %>
+                <%= cl_image_tag venue.reviews.first.user.photo.key, class: "review-avatar" %>
+              <% end %>
+             <span><%= venue.reviews.first.rating %></span>
+             <p><%= venue.reviews.first.comment %></p>
             </div>
           </div>
-          <div class="carousel-item showcase">
-            <%= cl_image_tag @venues[1].photos.first.key, class: "showcase-image d-block" %>
-            <div class="d-flex align-items-center justify-content-between flex-wrap py-4 px-4" style="position: absolute; top: 30px; right: 30px; background-color: rgba(250, 250, 250, 0.8);">
-              <p class="mb-5"><%= @venues[1].name %></p>
-              <p><%= @venues[1].reviews.first.rating %></p>
-              <p><%= @venues[1].reviews.first.comment %></p>
-            </div>
-          </div>
-          <div class="carousel-item showcase">
-            <%= cl_image_tag @venues[2].photos.first.key, class: "showcase-image d-block" %>
-            <div class="d-flex align-items-center justify-content-between flex-wrap py-4 px-4" style="position: absolute; top: 30px; right: 30px; background-color: rgba(250, 250, 250, 0.8);">
-              <p class="mb-5"><%= @venues[2].name %></p>
-              <p><%= @venues[2].reviews.first.rating %></p>
-              <p><%= @venues[2].reviews.first.comment %></p>
-
-            </div>
-          </div>
+        <% end %>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
