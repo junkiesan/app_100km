@@ -1,0 +1,21 @@
+.trip_radius {
+
+}
+
+.range-input-div {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.range-output {
+  position: absolute;
+  left: 100%;
+  background: $coral-CTA;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  transform: translateX(-30px);
+}

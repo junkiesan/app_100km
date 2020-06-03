@@ -8,8 +8,12 @@
         <%= simple_form_for @trip do |f| %>
         <div class="home-searchbar">
           <%= f.input :address, placeholder: "Entrez votre adresse", label: false, class: "barsearch" %>
-          <%= f.input :radius, as: :range, placeholder: "Radius", label: false, input_html: { value: 100 }, min: 0 %>
-          <div class="range-output">100km</div>
+          <div class="range-input-div">
+            <%= f.input :radius, as: :range, placeholder: "Radius", label: false, input_html: { value: 100 }, min: 0 %>
+            <div class="range-output">
+              <div>100km</div>
+            </div>
+          </div>
           <%= f.submit "Create Trip", class: "nav_button" %>
           <% end %>
         </div>
