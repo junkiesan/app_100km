@@ -15,6 +15,26 @@
   }
 }
 
+.validate_trip_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: $white;
+  background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
+  color: $white;
+  border: $red;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+  // margin-top: 15px;
+  margin-right: 40px;
+  transition: background-image 5s;
+  // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+  &:hover {
+    background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
+    color: $white;
+  }
+}
 
 .validate-trip-button {
   background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
@@ -31,6 +51,8 @@
     color: $white;
   }
 }
+
+
 
 .save-trip-btn {
   z-index: 2;

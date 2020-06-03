@@ -18,10 +18,9 @@
         <%= f.input :inviter, label: 'Invitez vos buddies', collection: User.all.reject { |u| u == current_user }, input_html: { class: 'js-example-basic-multiple', name: 'users[]', multiple: 'multiple' } %>
         <%#= f.submit "Sauvegarder", class: "save-trip-btn" %>
         <!-- <button class="nav_button"> -->
-          <div class="w-100 d-flex justify-content-between p-2">
-           <%= link_to "Retour", custom_trip_path(@trip), class: "trip-action" %>
-
-           <%= f.submit "Sauvegarder", class: 'nav_button' %>
+          <div class="w-100 d-flex justify-content-between mt-3 p-1 align-items-center">
+            <%= f.submit "Sauvegarder", class: 'validate_trip_button' %>
+            <%= link_to "Retour", custom_trip_path(@trip), class: "trip-action" %>
            <!-- </button> -->
            <% end %>
 
