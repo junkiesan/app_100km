@@ -33,11 +33,43 @@
 
 .trip-action {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 0 30px;
-  p {
-    padding: 0 10px;
+  background-image: $white;
+  color: $coral-CTA;
+  border: 0.5px;
+  border-style: solid;
+  border-color: $coral-CTA;
+  border-radius: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 95px;
+  transition: background-image 5s;
+  // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+  &:hover {
+    background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
+    color: $white;
   }
+
+
+
+  // background: $white;
+  // color: $coral-CTA;
+  // border-radius: 6px;
+  // border: 0.5px;
+  // border-style: solid;
+  // border-color: $coral-CTA;
+  // height: 35px;
+  // width : 90px;
+  // margin-top: 15px;
+  // margin-right: 40px;
+  // transition: background-image 6s;
+  // // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+  // &:hover {
+  //   background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
+  //   color: $white;
+
+  // }
 }
 
 .trip-venues-list {
