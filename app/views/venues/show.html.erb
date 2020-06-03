@@ -2,8 +2,7 @@
   <div class="row py-3 position-relative">
     <div class="col-12">
 
-      <%# Title section %>
-      <h1 class="py-3"><%= @venue.name %></h1>
+
     <%# Banner with user pix %>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -16,10 +15,10 @@
             <%= cl_image_tag @venue.photos.first.key, class: "showcase-image d-block" %>
           </div>
           <div class="carousel-item showcase">
-            <%= cl_image_tag @venue.photos.first.key, class: "showcase-image d-block" %>
+            <%= cl_image_tag @venue.photos.second.key, class: "showcase-image d-block" %>
           </div>
           <div class="carousel-item showcase">
-            <%= cl_image_tag @venue.photos.first.key, class: "showcase-image d-block" %>
+            <%= cl_image_tag @venue.photos.third.key, class: "showcase-image d-block" %>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -31,6 +30,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <%# Title section %>
+      <h1 class="py-3"><%= @venue.name %></h1>
     </div>
 
 
@@ -58,12 +59,11 @@
     </div>
   </div>
 
-
-
-
+  <%# User review %>
   <div class="row py-3">
-    <div class="col-6">
+    <div class="col-12">
       <div class="list-group">
+        <h4>Details</h4>
         <% @venue.reviews.each do |review| %>
           <li class="list-group-item">
             <small>
@@ -82,7 +82,11 @@
         <% end %>
       </div>
     </div>
-    <div class="col-6">
+
+
+    <%# User review %>
+    <div class="col-12">
+      <h4>Details</h4>
       <%= simple_form_for [@venue, @review] do |f| %>
         <%= f.input :rating, collection: 0..5 %>
         <%= f.input :comment%>

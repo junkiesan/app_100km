@@ -93,12 +93,20 @@ puts 'Creating venues...'
 
 venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Les gorges du Verdon sont un canyon creusé par la rivière Verdon séparant les Préalpes de Castellane et les Préalpes de Digne, en France.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
+file2 = URI.open('https://www.viree-malin.fr/wp-content/uploads/2018/12/visiter-activites-gorges-du-verdon.jpg')
+file3 = URI.open('https://cdn.generationvoyage.fr/2020/02/gorges-verdon-kayak-755x526.jpg')
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_1.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+venue_1.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
+file2 = URI.open('https://static.wixstatic.com/media/a27d24_6f85280ca1a348de9bd733db49dbcfed~mv2.jpg/v1/fit/w_770,h_556,al_c,q_80/file.png')
+file3 = URI.open('https://dailygeekshow.com/wp-content/uploads/2017/04/une-ocres-validee.jpg')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_2.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+venue_2.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 venue_2.save!
 
 venue_6 = Venue.new(name: 'Le Plateau de Valensole', latitude: '43.8333', longitude: '5.9833', zip: '04210', category: 'Parc', address: "Digne-les-Bains", description: 'Le Plateau de Valensole est une région naturelle de France située dans les Alpes-de-Haute-Provence, au sud-ouest de Digne-les-Bains, entre les vallées de la Durance à l ouest, de l Asse au nord, des Gorges du Verdon et du lac de Sainte-Croix au sud.')
