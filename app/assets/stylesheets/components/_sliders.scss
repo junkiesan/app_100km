@@ -10,10 +10,12 @@
 .range-output {
   position: absolute;
   left: 100%;
-  background: $coral-CTA;
-  color: white;
+  background: $white;
+  color: $coral-CTA;
+  border: solid 0.5px $coral-CTA ;
   height: 60px;
   width: 60px;
+  font-weight: bold;
   border-radius: 50%;
   line-height: 60px;
   text-align: center;

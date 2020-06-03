@@ -1,5 +1,5 @@
 <div class="container mt-5 pt-5">
-  <div class="row py-3">
+  <div class="row py-3 position-relative">
     <div class="col-12">
 
       <%# Title section %>
@@ -32,34 +32,34 @@
         </a>
       </div>
     </div>
+
+
+    <!-- insert map console on the left -->
+    <div class="map-window">
+      <div class="card-map">
+        <div id="map" class="mb-5"
+          style="width: 100%; height: 300px;"
+          data-show-marker="<%= @marker.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
   </div>
 
   <%# User description section %>
   <div class="row py-3">
     <div class="col-12">
       <div class="venue-details">
+        <h4>Details</h4>
         <p><strong>Category : </strong> <%= @venue.category %></p>
+        <p>Situé à à peu près 30km de Marseille, Cassis (prononcé « Cassi ») est célèbre pour ses falaises et calanques, mais aussi pour les vins de Cassis (rosé et blanc). Quoi de plus agréable que de siroter un rosé bien frais avec une vue à couper le souffle!</p>
         <!-- <p><strong>Category : </strong> <%#= @venue.description %></p> -->
       </div>
     </div>
   </div>
 
-  <%# Map section %>
-  <div class="row py-3">
-    <div class="col-12">
-      <div class="d-flex">
-        <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 24px; width: 24px; display: block; fill: currentcolor;">
-          <path d="m11.5 0c-5.08 0-8.5 3.56-8.5 8.5 0 4.55 1.9 8.07 8.12 15.33a.5.5 0 0 0 .76 0c6.22-7.26 8.12-10.78 8.12-15.33 0-4.94-3.41-8.5-8.5-8.5zm0 22.73c-5.76-6.78-7.5-10.07-7.5-14.23 0-4.4 2.98-7.5 7.5-7.5 4.53 0 7.5 3.1 7.5 7.5 0 4.16-1.74 7.45-7.5 14.23zm0-17.73a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill-rule="evenodd"></path>
-        </svg>
-        <h4 class="pl-3">Location</h4>
-      </div>
-      <div id="map" class="mb-5"
-        style="width: 100%; height: 600px;"
-        data-show-marker="<%= @marker.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-  </div>
+
+
 
   <div class="row py-3">
     <div class="col-6">
@@ -88,7 +88,6 @@
         <%= f.input :comment%>
         <%= f.submit class: 'nav_button' %>
       <% end %>
-      <%= link_to "See all Venues", venues_path %>
     </div>
   </div>
 </div>

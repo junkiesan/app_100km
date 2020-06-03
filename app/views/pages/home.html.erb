@@ -1,8 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559335823-e27122e727a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80);">
   <div class="container">
-      <h1>Votre voyage</h1>
-      <h1>commence ici*</h1>
-      <h5>*Mais toujours à -100km et dans le respect des gestes barrières 👋🏼</h5>
+    <h1 class="hp-title">Votre voyage</h1>
+    <h1 class="hp-title">commence ici*</h1>
+    <h5>*Mais toujours à -100km et dans le respect des gestes barrières 👋🏼</h5>
     <!-- <div class="row"> -->
       <div class="col-6">
         <%= simple_form_for @trip do |f| %>
@@ -14,29 +14,31 @@
               <div>100km</div>
             </div>
           </div>
-          <%= f.submit "Create Trip", class: "nav_button" %>
-          <% end %>
         </div>
+        <div class="validate-trip">
+            <%= f.submit "Créez votre Trip", class: "validate-trip-button" %>
+        </div>
+        <% end %>
       </div>
+    </div>
   </div>
-</div>
 
-<div class="bloc1">
-  <%= image_tag("image2.jpg") %>
-  <div>
-    <h2> Cet été, revalorisez le patrimoine Français.</h2>
-    <p> Pourquoi voyager loin quand le paysage national regorge de pépites en tout genre ? Cet été, re-dynamisez l’économie locale et évadez-vous près de chez vous ! </p>
+  <div class="bloc1">
+    <%= image_tag("image2.jpg") %>
+    <div>
+      <h2> Cet été, revalorisez le patrimoine Français.</h2>
+      <p> Pourquoi voyager loin quand le paysage national regorge de pépites en tout genre ? Cet été, re-dynamisez l’économie locale et évadez-vous près de chez vous ! </p>
+    </div>
   </div>
-</div>
 
-<div class="bloc2">
-  <div>
-    <h2> Trouvez vos buddies pour les vacances. </h2>
-    <p> Rencontrez des buddies près de chez vous et partagez un bout de chemin ensemble. </p>
+  <div class="bloc2">
+    <div>
+      <h2> Trouvez vos buddies pour les vacances. </h2>
+      <p> Rencontrez des buddies près de chez vous et partagez un bout de chemin ensemble. </p>
+    </div>
+    <%= image_tag("image3.jpg") %>
+    <%= image_tag("image4.jpg") %>
   </div>
-  <%= image_tag("image3.jpg") %>
-  <%= image_tag("image4.jpg") %>
-</div>
 
 <div class="bloc3 mb-5">
    <!-- <div class="row py-3"> -->
