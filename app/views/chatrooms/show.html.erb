@@ -1,12 +1,12 @@
-<div class="chat-wrapper">
+<div class="chat-wrapper" style="background-image: url('https://images.unsplash.com/photo-1580335389496-ec9a04132ee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80');">
 
   <div class="chatroom-container">
 
-    <h1>Chatroom #<%= @chatroom.trip.name %></h1>
+    <h2>Chatroom #<%= @chatroom.trip.name %></h2>
 
     <div class="chat-participants">
       <% @chatroom.trip.users.each do |user| %>
-        <h6><%= user.name %></h6>
+        <!-- <h6><%#= user.name %></h6> -->
         <% if user.photo.attached? %>
           <%= cl_image_tag user.photo.key %>
         <% end %>
@@ -25,7 +25,7 @@
 
     <div class="message-action">
       <%= simple_form_for [ @chatroom, @message ], class: "form-inline", remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+        <%= f.input :content, label: false, placeholder: "Commencez la discussion de votre trip 🏄" %>
         <%= f.submit 'Envoyer', class: 'nav_button' %>
       <% end %>
     </div>
