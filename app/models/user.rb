@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   # Validates
-  validates :interests, inclusion: { in: ['Sportif', 'Farniente', 'Vélo', 'Culture', 'Nature'] }
+  # validates :interests, inclusion: { in: ['Sportif', 'Farniente', 'Vélo', 'Culture', 'Nature'] }
 
 
   # Devise
