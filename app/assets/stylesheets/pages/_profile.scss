@@ -138,6 +138,14 @@ body {
 
 .buddies {
   align-self: flex-end;
+  display: flex;
+  img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-right: -15px;
+    border: solid white 2px;
+  }
 }
 
 @media (max-width: 960px) {
