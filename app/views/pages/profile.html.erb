@@ -66,9 +66,9 @@
           <div class="buddies">
             <% trip.users.each do |user| %>
               <h6><%= user.name %></h6>
-              <% if user.photo.attached? %>
-                <%= cl_image_tag user.photo.key %>
-              <% end %>
+              <%# if user.photo.attached? %>
+                <%#= cl_image_tag user.photo.key %>
+              <%# end %>
             <% end %>
           </div>
 

@@ -35,7 +35,8 @@ import { initSliders } from '../plugins/init_sliders';
 initStarRating();
 initChatroomCable();
 initFilter();
-initSliders();
+
+// initSliders();
 
 // initMarkerHightlight(map);
 
