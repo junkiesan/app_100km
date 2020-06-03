@@ -85,6 +85,7 @@ const initMapbox = () => {
       initRemoveMarker();
       initFlyTo(map);
       window.map = map;
+      AOS.init();
     });
   }
 };
