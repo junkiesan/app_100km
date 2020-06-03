@@ -21,3 +21,14 @@
   height: 50vh;
   border-radius: 8px;
 }
+
+.bloc3 {
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-inner {
+    width: 80%;
+  }
+}
