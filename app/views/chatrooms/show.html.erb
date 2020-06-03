@@ -5,12 +5,12 @@
     <h2>Chatroom #<%= @chatroom.trip.name %></h2>
 
     <div class="chat-participants">
-      <% @chatroom.trip.users.each do |user| %>
+      <%# @chatroom.trip.users.each do |user| %>
         <!-- <h6><%#= user.name %></h6> -->
-        <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key %>
-        <% end %>
-      <% end %>
+        <%# if user.photo.attached? %>
+          <%#= cl_image_tag user.photo.key %>
+        <%# end %>
+      <%# end %>
     </div>
 
 
