@@ -9,17 +9,24 @@ class TripVenuesController < ApplicationController
       @query = params[:trip_venue][:query]
       @venues = @venues.search_by_category(params[:trip_venue][:query])
     end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     @trip_venue = TripVenue.find(params[:id])
     @trip = @trip_venue.trip
+    @venue = @trip_venue.venue
     @trip_venue.destroy
     @venues = Venue.near([@trip.latitude, @trip.longitude], @trip.radius)
 
     if params[:trip_venue] && params[:trip_venue][:query].present?
       @query = params[:trip_venue][:query]
       @venues = @venues.search_by_category(params[:trip_venue][:query])
+    end
+    respond_to do |format|
+      format.js
     end
   end
 

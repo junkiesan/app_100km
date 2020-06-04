@@ -17,6 +17,8 @@
   position: relative;
   border-radius: 6px;
   overflow: hidden;
+  animation-name: slidein;
+  animation-duration: 1s;
   .venue-action {
     position: absolute;
     left: 15px;
@@ -40,6 +42,16 @@
     }
   }
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
 
   .roadtrips-card {
   margin-top: 70px;
