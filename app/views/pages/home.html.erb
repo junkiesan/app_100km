@@ -44,11 +44,11 @@
     <%= image_tag("image4.jpg") %>
   </div>
 
-<div class="bloc3 mb-5">
+<div class="bloc3 mb-5 pb-5">
    <!-- <div class="row py-3"> -->
     <!-- <div class="col-12"> -->
       <%# Title section %>
-      <h1 class="py-3 text-center ">Avis Voyageurs</h1>
+      <h1 class="pt-3 pb-5 text-center ">Avis Voyageurs</h1>
     <%# Banner with user pix %>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -58,9 +58,9 @@
         </ol>
         <div class="carousel-inner">
           <% @venues.each do |venue|%>
-            <div class="carousel-item active showcase" style="position: relative;">
+            <div class="carousel-item <% if venue.name == @venues.first.name %>active<% end %> showcase" style="position: relative;">
             <%= cl_image_tag venue.photos.first.key, class: "showcase-image d-block" %>
-              <div class="d-flex align-items-center justify-content-between flex-wrap flex-column py-4 px-4" style="position: absolute; top: 30px; right: 60px; background-color: rgba(250, 250, 250, 0.8); border-radius: 5px;">
+              <div class="d-flex align-items-center justify-content-between flex-wrap flex-column py-4 px-4" style="position: absolute; top: 30px; right: 120px; background-color: rgba(250, 250, 250, 0.7); border-radius: 5px; max-width: 400px;">
                 <h2 class="mb-5"><%= venue.name %></h2>
                 <div class="d-flex flex-row justify-content-between align-items-center w-100">
                   <div class="d-flex flex-column align-items-start justify-content-center">
@@ -68,14 +68,14 @@
                       <% count = 0 %>
                       <% 5.times do %>
                         <% if venue.reviews.first.rating > count %>
-                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star text-green"></i>
                         <% else %>
                           <i class="far fa-star"></i>
                         <% end %>
                         <% count += 1 %>
                       <% end %>
                     </p>
-                    <p class="mb-0"><i>" <%= venue.reviews.first.comment %> "</i></p>
+                    <p class="mb-0 text-black"><i>" <%= venue.reviews.first.comment %> "</i></p>
                   </div>
                   <% if venue.reviews.first.user.photo.attached? %>
                     <%= cl_image_tag venue.reviews.first.user.photo.key, class: "review-avatar" %>

@@ -37,12 +37,15 @@
       top: 0;
       width: 64px;
       height: 64px;
+      border: 2px solid $black;
+      margin-right: 0;
+      margin-left: 10px;
     }
   }
   .carousel-control-prev {
-    left: 50px;
+    left: 80px;
 }
   .carousel-control-next {
-    right: 50px;
+    right: 80px;
 }
 }
