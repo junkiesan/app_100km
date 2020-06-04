@@ -30,13 +30,13 @@ const addMarkersToMap = (map, markers, trip) => {
   markers.forEach(marker => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     if (trip) {
-      const el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundImage = `url('${marker.image_url}')`;
-      el.style.backgroundSize = 'contain';
-      el.style.width = '45px';
-      el.style.height = '45px';
-      let element = new mapboxgl.Marker(el)
+      // const el = document.createElement('div');
+      // el.className = 'marker';
+      // el.style.backgroundImage = `url('${marker.image_url}')`;
+      // el.style.backgroundSize = 'contain';
+      // el.style.width = '45px';
+      // el.style.height = '45px';
+      let element = new mapboxgl.Marker({color: "#FE7763"})
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
