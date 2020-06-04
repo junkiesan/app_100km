@@ -134,21 +134,11 @@ file = URI.open('https://www.lagrande-verriere.com/wp-content/uploads/2018/11/lu
 venue_10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_10.save!
 
-# venue_13 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères", description: 'L’île de Porquerolles est la plus grande et la plus occidentale des trois îles d Hyères avec ses 12,54 km² de superficie. Elle se situe à 2,6 km au sud-est de la Tour Fondue, l extrémité sud de la presqu île de Giens, et à 9,6 km à l ouest de l île de Port-Cros.')
-# file = URI.open('https://cdn.generationvoyage.fr/2020/05/ile-porquerolles.jpg')
-# venue_13.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# venue_13.save!
-
 puts 'Creating venues...'
 
 # À VELO
 
 puts 'Creating venues...'
-
-# venue_12 = Venue.new(name: 'Tour du Luberon', latitude: '43.7961', longitude: '5.2239', zip: '84240', category: 'Velo', address: 'Massif du Luberon', description: 'Villages perchés, bories, châteaux, monuments, mais aussi falaises et garrigues.. autant de richesses regroupées sur un seul territoire.')
-# file = URI.open('https://www.lagrande-verriere.com/wp-content/uploads/2018/11/luberon-provence-idees-sorties-villages-tourisme-2.jpg')
-# venue_12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# venue_12.save!
 
 
 # CULTURE
