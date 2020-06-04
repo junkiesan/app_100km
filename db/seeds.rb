@@ -34,10 +34,10 @@ photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1539599254/jant
 cecile.photo.attach(io: photo, filename: 'cecile.png', content_type: 'image/png')
 cecile.save!
 
-dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
-photo = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1523284008/vewklncjschzufwaixd6.jpg')
-dimitri.photo.attach(io: photo, filename: 'cecile.png', content_type: 'image/png')
-dimitri.save!
+# dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
+# photo = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1523284008/vewklncjschzufwaixd6.jpg')
+# dimitri.photo.attach(io: photo, filename: 'dimitri.png', content_type: 'image/png')
+# dimitri.save!
 
 romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
 photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
@@ -209,7 +209,7 @@ puts '11 venue created !'
 puts 'Creating reviews...'
 
 
-review_gv_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.")
+review_gv_1 = Review.new(rating: 4, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.")
 review_gv_1.user = cecile
 review_gv_1.venue = venue_1
 review_gv_1.save!
@@ -226,8 +226,8 @@ review_gv_3.save!
 
 puts 'Creating reviews...'
 
-review_or_1 = Review.new(rating: 5, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
-review_or_1.user = cecile
+review_or_1 = Review.new(rating: 3, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
+review_or_1.user = thomas
 review_or_1.venue = venue_2
 review_or_1.save!
 
@@ -244,7 +244,7 @@ review_or_3.save!
 puts 'Creating reviews...'
 
 review_pv_1 = Review.new(rating: 5, comment: "Magnifique ! On est venu passer un weekend pour contempler les champs de lavande. A faire au moins une fois dans sa vie.")
-review_pv_1.user = cecile
+review_pv_1.user = romain
 review_pv_1.venue = venue_6
 review_pv_1.save!
 
