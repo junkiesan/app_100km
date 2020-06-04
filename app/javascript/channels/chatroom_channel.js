@@ -8,6 +8,8 @@ const initChatroomCable = () => {
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
         messagesContainer.insertAdjacentHTML('beforeend', data)
+        document.querySelector('#message_content').value = '';
+        document.querySelector('#message_content').placeholder = '';
         // console.log(data); // called when data is broadcast in the cable
       },
     });
