@@ -69,23 +69,21 @@ puts 'Creating venues...'
 
 venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.779676', longitude: '6.35686', zip: '04500', category: 'Parc', address: 'La Palud-sur-Verdon', description: 'Les gorges du Verdon sont un canyon creusé par la rivière Verdon séparant les Préalpes de Castellane et les Préalpes de Digne, en France.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
-file_2 = URI.open("http://www.castellane-verdontourisme.com/wp-content/uploads/2014/10/best-of-gorges-verdon-1024x682.jpg")
-file_3 = URI.open("http://www.castellane-verdontourisme.com/wp-content/uploads/2014/10/best-of-gorges-verdon-1024x682.jpg")
+file2 = URI.open('https://www.viree-malin.fr/wp-content/uploads/2018/12/visiter-activites-gorges-du-verdon.jpg')
+file3 = URI.open('https://cdn.generationvoyage.fr/2020/02/gorges-verdon-kayak-755x526.jpg')
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-venue_1.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
-venue_1.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
-
+venue_1.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+venue_1.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 puts 'First venue created !'
 
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
-file_2 = URI.open('https://i1.wp.com/lamariniereenvoyage.com/wp-content/uploads/2019/01/la-mariniere-en-voyage-ocres-de-provence.jpg?resize=1170%2C550&ssl=1')
-file_3 = URI.open('https://dailygeekshow.com/wp-content/uploads/2016/03/visu-rustrel-4.jpg')
+file2 = URI.open('https://static.wixstatic.com/media/a27d24_6f85280ca1a348de9bd733db49dbcfed~mv2.jpg/v1/fit/w_770,h_556,al_c,q_80/file.png')
+file3 = URI.open('https://dailygeekshow.com/wp-content/uploads/2017/04/une-ocres-validee.jpg')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-venue_2.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
-venue_2.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
-
+venue_2.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+venue_2.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 venue_2.save!
 puts '2 venue created !'
 

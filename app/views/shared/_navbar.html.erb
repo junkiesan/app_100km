@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div>
   <%= link_to root_path, class: "#{"d-none" if params[:action] == "custom" || params[:action] == 'profile'} navbar-brand" do %>
-    <i class="far fa-compass"></i>
+    <i class="far fa-compass <% if params[:action] == "show" && params[:controller] == "venues" %>
+      coral-compass <% end %> "></i>
   <% end %>
   </div>
 

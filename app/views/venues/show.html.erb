@@ -3,25 +3,22 @@
     <div class="row py-3 position-relative">
       <div class="col-12">
 
-        <%# Title section %>
-        <h1 class="py-3"><%= @venue.name %></h1>
-      <%# Banner with user pix %>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active showcase">
-              <%= cl_image_tag @venue.photos.first.key, class: "showcase-image d-block" %>
-            </div>
-            <div class="carousel-item showcase">
-              <%= cl_image_tag @venue.photos.second.key, class: "showcase-image d-block" %>
-            </div>
-            <div class="carousel-item showcase">
-              <%= cl_image_tag @venue.photos.third.key, class: "showcase-image d-block" %>
-            </div>
+    <%# Banner with user pix %>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active showcase">
+            <%= cl_image_tag @venue.photos.first.key, class: "showcase-image d-block" %>
+          </div>
+          <div class="carousel-item showcase">
+            <%= cl_image_tag @venue.photos.second.key, class: "showcase-image d-block" %>
+          </div>
+          <div class="carousel-item showcase">
+            <%= cl_image_tag @venue.photos.third.key, class: "showcase-image d-block" %>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,7 +30,10 @@
           </a>
         </div>
       </div>
+      <%# Title section %>
+      <h1 class="py-3"><%= @venue.name %></h1>
 
+    </div>
 
       <!-- insert map console on the left -->
       <div class="map-window">
@@ -47,56 +47,63 @@
       </div>
     </div>
 
-    <%# User description section %>
-    <div class="row py-3">
-      <div class="col-12">
-        <div class="venue-details">
-          <h4>Details</h4>
-          <p><strong>Category : </strong> <%= @venue.category %></p>
-          <p>Situé à à peu près 30km de Marseille, Cassis (prononcé « Cassi ») est célèbre pour ses falaises et calanques, mais aussi pour les vins de Cassis (rosé et blanc). Quoi de plus agréable que de siroter un rosé bien frais avec une vue à couper le souffle!</p>
-          <!-- <p><strong>Category : </strong> <%#= @venue.description %></p> -->
-        </div>
+  <%# User description section %>
+  <div class="row py-3">
+    <div class="col-12">
+      <div class="venue-details">
+        <h4>Tout savoir sur ce lieu 👇🏻 </h4>
+        <p><strong>Catégorie : </strong> <%= @venue.category %></p>
+        <p><%= @venue.description %></p>
+        <!-- <p><strong>Category : </strong> <%#= @venue.description %></p> -->
       </div>
     </div>
+  </div>
 
-
-
-
-    <div class="row py-3">
-      <div class="col-6">
-        <div class="list-group">
-          <% @venue.reviews.each do |review| %>
-            <li class="list-group-item">
-              <small>
-                <% count = 0 %>
-                <% 5.times do %>
-                  <% if review.rating > count %>
-                    <i class="fas fa-star"></i>
-                  <% else %>
-                    <i class="far fa-star"></i>
-                  <% end %>
-                  <% count += 1 %>
-                <% end %>
+  <%# User review %>
+  <div class="row mb-5">
+    <div class="col-md-8">
+      <div class="card p-3 mb-3">
+        <h4>L'avis de nos backpackers ☀️</h4>
+        <% @venue.reviews.each do |review| %>
+          <li class="list-group-item border-0">
+            <small class="d-flex avatar-rating">
+              <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+              <div class="name-rating">
+                <p class="name">
+                  <%= review.user.name %>
+                </p>
+                <div class="rating-box">
+                  <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                        <i class="fas fa-star"></i>
+                      <% else %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                      <% count += 1 %>
+                    <% end %>
+                </div>
+                </div>
               </small>
-              <p><%= review.comment %></p>
+              <p>"<em><%= review.comment %></em>"</p>
             </li>
           <% end %>
         </div>
       </div>
-      <div class="col-6">
-        <%= simple_form_for [@venue, @review] do |f| %>
-          <%= f.input :rating, collection: 0..5 %>
-          <%= f.input :comment%>
-          <%= f.submit class: 'nav_button' %>
-        <% end %>
+
+      <div class="col-md-4">
+        <div class="bg-white border p-3 sticky-top">
+          <h4>Notez ce lieu ⭐️</h4>
+          <div class="d-flex justify-content-between mt-3">
+            <%= simple_form_for [@venue, @review] do |f| %>
+            <%= f.input :rating, collection: 0..5 %>
+            <%= f.input :comment%>
+            <%= f.submit class: 'nav_button' %>
+             <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
 
