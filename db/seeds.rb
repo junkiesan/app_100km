@@ -1,4 +1,6 @@
-# require 'faker'
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+
 require "json"
 require 'rest-client'
 require 'open-uri'
@@ -26,8 +28,6 @@ Venue.destroy_all
 
 puts 'Creating user...'
 
-aurian = User.create!(name: 'Aurian GL', email: 'user1@100km.com', password: '123456')
-basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', password: '123456')
 
 cecile = User.create!(name: 'Cécile Dezy', email: 'user3@100km.com', password: '123456')
 photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1539599254/janttrofl6xagki5zk6g.jpg')
@@ -35,15 +35,9 @@ cecile.photo.attach(io: photo, filename: 'cecile.png', content_type: 'image/png'
 cecile.save!
 
 dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
-diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
-edouard = User.create!(name: 'Edouard Foussier', email: 'user6@100km.com', password: '123456')
-fred = User.create!(name: 'Frédéric Laffont', email: 'user7@100km.com', password: '123456')
-hadrien = User.create!(name: 'Hadrien Matringe', email: 'user8@100km.com', password: '123456')
-julien = User.create!(name: 'Julien Da Silva', email: 'user9@100km.com', password: '123456')
-lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', password: '123456')
-louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
-philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
-paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
+photo = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1523284008/vewklncjschzufwaixd6.jpg')
+dimitri.photo.attach(io: photo, filename: 'cecile.png', content_type: 'image/png')
+dimitri.save!
 
 romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
 photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
@@ -55,8 +49,17 @@ photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1585588520/j0m6
 thomas.photo.attach(io: photo, filename: 'thomas.png', content_type: 'image/png')
 thomas.save!
 
-
-
+aurian = User.create!(name: 'Aurian GL', email: 'user1@100km.com', password: '123456')
+basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', password: '123456')
+dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
+diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
+edouard = User.create!(name: 'Edouard Foussier', email: 'user6@100km.com', password: '123456')
+fred = User.create!(name: 'Frédéric Laffont', email: 'user7@100km.com', password: '123456')
+hadrien = User.create!(name: 'Hadrien Matringe', email: 'user8@100km.com', password: '123456')
+julien = User.create!(name: 'Julien Da Silva', email: 'user9@100km.com', password: '123456')
+lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', password: '123456')
+louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
+philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
 
 # AIX EN PROVENCE
 
@@ -283,6 +286,8 @@ review_p_2 = Review.new(rating: 3, comment: "Beau mais un peu surfait, beaucoup 
 review_p_2.user = romain
 review_p_2.venue = venue_5
 review_p_2.save!
+
+# REVIEWS
 
 review_p_3 = Review.new(rating: 4, comment: "C'est il est vraiment magnifique surtout à vélo")
 review_p_3.user = thomas
