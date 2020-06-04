@@ -54,40 +54,6 @@ thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', pass
 photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1585588520/j0m6tlufeayghsj1uqdv.jpg')
 thomas.photo.attach(io: photo, filename: 'thomas.png', content_type: 'image/png')
 thomas.save!
-# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
-# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
-# CITIES = ['Paris'] # => Add Cities
-# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
-# CITIES.each do |city|
-#   puts "Fetching: #{city}"
-#   CATEGORIES.each do |category|
-#     puts "-- Category: #{category}"
-#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
-#     data = JSON.parse(response)
-#     data["response"]["venues"].each do |item|
-#       if item['categories'].any?
-#         venue = Venue.new(
-#           name: item['name'],
-#           latitude: item['location']['lat'],
-#           longitude: item['location']['lng'],
-#           zip: item['location']['postalCode'],
-#           category: item['categories'].first['name'],
-#           address: item['location']['formattedAddress'][0]
-#         )
-#         # GET PHOTO
-#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
-#         photo_data = JSON.parse(photo_response)
-#         if photo_data['response']['photos']['items'].first
-#           prefix = photo_data['response']['photos']['items'].first['prefix']
-#           suffix = photo_data['response']['photos']['items'].first['suffix']
-#           file = URI.open("#{prefix}500x500#{suffix}")
-#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-#           venue.save!
-#         end
-#       end
-#     end
-#   end
-# end
 
 
 
@@ -424,6 +390,41 @@ review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super expositio
 review_mp_3.user = thomas
 review_mp_3.venue = venue_8
 review_mp_3.save!
+
+# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
+# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
+# CITIES = ['Paris'] # => Add Cities
+# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
+# CITIES.each do |city|
+#   puts "Fetching: #{city}"
+#   CATEGORIES.each do |category|
+#     puts "-- Category: #{category}"
+#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
+#     data = JSON.parse(response)
+#     data["response"]["venues"].each do |item|
+#       if item['categories'].any?
+#         venue = Venue.new(
+#           name: item['name'],
+#           latitude: item['location']['lat'],
+#           longitude: item['location']['lng'],
+#           zip: item['location']['postalCode'],
+#           category: item['categories'].first['name'],
+#           address: item['location']['formattedAddress'][0]
+#         )
+#         # GET PHOTO
+#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
+#         photo_data = JSON.parse(photo_response)
+#         if photo_data['response']['photos']['items'].first
+#           prefix = photo_data['response']['photos']['items'].first['prefix']
+#           suffix = photo_data['response']['photos']['items'].first['suffix']
+#           file = URI.open("#{prefix}500x500#{suffix}")
+#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#           venue.save!
+#         end
+#       end
+#     end
+#   end
+# end
 
 # PARIS
 
