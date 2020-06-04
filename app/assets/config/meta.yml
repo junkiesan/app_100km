@@ -1,0 +1,5 @@
+meta_product_name: "100km"
+meta_title: "100km - Le roadtrip français"
+meta_description: "100km te permets de voyager partout en France, écologiquement et en respectant l'économie locale"
+meta_image: "venue-img.jpeg" # should exist in `app/assets/images/`
+twitter_account: "@100km_twitter_account"   # required for Twitter Cards
