@@ -36,10 +36,10 @@ photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1539599254/jant
 cecile.photo.attach(io: photo, filename: 'cecile.png', content_type: 'image/png')
 cecile.save!
 
-# diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
-# file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
-# diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# diane.save!
+diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
+file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
+diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+diane.save!
 
 dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
 diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
@@ -61,7 +61,15 @@ file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_2
 romain.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 romain.save!
 
+romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
+photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
+romain.photo.attach(io: photo, filename: 'romain.png', content_type: 'image/png')
+romain.save!
+
 thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
+photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1585588520/j0m6tlufeayghsj1uqdv.jpg')
+thomas.photo.attach(io: photo, filename: 'thomas.png', content_type: 'image/png')
+thomas.save!
 
 
 puts 'Creating reviews...'
@@ -218,18 +226,7 @@ review_mp_2.venue_id = venue_8.id
 review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super exposition « Tableaux magiques »")
 review_mp_3.user_id = Diane.id
 review_mp_3.venue_id = venue_8.id
-=======
-paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
 
-romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
-photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
-romain.photo.attach(io: photo, filename: 'romain.png', content_type: 'image/png')
-romain.save!
-
-thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
-photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1585588520/j0m6tlufeayghsj1uqdv.jpg')
-thomas.photo.attach(io: photo, filename: 'thomas.png', content_type: 'image/png')
-thomas.save!
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
 # CITIES = ['Paris'] # => Add Cities
