@@ -241,157 +241,189 @@ puts 'Creating reviews...'
 
 
 review_gv_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.")
-review_gv_1.user_id = cecile.id
+review_gv_1.user = cecile
 review_gv_1.venue = venue_1
+review_gv_1.save!
 
 review_gv_2 = Review.new(rating: 3, comment: "C'est un site exceptionnel ! Malheureusement, il y a beaucoup trop de monde en été!")
-review_gv_2.user_id = romain.id
+review_gv_2.user = romain
 review_gv_2.venue = venue_1
+review_gv_2.save!
 
 review_gv_3 = Review.new(rating: 4, comment: "Endroit paradisiaque où règnent le calme et les cigales")
-review_gv_3.user_id = thomas.id
+review_gv_3.user = thomas
 review_gv_3.venue = venue_1
+review_gv_3.save!
 
 puts 'Creating reviews...'
 
 review_or_1 = Review.new(rating: 5, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
-review_or_1.user_id = cecile.id
+review_or_1.user = cecile
 review_or_1.venue = venue_2
+review_or_1.save!
 
 review_or_2 = Review.new(rating: 3, comment: "C'est juste superbe. Un site magique. On en prend plein les yeux.")
-review_or_2.user_id = romain.id
+review_or_2.user = romain
 review_or_2.venue = venue_2
+review_or_2.save!
 
 review_or_3 = Review.new(rating: 4, comment: "En cette sortie de confinement pas bcp de monde balade agréable")
-review_or_3.user_id = thomas.id
+review_or_3.user = thomas
 review_or_3.venue = venue_2
+review_or_3.save!
 
 puts 'Creating reviews...'
 
 review_pv_1 = Review.new(rating: 5, comment: "Magnifique ! On est venu passer un weekend pour contempler les champs de lavande. A faire au moins une fois dans sa vie.")
-review_pv_1.user_id = cecile.id
+review_pv_1.user = cecile
 review_pv_1.venue = venue_6
+review_pv_1.save!
 
 review_pv_2 = Review.new(rating: 3, comment: "Lieu magique avec les vallons aux couleurs de la lavande et des tournesols.")
-review_pv_2.user_id = romain.id
+review_pv_2.user = romain
 review_pv_2.venue = venue_6
+review_pv_2.save!
 
 review_pv_3 = Review.new(rating: 4, comment: "Beau mais il faut choisir la bonne saison et le bon moment dans la journée")
-review_pv_3.user_id = thomas.id
+review_pv_3.user = thomas
 review_pv_3.venue = venue_6
+review_pv_3.save!
 
 puts 'Creating reviews...'
 
 review_cc_1 = Review.new(rating: 5, comment: "Belle ballade à faire mais si vous avez le choix, préférable en hors saison.")
-review_cc_1.user_id = cecile.id
+review_cc_1.user = cecile
 review_cc_1.venue = venue_3
+review_cc_1.save!
 
 review_cc_2 = Review.new(rating: 3, comment: "Splendide. sortie à ne pas rater si vous êtes dans le coin. avec la baignade dans les eaux turquoises... juste 100% de plaisir")
-review_cc_2.user_id = romain.id
+review_cc_2.user = romain
 review_cc_2.venue = venue_3
+review_cc_2.save!
 
 review_cc_3 = Review.new(rating: 4, comment: "C'est génial, les explications pendant la traversée sont bien menees, un agréable moment")
-review_cc_3.user_id = thomas.id
+review_cc_3.user = thomas
 review_cc_3.venue = venue_3
+review_cc_3.save!
 
 puts 'Creating reviews...'
 
 review_p_1 = Review.new(rating: 5, comment: "Sublime prévoir le pique-nique pour profiter des crique 😉")
-review_p_1.user_id = cecile.id
+review_p_1.user = cecile
 review_p_1.venue = venue_5
+review_p_1.save!
 
 review_p_2 = Review.new(rating: 3, comment: "Beau mais un peu surfait, beaucoup d'algues sur les plages, a vélo c'est très bien")
-review_p_2.user_id = romain.id
+review_p_2.user = romain
 review_p_2.venue = venue_5
+review_p_2.save!
 
 review_p_3 = Review.new(rating: 4, comment: "C'est il est vraiment magnifique surtout à vélo")
-review_p_3.user_id = thomas.id
+review_p_3.user = thomas
 review_p_3.venue = venue_5
+review_p_3.save!
 
 puts 'Creating reviews...'
 
 review_pp_1 = Review.new(rating: 5, comment: "Magnifique et calme pour le moment")
-review_pp_1.user_id = cecile.id
+review_pp_1.user = cecile
 review_pp_1.venue = venue_11
+review_pp_1.save!
 
 review_pp_2 = Review.new(rating: 3, comment: "Très belle plage, malheureusement trop de bruit des bars de plage 😟")
-review_pp_2.user_id = romain.id
+review_pp_2.user = romain
 review_pp_2.venue = venue_11
+review_pp_2.save!
 
 review_pp_3 = Review.new(rating: 4, comment: "Plage en cours de travaux pour l'été et magnifique hors saison.")
-review_pp_3.user_id = thomas.id
+review_pp_3.user = thomas
 review_pp_3.venue = venue_11
+review_pp_3.save!
 
 puts 'Creating reviews...'
 
 review_tl_1 = Review.new(rating: 5, comment: "Superbe lieu à visiter")
-review_tl_1.user_id = cecile.id
+review_tl_1.user = cecile
 review_tl_1.venue = venue_10
+review_tl_1.save!
 
 review_tl_2 = Review.new(rating: 3, comment: "Quels splendides paysages !")
-review_tl_2.user_id = romain.id
+review_tl_2.user = romain
 review_tl_2.venue = venue_10
+review_tl_2.save!
 
 review_tl_3 = Review.new(rating: 4, comment: "Beau massif. Vive la nature. A préserver sans modération....")
-review_tl_3.user_id = thomas.id
+review_tl_3.user = thomas
 review_tl_3.venue = venue_10
+review_tl_3.save!
 
 puts 'Creating reviews...'
 
 review_nd_1 = Review.new(rating: 5, comment: "La lumière etait ce jour là autant à l'extérieur qu'à l'intérieur.")
-review_nd_1.user_id = cecile.id
+review_nd_1.user = cecile
 review_nd_1.venue = venue_9
+review_nd_1.save!
 
 review_nd_2 = Review.new(rating: 3, comment: "Très jolie église")
-review_nd_2.user_id = romain.id
+review_nd_2.user = romain
 review_nd_2.venue = venue_9
+review_nd_2.save!
 
 review_nd_3 = Review.new(rating: 4, comment: "A voir pour le lieu et notre histoire, que l'on soit croyant ou non")
-review_nd_3.user_id = thomas.id
+review_nd_3.user = thomas
 review_nd_3.venue = venue_9
+review_nd_3.save!
 
 puts 'Creating reviews...'
 
 review_av_1 = Review.new(rating: 5, comment: "Super ville je kiffe a fond ")
-review_av_1.user_id = cecile.id
+review_av_1.user = cecile
 review_av_1.venue = venue_4
+review_av_1.save!
 
 review_av_2 = Review.new(rating: 3, comment: "Grosse deception le pont est cassé !")
-review_av_2.user_id = romain.id
+review_av_2.user = romain
 review_av_2.venue = venue_4
+review_av_2.save!
 
 review_av_3 = Review.new(rating: 4, comment: "Le festival d'Avignon est une tuerie de malade oui !")
-review_av_3.user_id = thomas.id
+review_av_3.user = thomas
 review_av_3.venue = venue_4
+review_av_3.save!
 
 puts 'Creating reviews...'
 
 review_aa_1 = Review.new(rating: 5, comment: "Joli lieu, mais on y pratique la torture!")
-review_aa_1.user_id = cecile.id
+review_aa_1.user = cecile
 review_aa_1.venue = venue_7
+review_aa_1.save!
 
 review_aa_2 = Review.new(rating: 3, comment: "Très belle arène au centre de la belle ville d'Arles ou il est possible de visiter pour la somme de 8€")
-review_aa_2.user_id = romain.id
+review_aa_2.user = romain
 review_aa_2.venue = venue_7
+review_aa_2.save!
 
 review_aa_3 = Review.new(rating: 4, comment: "Très bien. Quelle grandeur... spectaculaire monument.")
-review_aa_3.user_id = thomas.id
+review_aa_3.user = thomas
 review_aa_3.venue = venue_7
+review_aa_3.save!
 
 puts 'Creating reviews...'
 
 review_mp_1 = Review.new(rating: 5, comment: "Attention : entrée impossible avec une valise, même petite.")
-review_mp_1.user_id = cecile.id
+review_mp_1.user = cecile
 review_mp_1.venue = venue_8
+review_mp_1.save!
 
 review_mp_2 = Review.new(rating: 3, comment: "Réputé et atypique. On aime ou pas mais on ne peut pas  rester insensible. A voir absolument !")
-review_mp_2.user_id = romain.id
+review_mp_2.user = romain
 review_mp_2.venue = venue_8
+review_mp_2.save!
 
 review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super exposition « Tableaux magiques »")
-review_mp_3.user_id = thomas.id
+review_mp_3.user = thomas
 review_mp_3.venue = venue_8
-
+review_mp_3.save!
 
 # PARIS
 
