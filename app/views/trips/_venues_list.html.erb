@@ -6,8 +6,23 @@
 
 <div class="venue-details">
   <h2><%= venue.name  %></h2>
-  <p><%= venue.address %></p>
-  <h6><%= venue.category %></h6>
+  <p class="venue-address"><%= venue.address %></p>
+  <% if venue.category == "Plage" %>
+    <i class="fas fa-umbrella-beach"></i>
+  <% elsif venue.category == "Culture" %>
+    <i class="fas fa-archway"></i>
+  <% elsif venue.category == "Foret" %>
+    <i class="fas fa-hiking"></i>
+  <% elsif venue.category == "Parc" %>
+    <i class="fas fa-tree"></i>
+  <% elsif venue.category == "Velo" %>
+    <i class="fas fa-bicycle">
+  <% elsif venue.category == "Vues" %>
+    <i class="fas fa-binoculars">
+  <% else %>
+    <i class="fas fa-map"></i>
+  <% end %>
+
   <div class="venue-action">
     <% if @trip.venues.include?(venue) %>
     <%= simple_form_for @trip.trip_venue(venue),
