@@ -3,5 +3,7 @@
     <span><%= message.user.name %></span>
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
   </i>
-  <p><%= message.content %></p>
+  <div class="message-content">
+    <p><%= message.content %></p>
+  </div>
 </div>

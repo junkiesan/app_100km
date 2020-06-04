@@ -1,18 +1,6 @@
 // #chatrooms-show {
 // }
 
-.message-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 150px;
-  h3 {
-    color: grey;
-    font-family: Arial;
-  }
-}
-
-
 .chat-wrapper {
   // background-color: $coral-CTA;
   height: 100vh;
@@ -55,7 +43,7 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
-  padding: 35px;
+  padding: 10px;
   height: 57vh;
   overflow-y: scroll;
 }
@@ -66,6 +54,28 @@
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
   margin-top: 15px;
   padding: 20px;
+}
+
+.message-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+  h3 {
+    color: grey;
+    font-family: Arial;
+  }
+}
+
+i.author {
+  margin: 13px;
+}
+
+.message-content {
+    border-radius: 6px;
+    border: solid #80808061 1px;
+    padding: 8px;
+    margin: 10px;
 }
 
 #new-message .nav_button {
