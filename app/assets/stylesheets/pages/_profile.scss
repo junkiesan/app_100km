@@ -40,9 +40,16 @@ body {
   .profile-details {
     padding-top: 80px;
     padding-left: 20px;
+    margin-bottom: -20px;
   }
   .profile-action {
     bottom: 0px;
+    position: relative;
+    bottom: 320px;
+    right: -325px;
+    i {
+      color: black;
+    }
   }
   .profile-name div h6 :after {
     content: "";
@@ -62,7 +69,9 @@ body {
   font-size: 36px;
   display: inline;
   a {
-  padding: 10px;
+    padding: 17px;
+    justify-items: center;
+    align-items: center;
   }
 }
 
