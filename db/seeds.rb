@@ -129,12 +129,20 @@ venue_1.save!
 
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
+file_2 = URI.open('https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.castellane-verdontourisme.com%2Fje-decouvre-tout-un-pays%2Fbestof-castellane%2F&psig=AOvVaw1xjhQ1vxrx56ATP46OwKXA&ust=1591345745359000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLD_8oHf5-kCFQAAAAAdAAAAABAh')
+file_3 = URI.open('https://www.google.com/url?sa=i&url=https%3A%2F%2Ffigaronautisme.meteoconsult.fr%2Factus-nautisme-escales%2F2019-08-31%2F35246-les-gorges-du-verdon-un-site-naturel-unique-en-europe&psig=AOvVaw1xjhQ1vxrx56ATP46OwKXA&ust=1591345745359000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLD_8oHf5-kCFQAAAAAdAAAAABAn')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_2.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
+venue_2.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
+
 venue_2.save!
 
 venue_6 = Venue.new(name: 'Le Plateau de Valensole', latitude: '43.8333', longitude: '5.9833', zip: '04210', category: 'Parc', address: "Digne-les-Bains", description: 'Le Plateau de Valensole est une région naturelle de France située dans les Alpes-de-Haute-Provence, au sud-ouest de Digne-les-Bains, entre les vallées de la Durance à l ouest, de l Asse au nord, des Gorges du Verdon et du lac de Sainte-Croix au sud.')
 file = URI.open('https://www.actualitix.com/wp-content/uploads/2017/09/plateau-de-valensole.jpg')
 venue_6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_6.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
+venue_6.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
+
 venue_6.save!
 
 
