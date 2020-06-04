@@ -2,39 +2,57 @@
 
 <% venues.sort.each do |venue| %>
 <div class="venue-card"
-                        data-lng="<%= venue.longitude %>"
-                        data-lat="<%= venue.latitude %>">
+data-lng="<%= venue.longitude %>"
+data-lat="<%= venue.latitude %>">
 
 <div class="venue-details">
   <h2><%= venue.name  %></h2>
   <p class="venue-address"><%= venue.address %></p>
   <% if venue.category == "Plage" %>
-    <i class="fas fa-umbrella-beach"></i>
+  <i class="fas fa-umbrella-beach"></i>
   <% elsif venue.category == "Culture" %>
-    <i class="fas fa-archway"></i>
+  <i class="fas fa-archway"></i>
   <% elsif venue.category == "Foret" %>
-    <i class="fas fa-hiking"></i>
+  <i class="fas fa-hiking"></i>
   <% elsif venue.category == "Parc" %>
-    <i class="fas fa-tree"></i>
+  <i class="fas fa-tree"></i>
   <% elsif venue.category == "Velo" %>
-    <i class="fas fa-bicycle">
-  <% elsif venue.category == "Vues" %>
+  <i class="fas fa-bicycle">
+    <% elsif venue.category == "Vues" %>
     <i class="fas fa-binoculars">
-  <% else %>
-    <i class="fas fa-map"></i>
-  <% end %>
+      <% else %>
+      <i class="fas fa-map"></i>
+      <% end %>
+    <div class="venue-rating">
+      <% if venue.reviews.count > 0  %>
+       <p class="venue-address">Note:</p>
+        <% count = 0 %>
+        <% 5.times do %>
+          <% if venue.reviews.last.rating > count %>
+            <i class="fas fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
+          <% end %>
+          <% count += 1 %>
+        <% end %>
+      <% else %>
+        <p class="venue-address">Pas de note</p>
+        <p class="venue-emoji">🤷‍♀️</p>
 
-  <div class="venue-action" data-id="<%= venue.id %>" data-turbolinks="false">
-    <%= render "trips/card_action_buttons", venue: venue %>
+      <% end %>
+    </div>
+
+      <div class="venue-action" data-id="<%= venue.id %>" data-turbolinks="false">
+        <%= render "trips/card_action_buttons", venue: venue %>
+      </div>
+    </div>
+    <% if venue.photos.attached? %>
+    <% venue.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %>
+    <% end %>
+    <% else %>
+    <%= image_tag('venue-img.jpg') %>
+    <% end %>
   </div>
-</div>
-<% if venue.photos.attached? %>
-<% venue.photos.each do |photo| %>
-<%= cl_image_tag photo.key %>
-<% end %>
-<% else %>
-<%= image_tag('venue-img.jpg') %>
-<% end %>
-</div>
-<% end %>
+  <% end %>
 
