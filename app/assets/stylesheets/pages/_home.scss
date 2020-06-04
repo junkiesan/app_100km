@@ -23,7 +23,7 @@ p {
     object-fit: cover;
   }
   div {
-    background: $coral-CTA;
+    background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
     padding: 15px;
     width: 500px;
     height: 300px;
@@ -84,7 +84,7 @@ h1.py-3.text-center {
   margin-left: -40px;
   }
   div {
-    background: $coral-CTA;
+    background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
     padding: 15px;
     width: 400px;
 //    height: 200px;
