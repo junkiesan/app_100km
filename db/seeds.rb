@@ -49,16 +49,6 @@ photo = URI.open('https://res.cloudinary.com/wagon/image/upload/v1585588520/j0m6
 thomas.photo.attach(io: photo, filename: 'thomas.png', content_type: 'image/png')
 thomas.save!
 
-# diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
-# file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
-# diane.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# diane.save!
-
-# paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
-# file = URI.open('https://avatars1.githubusercontent.com/u/26028980?v=4')
-# paul.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# paul.save!
-
 aurian = User.create!(name: 'Aurian GL', email: 'user1@100km.com', password: '123456')
 basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', password: '123456')
 dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
@@ -70,197 +60,6 @@ julien = User.create!(name: 'Julien Da Silva', email: 'user9@100km.com', passwor
 lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', password: '123456')
 louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
 philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
-
-
-puts 'Creating reviews...'
-
-
-# review_gv_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.")
-# review_gv_1.user_id = Paul.id
-# review_gv_1.venue_id = venue_1.id
-
-review_gv_2 = Review.new(rating: 3, comment: "C'est un site exceptionnel ! Malheureusement, il y a beaucoup trop de monde en été!")
-review_gv_2.user_id = romain.id
-review_gv_2.venue_id = venue_1.id
-
-# review_gv_3 = Review.new(rating: 4, comment: "Endroit paradisiaque où règnent le calme et les cigales")
-# review_gv_3.user_id = Diane.id
-# review_gv_3.venue_id = venue_1.id
-
-puts 'Creating reviews...'
-
-review_or_1 = Review.new(rating: 5, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
-review_or_1.user_id = thomas.id
-review_or_1.venue_id = venue_2.id
-
-review_or_2 = Review.new(rating: 3, comment: "C'est juste superbe. Un site magique. On en prend plein les yeux.")
-review_or_2.user_id = romain.id
-review_or_2.venue_id = venue_2.id
-
-review_or_3 = Review.new(rating: 4, comment: "En cette sortie de confinement pas bcp de monde balade agréable")
-review_or_3.user_id = cecile.id
-review_or_3.venue_id = venue_2.id
-
-puts 'Creating reviews...'
-
-review_pv_1 = Review.new(rating: 5, comment: "Magnifique ! On est venu passer un weekend pour contempler les champs de lavande. A faire au moins une fois dans sa vie.")
-review_pv_1.user_id = dimitri.id
-review_pv_1.venue_id = venue_6.id
-
-review_pv_2 = Review.new(rating: 3, comment: "Lieu magique avec les vallons aux couleurs de la lavande et des tournesols.")
-review_pv_2.user_id = romain.id
-review_pv_2.venue_id = venue_6.id
-
-review_pv_3 = Review.new(rating: 4, comment: "Beau mais il faut choisir la bonne saison et le bon moment dans la journée")
-review_pv_3.user_id = cecile.id
-review_pv_3.venue_id = venue_6.id
-
-puts 'Creating reviews...'
-
-review_cc_1 = Review.new(rating: 5, comment: "Belle ballade à faire mais si vous avez le choix, préférable en hors saison.")
-review_cc_1.user_id = thomas.id
-review_cc_1.venue_id = venue_3.id
-
-review_cc_2 = Review.new(rating: 3, comment: "Splendide. sortie à ne pas rater si vous êtes dans le coin. avec la baignade dans les eaux turquoises... juste 100% de plaisir")
-review_cc_2.user_id = romain.id
-review_cc_2.venue_id = venue_3.id
-
-review_cc_3 = Review.new(rating: 4, comment: "C'est génial, les explications pendant la traversée sont bien menees, un agréable moment")
-review_cc_3.user_id = dimitri.id
-review_cc_3.venue_id = venue_3.id
-
-puts 'Creating reviews...'
-
-review_p_1 = Review.new(rating: 5, comment: "Sublime prévoir le pique-nique pour profiter des crique 😉")
-review_p_1.user_id = thomas.id
-review_p_1.venue_id = venue_5.id
-
-review_p_2 = Review.new(rating: 3, comment: "Beau mais un peu surfait, beaucoup d'algues sur les plages, a vélo c'est très bien")
-review_p_2.user_id = romain.id
-review_p_2.venue_id = venue_5.id
-
-review_p_3 = Review.new(rating: 4, comment: "C'est il est vraiment magnifique surtout à vélo")
-review_p_3.user_id = cecile.id
-review_p_3.venue_id = venue_5.id
-
-puts 'Creating reviews...'
-
-review_pp_1 = Review.new(rating: 5, comment: "Magnifique et calme pour le moment")
-review_pp_1.user_id = paul.id
-review_pp_1.venue_id = venue_11.id
-
-review_pp_2 = Review.new(rating: 3, comment: "Très belle plage, malheureusement trop de bruit des bars de plage 😟")
-review_pp_2.user_id = romain.id
-review_pp_2.venue_id = venue_11.id
-
-review_pp_3 = Review.new(rating: 4, comment: "Plage en cours de travaux pour l'été et magnifique hors saison.")
-review_pp_3.user_id = diane.id
-review_pp_3.venue_id = venue_11.id
-
-puts 'Creating reviews...'
-
-review_tl_1 = Review.new(rating: 5, comment: "Superbe lieu à visiter")
-review_tl_1.user_id = paul.id
-review_tl_1.venue_id = venue_10.id
-
-review_tl_2 = Review.new(rating: 3, comment: "Quels splendides paysages !")
-review_tl_2.user_id = romain.id
-review_tl_2.venue_id = venue_10.id
-
-review_tl_3 = Review.new(rating: 4, comment: "Beau massif. Vive la nature. A préserver sans modération....")
-review_tl_3.user_id = diane.id
-review_tl_3.venue_id = venue_10.id
-
-puts 'Creating reviews...'
-
-review_nd_1 = Review.new(rating: 5, comment: "La lumière etait ce jour là autant à l'extérieur qu'à l'intérieur.")
-review_nd_1.user_id = paul.id
-review_nd_1.venue_id = venue_9.id
-
-review_nd_2 = Review.new(rating: 3, comment: "Très jolie église")
-review_nd_2.user_id = thomas.id
-review_nd_2.venue_id = venue_9.id
-
-review_nd_3 = Review.new(rating: 4, comment: "A voir pour le lieu et notre histoire, que l'on soit croyant ou non")
-review_nd_3.user_id = diane.id
-review_nd_3.venue_id = venue_9.id
-
-puts 'Creating reviews...'
-
-review_av_1 = Review.new(rating: 5, comment: "Super ville je kiffe a fond ")
-review_av_1.user_id = dimitri.id
-review_av_1.venue_id = venue_4.id
-
-review_av_2 = Review.new(rating: 3, comment: "Grosse deception le pont est cassé !")
-review_av_2.user_id = romain.id
-review_av_2.venue_id = venue_4.id
-
-review_av_3 = Review.new(rating: 4, comment: "Le festival d'Avignon est une tuerie de malade oui !")
-review_av_3.user_id = cecile.id
-review_av_3.venue_id = venue_4.id
-
-puts 'Creating reviews...'
-
-review_aa_1 = Review.new(rating: 5, comment: "Joli lieu, mais on y pratique la torture!")
-review_aa_1.user_id = paul.id
-review_aa_1.venue_id = venue_7.id
-
-review_aa_2 = Review.new(rating: 3, comment: "Très belle arène au centre de la belle ville d'Arles ou il est possible de visiter pour la somme de 8€")
-review_aa_2.user_id = thomas.id
-review_aa_2.venue_id = venue_7.id
-
-review_aa_3 = Review.new(rating: 4, comment: "Très bien. Quelle grandeur... spectaculaire monument.")
-review_aa_3.user_id = diane.id
-review_aa_3.venue_id = venue_7.id
-
-puts 'Creating reviews...'
-
-review_mp_1 = Review.new(rating: 5, comment: "Attention : entrée impossible avec une valise, même petite.")
-review_mp_1.user_id = paul.id
-review_mp_1.venue_id = venue_8.id
-
-review_mp_2 = Review.new(rating: 3, comment: "Réputé et atypique. On aime ou pas mais on ne peut pas  rester insensible. A voir absolument !")
-review_mp_2.user_id = romain.id
-review_mp_2.venue_id = venue_8.id
-
-review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super exposition « Tableaux magiques »")
-review_mp_3.user_id = diane.id
-review_mp_3.venue_id = venue_8.id
-
-# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
-# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
-# CITIES = ['Paris'] # => Add Cities
-# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
-# CITIES.each do |city|
-#   puts "Fetching: #{city}"
-#   CATEGORIES.each do |category|
-#     puts "-- Category: #{category}"
-#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
-#     data = JSON.parse(response)
-#     data["response"]["venues"].each do |item|
-#       if item['categories'].any?
-#         venue = Venue.new(
-#           name: item['name'],
-#           latitude: item['location']['lat'],
-#           longitude: item['location']['lng'],
-#           zip: item['location']['postalCode'],
-#           category: item['categories'].first['name'],
-#           address: item['location']['formattedAddress'][0]
-#         )
-#         # GET PHOTO
-#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
-#         photo_data = JSON.parse(photo_response)
-#         if photo_data['response']['photos']['items'].first
-#           prefix = photo_data['response']['photos']['items'].first['prefix']
-#           suffix = photo_data['response']['photos']['items'].first['suffix']
-#           file = URI.open("#{prefix}500x500#{suffix}")
-#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-#           venue.save!
-#         end
-#       end
-#     end
-#   end
-# end
 
 # AIX EN PROVENCE
 
@@ -488,41 +287,6 @@ review_p_2.user = romain
 review_p_2.venue = venue_5
 review_p_2.save!
 
-# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
-# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
-# CITIES = ['Paris'] # => Add Cities
-# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
-# CITIES.each do |city|
-#   puts "Fetching: #{city}"
-#   CATEGORIES.each do |category|
-#     puts "-- Category: #{category}"
-#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
-#     data = JSON.parse(response)
-#     data["response"]["venues"].each do |item|
-#       if item['categories'].any?
-#         venue = Venue.new(
-#           name: item['name'],
-#           latitude: item['location']['lat'],
-#           longitude: item['location']['lng'],
-#           zip: item['location']['postalCode'],
-#           category: item['categories'].first['name'],
-#           address: item['location']['formattedAddress'][0]
-#         )
-#         # GET PHOTO
-#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
-#         photo_data = JSON.parse(photo_response)
-#         if photo_data['response']['photos']['items'].first
-#           prefix = photo_data['response']['photos']['items'].first['prefix']
-#           suffix = photo_data['response']['photos']['items'].first['suffix']
-#           file = URI.open("#{prefix}500x500#{suffix}")
-#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-#           venue.save!
-#         end
-#       end
-#     end
-#   end
-# end
-
 # REVIEWS
 
 review_p_3 = Review.new(rating: 4, comment: "C'est il est vraiment magnifique surtout à vélo")
@@ -631,6 +395,41 @@ review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super expositio
 review_mp_3.user = thomas
 review_mp_3.venue = venue_8
 review_mp_3.save!
+
+# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
+# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
+# CITIES = ['Paris'] # => Add Cities
+# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
+# CITIES.each do |city|
+#   puts "Fetching: #{city}"
+#   CATEGORIES.each do |category|
+#     puts "-- Category: #{category}"
+#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
+#     data = JSON.parse(response)
+#     data["response"]["venues"].each do |item|
+#       if item['categories'].any?
+#         venue = Venue.new(
+#           name: item['name'],
+#           latitude: item['location']['lat'],
+#           longitude: item['location']['lng'],
+#           zip: item['location']['postalCode'],
+#           category: item['categories'].first['name'],
+#           address: item['location']['formattedAddress'][0]
+#         )
+#         # GET PHOTO
+#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
+#         photo_data = JSON.parse(photo_response)
+#         if photo_data['response']['photos']['items'].first
+#           prefix = photo_data['response']['photos']['items'].first['prefix']
+#           suffix = photo_data['response']['photos']['items'].first['suffix']
+#           file = URI.open("#{prefix}500x500#{suffix}")
+#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#           venue.save!
+#         end
+#       end
+#     end
+#   end
+# end
 
 # PARIS
 
