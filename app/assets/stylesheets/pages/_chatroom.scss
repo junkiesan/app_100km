@@ -23,17 +23,31 @@
 }
 
 .chat-participants {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-right: -15px;
+    border: solid white 2px;
+  }
 
 }
 
 .chatroom-container {
   width: 1200px;
   margin: auto;
+  position: relative;
   h1 {
     color: white;
   }
   h2 {
     color: white;
+  }
+   p {
+    color: black;
   }
 }
 
@@ -44,9 +58,6 @@
   padding: 35px;
   height: 57vh;
   overflow-y: scroll;
-  p {
-    color: black;
-  }
 }
 
 .message-action {

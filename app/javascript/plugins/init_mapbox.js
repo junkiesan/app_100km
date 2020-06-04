@@ -34,8 +34,8 @@ const addMarkersToMap = (map, markers, trip) => {
       el.className = 'marker';
       el.style.backgroundImage = `url('${marker.image_url}')`;
       el.style.backgroundSize = 'contain';
-      el.style.width = '105px';
-      el.style.height = '105px';
+      el.style.width = '45px';
+      el.style.height = '45px';
       let element = new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
@@ -85,6 +85,7 @@ const initMapbox = () => {
       initRemoveMarker();
       initFlyTo(map);
       window.map = map;
+      AOS.init();
     });
   }
 };

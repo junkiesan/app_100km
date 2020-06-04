@@ -46,8 +46,6 @@ philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', 
 paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
 romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
 thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
-paul = User.create!(name: 'Paul Lahana', email: 'user16@100km.com', password: '123456')
-
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
 # CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
@@ -147,10 +145,10 @@ puts 'Creating venues...'
 
 puts 'Creating venues...'
 
-venue_12 = Venue.new(name: 'Tour du Luberon', latitude: '43.7961', longitude: '5.2239', zip: '84240', category: 'Velo', address: 'Massif du Luberon', description: 'Villages perchés, bories, châteaux, monuments, mais aussi falaises et garrigues.. autant de richesses regroupées sur un seul territoire.')
-file = URI.open('https://www.lagrande-verriere.com/wp-content/uploads/2018/11/luberon-provence-idees-sorties-villages-tourisme-2.jpg')
-venue_12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-venue_12.save!
+# venue_12 = Venue.new(name: 'Tour du Luberon', latitude: '43.7961', longitude: '5.2239', zip: '84240', category: 'Velo', address: 'Massif du Luberon', description: 'Villages perchés, bories, châteaux, monuments, mais aussi falaises et garrigues.. autant de richesses regroupées sur un seul territoire.')
+# file = URI.open('https://www.lagrande-verriere.com/wp-content/uploads/2018/11/luberon-provence-idees-sorties-villages-tourisme-2.jpg')
+# venue_12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# venue_12.save!
 
 
 # CULTURE

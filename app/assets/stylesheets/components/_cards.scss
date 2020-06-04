@@ -1,18 +1,26 @@
+.select2-selection__choice {
+  padding: 0 10px 0 0 !important;
+  span {
+    margin: 0 10px 0 0;
+  }
+}
+
 .venue-card {
   background-color: white;
   // border: 1px solid grey;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
-  height: 170px;
+  height: 200px;
   position: relative;
   border-radius: 6px;
   overflow: hidden;
   .venue-action {
     position: absolute;
     left: 15px;
-    bottom: 5px;
+    bottom: 12px;
   }
   img {
     width: 45%;
