@@ -6,6 +6,11 @@
   z-index: 3;
   width: 100%;
   // height: 12vh;
+  .fa-compass {
+    font-size: 50px;
+    margin-left: 10px;
+    color: white;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -34,11 +39,7 @@
   position: absolute;
 }
 
-.fa-compass {
-  font-size: 50px;
-  margin-left: 10px;
-  color: white;
-}
+
 
 .coral-compass{
   color: $coral-CTA;
