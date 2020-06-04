@@ -1,11 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# require 'faker'
+
 require "json"
 require 'rest-client'
 require 'open-uri'
@@ -38,10 +34,10 @@ basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', passw
 cecile = User.create!(name: 'Cécile Dezy', email: 'user3@100km.com', password: '123456')
 dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
 
-diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
-file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
-diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-diane.save!
+# diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
+# file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
+# diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# diane.save!
 
 edouard = User.create!(name: 'Edouard Foussier', email: 'user6@100km.com', password: '123456')
 fred = User.create!(name: 'Frédéric Laffont', email: 'user7@100km.com', password: '123456')
@@ -51,54 +47,18 @@ lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', 
 louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
 philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
 
-paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
-file = URI.open('https://avatars1.githubusercontent.com/u/26028980?v=4')
-paul.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-paul.save!
+# paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
+# file = URI.open('https://avatars1.githubusercontent.com/u/26028980?v=4')
+# paul.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# paul.save!
 
-romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
-file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
-romain.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-romain.save!
+# romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
+# file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
+# romain.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+# romain.save!
 
 thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
 
-# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
-# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
-# CITIES = ['Paris'] # => Add Cities
-# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
-# CITIES.each do |city|
-#   puts "Fetching: #{city}"
-#   CATEGORIES.each do |category|
-#     puts "-- Category: #{category}"
-#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
-#     data = JSON.parse(response)
-#     data["response"]["venues"].each do |item|
-#       if item['categories'].any?
-#         venue = Venue.new(
-#           name: item['name'],
-#           latitude: item['location']['lat'],
-#           longitude: item['location']['lng'],
-#           zip: item['location']['postalCode'],
-#           category: item['categories'].first['name'],
-#           address: item['location']['formattedAddress'][0]
-#         )
-#         # GET PHOTO
-#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
-#         photo_data = JSON.parse(photo_response)
-#         if photo_data['response']['photos']['items'].first
-#           prefix = photo_data['response']['photos']['items'].first['prefix']
-#           suffix = photo_data['response']['photos']['items'].first['suffix']
-#           file = URI.open("#{prefix}500x500#{suffix}")
-#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-#           venue.save!
-#         end
-#       end
-#     end
-#   end
-# end
-
-# REVIEWS
 
 puts 'Creating reviews...'
 
@@ -385,6 +345,42 @@ venue_8.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png'
 venue_8.save!
 
 
+# CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
+# CLIENT_ID = "5PX51VG5G0LLVYDSI0LNISENVY4WSGRZWM21ZNC3THKGQI4X"
+# CITIES = ['Paris'] # => Add Cities
+# CATEGORIES = ['Musee', 'Parc', 'Plage', 'Monument'] # => Add Categories
+# CITIES.each do |city|
+#   puts "Fetching: #{city}"
+#   CATEGORIES.each do |category|
+#     puts "-- Category: #{category}"
+#     response = RestClient.get "https://api.foursquare.com/v2/venues/search?near=#{city},France&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005&query=#{category}&locale=fr&limit=5"
+#     data = JSON.parse(response)
+#     data["response"]["venues"].each do |item|
+#       if item['categories'].any?
+#         venue = Venue.new(
+#           name: item['name'],
+#           latitude: item['location']['lat'],
+#           longitude: item['location']['lng'],
+#           zip: item['location']['postalCode'],
+#           category: item['categories'].first['name'],
+#           address: item['location']['formattedAddress'][0]
+#         )
+#         # GET PHOTO
+#         photo_response = RestClient.get "https://api.foursquare.com/v2/venues/#{item['id']}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20202005"
+#         photo_data = JSON.parse(photo_response)
+#         if photo_data['response']['photos']['items'].first
+#           prefix = photo_data['response']['photos']['items'].first['prefix']
+#           suffix = photo_data['response']['photos']['items'].first['suffix']
+#           file = URI.open("#{prefix}500x500#{suffix}")
+#           venue.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#           venue.save!
+#         end
+#       end
+#     end
+#   end
+# end
+
+# REVIEWS
 
 # PARIS
 
