@@ -135,11 +135,13 @@
 
 
 .filter-btn {
-  display: block;
+  display: flex;
   text-align: center;
-  height: 70px;
+  height: 12.5vh;
   padding: 0;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
   i {
     font-size: 35px;
     padding: 0;
@@ -151,8 +153,9 @@
 
   p {
     font-size: 12px;
-    padding: 0;
+    padding: 10px 0;
     z-index: 10;
+    margin: 0;
     &:hover {
       color: $coral-CTA;
     }
