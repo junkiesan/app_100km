@@ -391,6 +391,8 @@ review_mp_2.venue_id = venue_8.id
 review_mp_3 = Review.new(rating: 4, comment: "Très beau musée. Super exposition « Tableaux magiques »")
 review_mp_3.user_id = thomas.id
 review_mp_3.venue_id = venue_8.id
+ 
+
 # PARIS
 
 # venue_1 = Venue.new(name: 'Fondation Claude Monet', latitude: '48.8656', longitude: '2.3789894', zip: '27620', category: 'Monument', address: '84 Rue Claude Monet, 27620 Giverny')
