@@ -1,10 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div>
-  <%= link_to root_path, class: "#{"d-none" if params[:action] == "custom" || params[:action] == 'profile'} navbar-brand" do %>
-    <i class="far fa-compass <% if params[:action] == "show" && params[:controller] == "venues" %>
-      coral-compass <% end %> "></i>
-  <% end %>
+  <div class="d-flex align-items-center">
+    <%= link_to root_path, class: "#{"d-none" if params[:action] == "custom" || params[:action] == 'profile'} navbar-brand" do %>
+      <i class="far fa-compass <% if params[:action] == "show" && params[:controller] == "venues" %>
+        coral-compass <% end %> "></i>
+    <% end %>
+    <% if params[:action] == "show" && params[:controller] == "venues" %>
+      <div class="return-to-custom"><%= link_to "Retour à mon voyage", :back  %></div>
+    <% end %>
   </div>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

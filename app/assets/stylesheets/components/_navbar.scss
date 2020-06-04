@@ -43,3 +43,15 @@
 .coral-compass{
   color: $coral-CTA;
 }
+.return-to-custom {
+    padding: 4px 16px;
+    border-radius: 15px;
+    background: $coral-CTA;
+    position: fixed;
+    z-index: 10;
+    top: 32px;
+    left: 110px;
+    a {
+      color: white;
+    }
+}
