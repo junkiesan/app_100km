@@ -21,6 +21,7 @@ body {
 
 .profile-avatar {
   display: flex;
+  object-fit: cover;
 }
 
 .profile-card {
