@@ -51,25 +51,28 @@
   <div class="row py-3">
     <div class="col-12">
       <div class="venue-details">
-        <h4>Details</h4>
-        <p><strong>Category : </strong> <%= @venue.category %></p>
+        <h4>Tout savoir sur ce lieu 👇🏻 </h4>
+        <p><strong>Catégorie : </strong> <%= @venue.category %></p>
         <p>Situé à à peu près 30km de Marseille, Cassis (prononcé « Cassi ») est célèbre pour ses falaises et calanques, mais aussi pour les vins de Cassis (rosé et blanc). Quoi de plus agréable que de siroter un rosé bien frais avec une vue à couper le souffle!</p>
         <!-- <p><strong>Category : </strong> <%#= @venue.description %></p> -->
       </div>
     </div>
   </div>
 
+<!--   <hr class="solid">
+ -->
   <%# User review %>
-  <div class="row py-3">
-    <div class="col-12">
-      <div class="list-group">
-        <h4>Details</h4>
+  <div class="row mb-5">
+    <div class="col-md-8">
+      <div class="card p-3 mb-3">
+        <h4>L'avis de nos backpackers ☀️</h4>
         <% @venue.reviews.each do |review| %>
-          <li class="list-group-item">
+          <li class="list-group-item border-0">
             <small>
               <% count = 0 %>
               <% 5.times do %>
                 <% if review.rating > count %>
+                  <%#= cl_image_tag venue.photos.first.key, class: "showcase-image d-block" %>
                   <i class="fas fa-star"></i>
                 <% else %>
                   <i class="far fa-star"></i>
@@ -83,21 +86,20 @@
       </div>
     </div>
 
-
-    <%# User review %>
-    <div class="col-12">
-      <h4>Details</h4>
-      <%= simple_form_for [@venue, @review] do |f| %>
-        <%= f.input :rating, collection: 0..5 %>
-        <%= f.input :comment%>
-        <%= f.submit class: 'nav_button' %>
-      <% end %>
+    <div class="col-md-4">
+      <div class="bg-white border p-3 sticky-top">
+        <h4>Notez ce lieu ⭐️</h4>
+        <div class="d-flex justify-content-between mt-3">
+          <%= simple_form_for [@venue, @review] do |f| %>
+          <%= f.input :rating, collection: 0..5 %>
+          <%= f.input :comment%>
+          <%= f.submit class: 'nav_button' %>
+           <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
 
 
 
