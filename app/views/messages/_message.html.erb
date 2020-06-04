@@ -1,9 +1,16 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container <%= "right" if message.user == current_user %>" id="message-<%= message.id %>">
   <i class="author">
-    <span><%= message.user.name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    <div class="author-avatar">
+      <%# @message.users.each do |user| %>
+        <%# if user.photo.attached? %>
+          <%#= cl_image_tag user.photo.key %>
+        <%# end %>
+      <%# end %>
+    </div>
+    <!-- <span><%#= message.user.name %></span> -->
   </i>
-  <div class="message-content">
+  <div class="message-content position-relative">
     <p><%= message.content %></p>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
   </div>
 </div>

@@ -28,6 +28,7 @@
   width: 1200px;
   margin: auto;
   position: relative;
+  top: -15px;
   h1 {
     color: white;
   }
@@ -35,7 +36,8 @@
     color: white;
   }
    p {
-    color: black;
+    color: white;
+    margin-bottom: 0;
   }
 }
 
@@ -52,8 +54,10 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
-  margin-top: 15px;
+  margin-top: 30px;
   padding: 20px;
+  padding-bottom: 5px;
+
 }
 
 .message-placeholder {
@@ -72,10 +76,28 @@ i.author {
 }
 
 .message-content {
-    border-radius: 6px;
-    border: solid #80808061 1px;
-    padding: 8px;
-    margin: 10px;
+  padding: 8px 20px;
+  margin: 10px;
+  background: #ed7460;
+  border-radius: 30px;
+  small {
+    position: absolute;
+    bottom: -23px;
+    right: 0;
+    width: max-content;
+    font-size: 11px;
+    color: grey;
+    font-style: italic;
+  }
+}
+
+.message-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.message-container.right {
+  flex-direction: row-reverse;
 }
 
 #new-message .nav_button {
@@ -87,6 +109,7 @@ form#new_message {
     display: flex;
     align-items: center;
   }
+
 .form-group.text.optional.message_content {
     flex-grow: 1;
 }
