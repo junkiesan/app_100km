@@ -1,5 +1,7 @@
-p {
-  color: black;
+.venue-container {
+  p {
+    color: black;
+  }
 }
 
 hr.solid {
@@ -13,4 +15,16 @@ hr.solid {
   // margin: 30px;
   padding: 10px;
   margin-bottom: 40px;
+}
+.avatar-rating {
+  align-items: center;
+  .name-rating {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+    .name {
+      margin: 0;
+    }
+  }
 }

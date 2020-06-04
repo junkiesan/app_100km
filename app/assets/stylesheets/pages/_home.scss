@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 #pages-home {
-  background: #f8edeb;
+  background: white;
 }
 
 p {
@@ -10,7 +10,7 @@ p {
 
 .bloc1 {
   height: 500px;
-  background: #f8edeb;
+  background: white;
   background-position: center;
   vertical-align: middle;
   display:flex;
@@ -49,6 +49,10 @@ p {
 }
 
 
+h1.py-3.text-center {
+    margin-bottom: -30px;
+}
+
 .validate-trip {
   width: 100%;
   display: flex;
@@ -60,7 +64,7 @@ p {
 
 .bloc2 {
   height: 500px;
-  background: #f8edeb;
+  background: white;
   background-position: center;
   vertical-align: middle;
   display:flex;

@@ -2,12 +2,13 @@ import mapboxgl from 'mapbox-gl';
 
 const mapElement = document.getElementById('map-show');
 
-const buildMap = () => {
+const buildMap = (marker) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map-show',
     style: 'mapbox://styles/mapbox/light-v10',
-    zoom: 7
+    zoom: 7,
+    center: [marker[0].lng, marker[0].lat]
   });
 };
 
@@ -19,8 +20,8 @@ const addMarkersToMap = (map, markers, trip) => {
       el.className = 'marker';
       el.style.backgroundImage = `url('${marker.image_url}')`;
       el.style.backgroundSize = 'contain';
-      el.style.width = '105px';
-      el.style.height = '105px';
+      el.style.width = '45px';
+      el.style.height = '45px';
       let element = new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
@@ -104,14 +105,14 @@ function displayTripReshaped(map, coords) {
 
 const initMapboxShow = () => {
   if (mapElement) {
-    const map = buildMap();
+    const map = buildMap(JSON.parse(mapElement.dataset.tripMarker));
     const markers = JSON.parse(mapElement.dataset.tripMarker);
     map.on("load", function(){
       addMarkersToMap(map, markers, true);
-      fitMapToMarkers(map, markers);
+      // fitMapToMarkers(map, markers);
       const venue_markers = JSON.parse(mapElement.dataset.venueMarkers);
       addMarkersToMap(map, venue_markers, false);
-      fitMapToMarkers(map, venue_markers);
+      // fitMapToMarkers(map, venue_markers);
       const steps = [];
       steps.push([markers[0].lng, markers[0].lat]);
       venue_markers.forEach((marker) => {

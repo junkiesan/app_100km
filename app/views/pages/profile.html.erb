@@ -3,9 +3,7 @@
 
   <div class="socials-card">
       <a href="/" data-value=""><i class="fa fa-home"></i></a>
-      <a href="#"><i class="fab fa-github-square"></i></a>
       <a href="#"><i class="fab fa-twitter-square"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-facebook"></i></a>
   </div>
@@ -13,35 +11,40 @@
   <div class="col-md-4 p-4">
     <!-- <h5>Mon Profil</h5> -->
 
-      <div class="profile-card p-5">
-        <div class="profile-avatar">
-          <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
-          <% end %>
-        </div>
+    <div class="profile-card p-5">
+      <div class="profile-avatar">
+        <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "profile-card-img" %>
+        <% end %>
+      </div>
 
-        <div class="">
-          <div class="profile-details">
+      <div class="">
+        <div class="profile-details">
 
-            <div class="profile-name">
-              <h1><%= @user.name %></h1>
-              <h6><%= @user.bio %></h6>
-            </div>
-
-            <div class="interests">
-              <a href="#"><i class="fas fa-hiking"></i></a>
-              <a href="#"><i class="fas fa-umbrella-beach"></i></a>
-              <a href="#"><i class="fas fa-bicycle"></i></a>
-              <a href="#"><i class="fas fa-archway"></i></a>
-              <a href="#"><i class="fas fa-tree"></i></a>
-            </div>
-
-            <div class="profile-action">
-              <%= link_to "Modifier mon profil", edit_user_registration_path %>
-            </div>
+          <div class="profile-name">
+            <h1><%= @user.name %></h1>
+            <br>
+            <h6><%= @user.bio %></h6>
           </div>
+            <br>
+
+          <div class="interests">
+            <a href="#"><i class="fas fa-hiking"></i></a>
+            <a href="#"><i class="fas fa-umbrella-beach"></i></a>
+            <a href="#"><i class="fas fa-bicycle"></i></a>
+            <a href="#"><i class="fas fa-archway"></i></a>
+            <a href="#"><i class="fas fa-tree"></i></a>
+          </div>
+
         </div>
       </div>
+
+      <div class="profile-action">
+        <%= link_to edit_user_registration_path do %>
+          <i class="fas fa-user-edit"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-8 p-4">
@@ -52,8 +55,8 @@
           <div class="my-trip-card">
             <h2><%= trip.name %></h2>
             <div class="trip-date">
-              <h6>Début du voyage <%= trip.start_date.strftime('%m/%d/%Y') %></h6>
-              <h6>Fin du voyage <%= trip.end_date.strftime('%m/%d/%Y') %></h6>
+              <h6>Début du voyage <%= trip.start_date&.strftime('%m/%d/%Y') %></h6>
+              <h6>Fin du voyage <%= trip.end_date&.strftime('%m/%d/%Y') %></h6>
             </div>
             <%= link_to 'Voir ma roadmap', trip_path(trip), class: 'nav_button' %>
             <div class="bubble-chatroom">
@@ -65,7 +68,7 @@
 
           <div class="buddies">
             <% trip.users.each do |user| %>
-              <h6><%= user.name %></h6>
+              <!-- <h6><%#= user.name %></h6> -->
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key %>
               <% end %>

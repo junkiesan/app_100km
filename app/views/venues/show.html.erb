@@ -1,7 +1,7 @@
-<div class="container mt-5 pt-5">
-  <div class="row py-3 position-relative">
-    <div class="col-12">
-
+<div class="venue-container">
+  <div class="container mt-5 pt-5">
+    <div class="row py-3 position-relative">
+      <div class="col-12">
 
     <%# Banner with user pix %>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -20,32 +20,32 @@
           <div class="carousel-item showcase">
             <%= cl_image_tag @venue.photos.third.key, class: "showcase-image d-block" %>
           </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
       <%# Title section %>
       <h1 class="py-3"><%= @venue.name %></h1>
+
     </div>
 
-
-    <!-- insert map console on the left -->
-    <div class="map-window">
-      <div class="card-map">
-        <div id="map" class="mb-5"
-          style="width: 100%; height: 300px;"
-          data-show-marker="<%= @marker.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <!-- insert map console on the left -->
+      <div class="map-window">
+        <div class="card-map">
+          <div id="map" class="mb-5"
+            style="width: 100%; height: 300px;"
+            data-show-marker="<%= @marker.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
   <%# User description section %>
   <div class="row py-3">
@@ -53,14 +53,12 @@
       <div class="venue-details">
         <h4>Tout savoir sur ce lieu 👇🏻 </h4>
         <p><strong>Catégorie : </strong> <%= @venue.category %></p>
-        <p>Situé à à peu près 30km de Marseille, Cassis (prononcé « Cassi ») est célèbre pour ses falaises et calanques, mais aussi pour les vins de Cassis (rosé et blanc). Quoi de plus agréable que de siroter un rosé bien frais avec une vue à couper le souffle!</p>
+        <p><%= @venue.description %></p>
         <!-- <p><strong>Category : </strong> <%#= @venue.description %></p> -->
       </div>
     </div>
   </div>
 
-<!--   <hr class="solid">
- -->
   <%# User review %>
   <div class="row mb-5">
     <div class="col-md-8">
@@ -68,39 +66,44 @@
         <h4>L'avis de nos backpackers ☀️</h4>
         <% @venue.reviews.each do |review| %>
           <li class="list-group-item border-0">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <%#= cl_image_tag venue.photos.first.key, class: "showcase-image d-block" %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <p><%= review.comment %></p>
-          </li>
-        <% end %>
+            <small class="d-flex avatar-rating">
+              <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+              <div class="name-rating">
+                <p class="name">
+                  <%= review.user.name %>
+                </p>
+                <div class="rating-box">
+                  <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                        <i class="fas fa-star"></i>
+                      <% else %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                      <% count += 1 %>
+                    <% end %>
+                </div>
+                </div>
+              </small>
+              <p>"<em><%= review.comment %></em>"</p>
+            </li>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="bg-white border p-3 sticky-top">
-        <h4>Notez ce lieu ⭐️</h4>
-        <div class="d-flex justify-content-between mt-3">
-          <%= simple_form_for [@venue, @review] do |f| %>
-          <%= f.input :rating, collection: 0..5 %>
-          <%= f.input :comment%>
-          <%= f.submit class: 'nav_button' %>
-           <% end %>
+      <div class="col-md-4">
+        <div class="bg-white border p-3 sticky-top">
+          <h4>Notez ce lieu ⭐️</h4>
+          <div class="d-flex justify-content-between mt-3">
+            <%= simple_form_for [@venue, @review] do |f| %>
+            <%= f.input :rating, collection: 0..5 %>
+            <%= f.input :comment%>
+            <%= f.submit class: 'nav_button' %>
+             <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
 

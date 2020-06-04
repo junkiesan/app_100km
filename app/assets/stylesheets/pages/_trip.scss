@@ -41,39 +41,43 @@
   border-style: solid;
   border-color: $coral-CTA;
   border-radius: 6px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   width: 95px;
+  height: 44px;
   transition: background-image 5s;
   // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
   &:hover {
     background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
     color: $white;
   }
-
-
-
-  // background: $white;
-  // color: $coral-CTA;
-  // border-radius: 6px;
-  // border: 0.5px;
-  // border-style: solid;
-  // border-color: $coral-CTA;
-  // height: 35px;
-  // width : 90px;
-  // margin-top: 15px;
-  // margin-right: 40px;
-  // transition: background-image 6s;
-  // // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
-  // &:hover {
-  //   background-image: linear-gradient(to right, $light-coral 0%, $coral-CTA 51%, $coral-CTA 100%);
-  //   color: $white;
-
-  // }
 }
 
+
+
+// .trip-action {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-image: $white;
+//   color: $coral-CTA;
+//   border: 0.5px;
+//   border-style: solid;
+//   border-color: $coral-CTA;
+//   border-radius: 6px;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   width: 95px;
+//   transition: background-image 5s;
+//   // box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.03);
+//   &:hover {
+//     background-image: linear-gradient(to right, $coral-CTA 0%, $coral-CTA 51%, $light-coral 100%);
+//     color: $white;
+//   }
+// }
+
 .trip-venues-list {
-  width: 53vw;
+  width: 50vw;
   position: absolute;
   bottom: 20px;
   right: 0;
@@ -90,9 +94,8 @@
   background-color: $white;
   border-radius: 6px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
-  margin: 30px;
-  padding: 10px;
-  margin-bottom: 10px;
+  margin: 90px 50px;
+  padding: 20px;
 }
 
 .trip-venue-card {

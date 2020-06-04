@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @trip = Trip.new
+    @venues = Venue.reviewed.first(3)
+
   end
 
   def profile
