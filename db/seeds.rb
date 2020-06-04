@@ -37,7 +37,12 @@ aurian = User.create!(name: 'Aurian GL', email: 'user1@100km.com', password: '12
 basile = User.create!(name: 'Basile Marquefave', email: 'user2@100km.com', password: '123456')
 cecile = User.create!(name: 'Cécile Dezy', email: 'user3@100km.com', password: '123456')
 dimitri = User.create!(name: 'Dimitri Bosch', email: 'user4@100km.com', password: '123456')
+
 diane = User.create!(name: 'Diane Johnston-Roussillon', email: 'user5@100km.com', password: '123456')
+file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
+diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+diane.save!
+
 edouard = User.create!(name: 'Edouard Foussier', email: 'user6@100km.com', password: '123456')
 fred = User.create!(name: 'Frédéric Laffont', email: 'user7@100km.com', password: '123456')
 hadrien = User.create!(name: 'Hadrien Matringe', email: 'user8@100km.com', password: '123456')
@@ -45,8 +50,17 @@ julien = User.create!(name: 'Julien Da Silva', email: 'user9@100km.com', passwor
 lomig = User.create!(name: 'Guillaume Lomig Enfroy', email: 'user10@100km.com', password: '123456')
 louis = User.create!(name: 'Louis Sommer', email: 'user11@100km.com', password: '123456')
 philippine = User.create!(name: 'Philippine Berton', email: 'user12@100km.com', password: '123456')
+
 paul = User.create!(name: 'Paul Lahana', email: 'user13@100km.com', password: '123456')
+file = URI.open('https://avatars1.githubusercontent.com/u/26028980?v=4')
+paul.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+paul.save!
+
 romain = User.create!(name: 'Romain Sanson', email: 'user14@100km.com', password: '123456')
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1544604383/pnqv3gmdpbtqrstpqgls.jpg')
+romain.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+romain.save!
+
 thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', password: '123456')
 
 # CLIENT_SECRET = "DFBAQSN053VYIGQYLPTSI4ETXQ3PB1IIXUS1455EHOJEJGRQ"
@@ -86,7 +100,17 @@ thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', pass
 
 # REVIEWS
 
-review_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.", venue_id: , user_id: )
+review_gv_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.")
+review_gv_1.user_id = Paul.id
+review_gv_1.venue_id = venue_1.id
+
+review_gv_2 = Review.new(rating: 3, comment: "C'est un site exceptionnel ! Malheureusement, il y a beaucoup trop de monde en été!")
+review_gv_2.user_id = Romain.id
+review_gv_2.venue_id = venue_1.id
+
+review_gv_3 = Review.new(rating: 4, comment: "Endroit paradisiaque où règnent le calme et les cigales")
+review_gv_3.user_id = Diane.id
+review_gv_3.venue_id = venue_1.id
 # AIX EN PROVENCE
 
 puts 'Creating venues...'
@@ -95,10 +119,12 @@ puts 'Creating venues...'
 
 venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Les gorges du Verdon sont un canyon creusé par la rivière Verdon séparant les Préalpes de Castellane et les Préalpes de Digne, en France.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
-file_2 = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
-file_3 = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
-
+file_2 = URI.open('https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.castellane-verdontourisme.com%2Fje-decouvre-tout-un-pays%2Fbestof-castellane%2F&psig=AOvVaw1xjhQ1vxrx56ATP46OwKXA&ust=1591345745359000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLD_8oHf5-kCFQAAAAAdAAAAABAh')
+file_3 = URI.open('https://www.google.com/url?sa=i&url=https%3A%2F%2Ffigaronautisme.meteoconsult.fr%2Factus-nautisme-escales%2F2019-08-31%2F35246-les-gorges-du-verdon-un-site-naturel-unique-en-europe&psig=AOvVaw1xjhQ1vxrx56ATP46OwKXA&ust=1591345745359000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLD_8oHf5-kCFQAAAAAdAAAAABAn')
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_1.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
+venue_1.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
+
 venue_1.save!
 
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
