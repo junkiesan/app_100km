@@ -70,7 +70,7 @@
 }
 
 i.author {
-  margin: 13px;
+  margin: 0 13px;
   img {
     vertical-align: middle;
     border-style: none;
@@ -83,13 +83,14 @@ i.author {
 
 .message-content {
   padding: 8px 20px;
-  margin: 10px;
   background: #ed7460;
   border-radius: 30px;
+  max-width: 77%;
+  margin: 0 10px;
   small {
     position: absolute;
     bottom: -23px;
-    right: 0;
+    left: 8px;
     width: max-content;
     font-size: 11px;
     color: grey;
@@ -99,7 +100,8 @@ i.author {
 
 .message-container {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  align-items: flex-end;
 }
 
 .message-container.right {
