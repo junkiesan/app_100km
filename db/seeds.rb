@@ -10,6 +10,8 @@ require "json"
 require 'rest-client'
 require 'open-uri'
 
+puts "Destroy Reviews"
+Review.destroy_all
 
 puts "Destroy Messages"
 Message.destroy_all
@@ -82,7 +84,9 @@ thomas = User.create!(name: 'Thomas Desmoulins', email: 'user15@100km.com', pass
 #   end
 # end
 
+# REVIEWS
 
+review_1 = Review.new(rating: 5, comment: "Grandiose et sauvage (en hiver). Prévoir plusieurs jours de randonnée.", venue_id: , user_id: )
 # AIX EN PROVENCE
 
 puts 'Creating venues...'
@@ -91,6 +95,9 @@ puts 'Creating venues...'
 
 venue_1 = Venue.new(name: 'Les Gorges du Verdon', latitude: '43.7614', longitude: '6.3788', zip: '04500', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Les gorges du Verdon sont un canyon creusé par la rivière Verdon séparant les Préalpes de Castellane et les Préalpes de Digne, en France.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
+file_2 = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
+file_3 = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-gorges-verdon.jpg')
+
 venue_1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 
