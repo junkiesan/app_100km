@@ -80,7 +80,7 @@ puts 'First venue created !'
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
 file2 = URI.open('https://static.wixstatic.com/media/a27d24_6f85280ca1a348de9bd733db49dbcfed~mv2.jpg/v1/fit/w_770,h_556,al_c,q_80/file.png')
-file3 = URI.open('https://dailygeekshow.com/wp-content/uploads/2017/04/une-ocres-validee.jpg')
+file3 = URI.open('https://cdn-s-www.ledauphine.com/images/B80D822B-D98F-4A71-B41A-B39672F2CC10/NW_raw/angelique-surel-le-dauphine-libere-rustrel-le-5-juillet-2018-reportage-sur-les-ocres-du-colorado-provencal-angelique-surel-photo-pqr-1563721835.jpg')
 venue_2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_2.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
 venue_2.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
@@ -89,8 +89,8 @@ puts '2 venue created !'
 
 venue_6 = Venue.new(name: 'Le Plateau de Valensole', latitude: '43.8333', longitude: '5.9833', zip: '04210', category: 'Parc', address: "Digne-les-Bains", description: 'Le Plateau de Valensole est une région naturelle de France située dans les Alpes-de-Haute-Provence, au sud-ouest de Digne-les-Bains, entre les vallées de la Durance à l ouest, de l Asse au nord, des Gorges du Verdon et du lac de Sainte-Croix au sud.')
 file = URI.open('https://www.actualitix.com/wp-content/uploads/2017/09/plateau-de-valensole.jpg')
-file_2 = URI.open('https://www.camping-la-verdiere-83.com/wp-content/uploads/2016/01/plateau-valensole.jpg')
-file_3 = URI.open('https://www.closdevilleneuve.fr/valensole/wp-content/uploads/plateau-valensole-1600x800.jpg')
+file_2 = URI.open('https://www.tourisme-alpes-haute-provence.com/wp-content/uploads/2020/04/lavande-valensole-verneuil-1140x760.jpg')
+file_3 = URI.open('https://p7.storage.canalblog.com/71/24/1043820/106819514_o.jpg')
 venue_6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_6.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 venue_6.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
@@ -104,8 +104,8 @@ puts 'Creating venues...'
 
 venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille', description: 'À l ouest de Cassis, le Massif des Calanques est constitué de calcaire blanc de plus de 400 m d’épaisseur. Des vallées marines se sont creusées, créant de véritables fjords miniatures, abritant parfois de magnifiques anses naturelles.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-calanques-cassis.jpg')
-file_2 = URI.open('https://www.marseilletourisme.fr/media/filer_public_thumbnails/filer_public/2019/04/19/calanque-marseille.jpg__850x300_q85_crop_subsampling-2_upscale.jpg')
-file_3 = URI.open('http://www.calanques13.com/photo/calanques/sormiou/t_plage-sormiou.jpg')
+file_2 = URI.open('https://www.augoutdemma.be/wp-content/uploads/2014/07/calanques_cassis-19.jpg')
+file_3 = URI.open('https://decouvrirensemble.com/wp-content/uploads/2017/07/calanques-de-cassis-a-pied-blog-voyage-drone.jpg')
 venue_3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_3.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 venue_3.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
@@ -115,8 +115,8 @@ puts '4 venue created !'
 
 venue_5 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères", description: 'L’île de Porquerolles est la plus grande et la plus occidentale des trois îles d Hyères avec ses 12,54 km² de superficie. Elle se situe à 2,6 km au sud-est de la Tour Fondue, l extrémité sud de la presqu île de Giens, et à 9,6 km à l ouest de l île de Port-Cros.')
 file = URI.open('https://cdn.generationvoyage.fr/2020/05/ile-porquerolles.jpg')
-file_2 = URI.open('https://www.latitudeverte.fr/wp-content/uploads/2019/03/AS_Plage_Notre_Dame.jpg')
-file_3 = URI.open('https://images.weserv.nl/?url=https://www.visitvar.fr/wp-content/uploads/2017/07/porquerolles-049-1920x641.jpg&w=1920&h=691&fit=cover')
+file_2 = URI.open('https://www.ot-lelavandou.fr/wp-content/uploads/2018/11/ile-de-porquerolles-cg-2017.jpg')
+file_3 = URI.open('https://i.pinimg.com/originals/f7/3f/e4/f73fe45a1cadf703a02f9b1c8ea66b9b.jpg')
 venue_5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_5.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 venue_5.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
@@ -139,11 +139,12 @@ puts '6 venue created !'
 puts 'Creating venues...'
 
 venue_10 = Venue.new(name: 'Tour du Luberon', latitude: '43.7961', longitude: '5.2239', zip: '84240', category: 'Foret', address: 'Massif du Luberon', description: 'Villages perchés, bories, châteaux, monuments, mais aussi falaises et garrigues.. autant de richesses regroupées sur un seul territoire.')
-file = URI.open('https://www.lagrande-verriere.com/wp-content/uploads/2018/11/luberon-provence-idees-sorties-villages-tourisme-2.jpg')
-file_2 = URI.open('https://www.respyrenees.com/images/com_webresa/thumb-medium/125-sejour-velo-Luberon.jpg')
-#file_3 = URI.open('https://www.velorizons.com/mf_websites/velorizons/uploads/fr/circuit/circuit_20/provence-vtc-hd-3-3_1551260583_302x200_resized.jpg')
+file = URI.open('https://www.luberon-apt.fr/sites/aptluberon/files/styles/ratio_16_9_xl/public/content/images/les_ocres_a_10.jpg?itok=Qwt96sxd')
+file_2 = URI.open('https://www.janssens-immobilier.com/images/secteurs/luberon.jpg')
+file_3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-m/1280/13/b8/34/65/le-village-de-roussillon.jpg')
 venue_10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_10.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
+venue_10.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
 #venue_10.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
 venue_10.save!
 puts '7 venue created !'
@@ -174,7 +175,7 @@ puts '8 venue created !'
 venue_4 = Venue.new(name: 'Avignon', latitude: '43.9493', longitude: '4.8055', zip: '84000', category: 'Culture', address: 'Avignon', description: 'Avignon, ville de Provence dans le sud-est de la France, est traversée par le Rhône. De 1309 à 1377, les papes catholiques élisent résidence dans la ville. Celle-ci reste sous le règne pontifical jusqu’en 1791, date à laquelle elle est rattachée à la France. Le Palais des Papes, qui se trouve dans le centre-ville, est entouré de remparts médiévaux en pierre et témoigne de cette histoire.')
 file = URI.open('https://cdn.generationvoyage.fr/2019/10/vue-sur-le-pont-d-avignon-vue-depuis-le-rhone.jpg')
 file_2 = URI.open('https://avignon-tourisme.com/app/uploads/2019/01/EmpreinteDAilleurs-7747.jpg')
-file_3 = URI.open('https://images.france.fr/zeaejvyq9bhj/2yX0didHziswUsoyY8kkYe/978c061f13d0fd7210c010ebea64d567/avignon-palacio-de-los-papas.jpg?w=1120&h=490&q=70&fl=progressive&fit=fill')
+file_3 = URI.open('https://upload.wikimedia.org/wikipedia/commons/a/a3/Avignon%2C_Palais_des_Papes_depuis_Tour_Philippe_le_Bel_by_JM_Rosier.jpg')
 venue_4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 venue_4.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 venue_4.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
@@ -183,8 +184,8 @@ puts '9 venue created !'
 
 venue_7 = Venue.new(name: "Arènes d'Arles", latitude: '43.6778', longitude: '4.6309', zip: '13200', category: 'Culture', address: "Rond-Point des Arènes, Arles", description: 'Les Arènes d Arles sont un amphithéâtre romain construit vers 80 apr. J.-C. / 90 apr. J.-C. par les ordres de Tibère César Auguste, dans le cadre des extensions flaviennes de la ville.')
 file = URI.open('https://cdn.thecrazytourist.com/wp-content/uploads/2016/11/Les-Ar%C3%A8nes-1024x705.jpg')
-file_2 = URI.open('https://www.samm-honfleur.com/gallery/20161207151957(1).jpg')
-file_3 = URI.open('https://cdn-s-www.ledauphine.com/images/6EE9CAC5-5320-433A-9A06-4DDB0712C5DA/NW_detail/aux-abords-des-celebres-arenes-d-arles-d-ordinaire-plein-de-monde-photo-le-dl-angelique-surel-1586882568.jpg')
+file_2 = URI.open('https://traveltop6.com/assets/media/places/arenes-darles/_AUTOx800_crop_center-center_none/piryzpqjzhbjucl7uokd.jpg')
+file_3 = URI.open('https://img-4.linternaute.com/tGxIs5CyrYyb5BSDMFqaQuYJ8S0=/1240x/smart/e845cf974b384182ad7da14cf615a346/ccmcms-linternaute/11097941.jpg')
 venue_7.photos.attach(io: file, filename: 'chateaustger.png', content_type: 'image/png')
 venue_7.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 venue_7.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
