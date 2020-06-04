@@ -1,17 +1,12 @@
 <!-- Venues List -->
 <% venues.sort.each do |venue| %>
-<% @delay += 200 %>
-<div class="venue-card" data-aos="fade-up-left"
-                        data-aos-delay="<%=@delay %>"
-                        data-aos-duration="800"
-                        data-id="<%= venue.id %>"
+<div class="venue-card" data-id="<%= venue.id %>"
                         data-lng="<%= venue.longitude %>"
                         data-lat="<%= venue.latitude %>">
 
 <div class="venue-details">
   <h2><%= venue.name  %></h2>
   <p><%= venue.address %></p>
-  <h6><%= venue.reviews.rating %></h6>
   <h6><%= venue.category %></h6>
   <div class="venue-action">
     <% if @trip.venues.include?(venue) %>
