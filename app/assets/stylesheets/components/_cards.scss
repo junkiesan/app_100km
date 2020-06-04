@@ -14,9 +14,17 @@
   display: flex;
   justify-content: space-between;
   height: 200px;
+  width: 90%;
   position: relative;
   border-radius: 6px;
-  overflow: hidden;
+  animation-name: slidein;
+  animation-duration: 1s;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+  }
   .venue-action {
     position: absolute;
     left: 15px;
@@ -35,11 +43,30 @@
   }
   .venue-details {
     padding: 15px;
+    .venue-rating {
+      display: flex;
+      align-items: center;
+    }
     .venue-address {
       color: $black;
+      padding: 0 10px 0 0;
+      margin: 0;
+    }
+    .venue-emoji {
+      font-size: 15px;
     }
   }
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
 
   .roadtrips-card {
   margin-top: 70px;
