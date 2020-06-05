@@ -276,7 +276,7 @@ review_cc_3.save!
 
 puts 'Creating reviews...'
 
-review_p_1 = Review.new(rating: 5, comment: "Sublime prévoir le pique-nique pour profiter des crique 😉")
+review_p_1 = Review.new(rating: 5, comment: "Sublime prévoir le pique-nique pour profiter des crique")
 review_p_1.user = cecile
 review_p_1.venue = venue_5
 review_p_1.save!
@@ -300,7 +300,7 @@ review_pp_1.user = cecile
 review_pp_1.venue = venue_11
 review_pp_1.save!
 
-review_pp_2 = Review.new(rating: 3, comment: "Très belle plage, malheureusement trop de bruit des bars de plage 😟")
+review_pp_2 = Review.new(rating: 3, comment: "Très belle plage, malheureusement trop de bruit des bars de plage ")
 review_pp_2.user = romain
 review_pp_2.venue = venue_11
 review_pp_2.save!
