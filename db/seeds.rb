@@ -77,6 +77,17 @@ venue_1.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 venue_1.save!
 puts 'First venue created !'
 
+venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille', description: 'À l ouest de Cassis, le Massif des Calanques est constitué de calcaire blanc de plus de 400 m d’épaisseur. Des vallées marines se sont creusées, créant de véritables fjords miniatures, abritant parfois de magnifiques anses naturelles.')
+file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-calanques-cassis.jpg')
+file_2 = URI.open('https://www.augoutdemma.be/wp-content/uploads/2014/07/calanques_cassis-19.jpg')
+file_3 = URI.open('https://decouvrirensemble.com/wp-content/uploads/2017/07/calanques-de-cassis-a-pied-blog-voyage-drone.jpg')
+venue_3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+venue_3.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
+venue_3.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
+venue_3.save!
+puts '4 venue created !'
+
+
 venue_2 = Venue.new(name: 'Les Ocres de Rustrel', latitude: '43.92363', longitude: '5.48598', zip: '84400', category: 'Parc', address: 'Provence Alpes Côte d’Azur', description: 'Le Colorado provençal ou ocres de Rustrel est un site industriel, exploité depuis la fin du xviie siècle jusqu en 1992 où le dernier ocrier prit sa retraite. Le site est situé sur la commune de Rustrel dans le département de Vaucluse et la région Provence-Alpes-Côte d Azur. Les paysages insolites qu il offre sont constitués de sable ocreux d origine latéritique.')
 file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-ocres-rustrel.jpg')
 file2 = URI.open('https://static.wixstatic.com/media/a27d24_6f85280ca1a348de9bd733db49dbcfed~mv2.jpg/v1/fit/w_770,h_556,al_c,q_80/file.png')
@@ -102,15 +113,6 @@ puts 'Creating venues...'
 
 # PLAGE
 
-venue_3 = Venue.new(name: 'Les calanques de Cassis', latitude: '43.2167', longitude: '5.5333', zip: '13260', category: 'Plage', address: 'Marseille', description: 'À l ouest de Cassis, le Massif des Calanques est constitué de calcaire blanc de plus de 400 m d’épaisseur. Des vallées marines se sont creusées, créant de véritables fjords miniatures, abritant parfois de magnifiques anses naturelles.')
-file = URI.open('https://cdn.generationvoyage.fr/2017/08/visiter-france-calanques-cassis.jpg')
-file_2 = URI.open('https://www.augoutdemma.be/wp-content/uploads/2014/07/calanques_cassis-19.jpg')
-file_3 = URI.open('https://decouvrirensemble.com/wp-content/uploads/2017/07/calanques-de-cassis-a-pied-blog-voyage-drone.jpg')
-venue_3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-venue_3.photos.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
-venue_3.photos.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
-venue_3.save!
-puts '4 venue created !'
 
 
 venue_5 = Venue.new(name: 'Porquerolles', latitude: '43.0', longitude: '6.2', zip: '83400', category: 'Plage', address: "Îles d'Hyères", description: 'L’île de Porquerolles est la plus grande et la plus occidentale des trois îles d Hyères avec ses 12,54 km² de superficie. Elle se situe à 2,6 km au sud-est de la Tour Fondue, l extrémité sud de la presqu île de Giens, et à 9,6 km à l ouest de l île de Port-Cros.')
@@ -218,19 +220,19 @@ review_gv_2.user = romain
 review_gv_2.venue = venue_1
 review_gv_2.save!
 
-review_gv_3 = Review.new(rating: 4, comment: "Endroit paradisiaque où règnent le calme et les cigales")
+review_gv_3 = Review.new(rating: 2, comment: "Endroit paradisiaque où règnent le calme et les cigales")
 review_gv_3.user = thomas
 review_gv_3.venue = venue_1
 review_gv_3.save!
 
 puts 'Creating reviews...'
 
-review_or_1 = Review.new(rating: 3, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
+review_or_1 = Review.new(rating: 1, comment: "À visiter. Dépaysement total. Circuit facile et pratique. À faire en amoureux ou en famille")
 review_or_1.user = thomas
 review_or_1.venue = venue_2
 review_or_1.save!
 
-review_or_2 = Review.new(rating: 3, comment: "C'est juste superbe. Un site magique. On en prend plein les yeux.")
+review_or_2 = Review.new(rating: 5, comment: "C'est juste superbe. Un site magique. On en prend plein les yeux.")
 review_or_2.user = romain
 review_or_2.venue = venue_2
 review_or_2.save!
@@ -264,12 +266,12 @@ review_cc_1.user = cecile
 review_cc_1.venue = venue_3
 review_cc_1.save!
 
-review_cc_2 = Review.new(rating: 3, comment: "Splendide. sortie à ne pas rater si vous êtes dans le coin. avec la baignade dans les eaux turquoises... juste 100% de plaisir")
+review_cc_2 = Review.new(rating: 4, comment: "Splendide. sortie à ne pas rater si vous êtes dans le coin. avec la baignade dans les eaux turquoises... juste 100% de plaisir")
 review_cc_2.user = romain
 review_cc_2.venue = venue_3
 review_cc_2.save!
 
-review_cc_3 = Review.new(rating: 4, comment: "C'est génial, les explications pendant la traversée sont bien menees, un agréable moment")
+review_cc_3 = Review.new(rating: 3, comment: "C'est génial, les explications pendant la traversée sont bien menees, un agréable moment")
 review_cc_3.user = thomas
 review_cc_3.venue = venue_3
 review_cc_3.save!
@@ -300,12 +302,12 @@ review_pp_1.user = cecile
 review_pp_1.venue = venue_11
 review_pp_1.save!
 
-review_pp_2 = Review.new(rating: 3, comment: "Très belle plage, malheureusement trop de bruit des bars de plage ")
+review_pp_2 = Review.new(rating: 4, comment: "Très belle plage, malheureusement trop de bruit des bars de plage ")
 review_pp_2.user = romain
 review_pp_2.venue = venue_11
 review_pp_2.save!
 
-review_pp_3 = Review.new(rating: 4, comment: "Plage en cours de travaux pour l'été et magnifique hors saison.")
+review_pp_3 = Review.new(rating: 3, comment: "Plage en cours de travaux pour l'été et magnifique hors saison.")
 review_pp_3.user = thomas
 review_pp_3.venue = venue_11
 review_pp_3.save!
@@ -317,36 +319,36 @@ review_tl_1.user = cecile
 review_tl_1.venue = venue_10
 review_tl_1.save!
 
-review_tl_2 = Review.new(rating: 3, comment: "Quels splendides paysages !")
+review_tl_2 = Review.new(rating: 5, comment: "Quels splendides paysages !")
 review_tl_2.user = romain
 review_tl_2.venue = venue_10
 review_tl_2.save!
 
-review_tl_3 = Review.new(rating: 4, comment: "Beau massif. Vive la nature. A préserver sans modération....")
+review_tl_3 = Review.new(rating: 5, comment: "Beau massif. Vive la nature. A préserver sans modération....")
 review_tl_3.user = thomas
 review_tl_3.venue = venue_10
 review_tl_3.save!
 
 puts 'Creating reviews...'
 
-review_nd_1 = Review.new(rating: 5, comment: "La lumière etait ce jour là autant à l'extérieur qu'à l'intérieur.")
+review_nd_1 = Review.new(rating: 3, comment: "La lumière etait ce jour là autant à l'extérieur qu'à l'intérieur.")
 review_nd_1.user = cecile
 review_nd_1.venue = venue_9
 review_nd_1.save!
 
-review_nd_2 = Review.new(rating: 3, comment: "Très jolie église")
+review_nd_2 = Review.new(rating: 4, comment: "Très jolie église")
 review_nd_2.user = romain
 review_nd_2.venue = venue_9
 review_nd_2.save!
 
-review_nd_3 = Review.new(rating: 4, comment: "A voir pour le lieu et notre histoire, que l'on soit croyant ou non")
+review_nd_3 = Review.new(rating: 2, comment: "A voir pour le lieu et notre histoire, que l'on soit croyant ou non")
 review_nd_3.user = thomas
 review_nd_3.venue = venue_9
 review_nd_3.save!
 
 puts 'Creating reviews...'
 
-review_av_1 = Review.new(rating: 5, comment: "Super ville je kiffe a fond ")
+review_av_1 = Review.new(rating: 4, comment: "Super ville je kiffe a fond ")
 review_av_1.user = cecile
 review_av_1.venue = venue_4
 review_av_1.save!
@@ -356,7 +358,7 @@ review_av_2.user = romain
 review_av_2.venue = venue_4
 review_av_2.save!
 
-review_av_3 = Review.new(rating: 4, comment: "Le festival d'Avignon est une tuerie de malade oui !")
+review_av_3 = Review.new(rating: 5, comment: "Le festival d'Avignon est une tuerie de malade oui !")
 review_av_3.user = thomas
 review_av_3.venue = venue_4
 review_av_3.save!
