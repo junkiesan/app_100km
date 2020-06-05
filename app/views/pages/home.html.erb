@@ -66,9 +66,10 @@
                 <div class="d-flex flex-row justify-content-between align-items-center w-100">
                   <div class="d-flex flex-column align-items-start justify-content-center">
                     <p class="mb-0">
+                      <% review = venue.reviews.sample %>
                       <% count = 0 %>
                       <% 5.times do %>
-                        <% if venue.reviews.first.rating > count %>
+                        <% if review.rating > count %>
                           <i class="fas fa-star text-green"></i>
                         <% else %>
                           <i class="far fa-star"></i>
@@ -76,10 +77,10 @@
                         <% count += 1 %>
                       <% end %>
                     </p>
-                    <p class="mb-0 text-black"><i>" <%= venue.reviews.first.comment %> "</i></p>
+                    <p class="mb-0 text-black"><i>" <%= review.comment %> "</i></p>
                   </div>
-                  <% if venue.reviews.first.user.photo.attached? %>
-                    <%= cl_image_tag venue.reviews.first.user.photo.key, class: "review-avatar" %>
+                  <% if review.user.photo.attached? %>
+                    <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
                   <% end %>
                 </div>
               </div>
